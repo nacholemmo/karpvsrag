@@ -44,8 +44,11 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
   - `tipo` ∈ {monto, plazo, porcentaje, responsable, paso_procedimiento, excepcion, referencia_cruzada, version, contradiccion, seccion, dato}.
   - `grupo` admite varios valores separados por `;`: `V*` para versiones vieja/nueva (tipo `version`), `C*` para contradicciones (tipo `contradiccion`, exactamente 5) y `X*` para cruces entre documentos.
   - Los hechos viejos tienen `reemplazado=si` y `reemplazado_por=<hecho_id>`.
-- **Contradicciones:** en ellas ningún documento menciona al otro. En las versiones, el documento nuevo puede decir que reemplaza al viejo.
-- Los documentos los escribieron subagentes en 5 tandas de 10, a partir de la biblia, el catálogo y sus hechos asignados. No pueden inventar datos duros fuera de esas fuentes.
+- **Contradicciones (C1-C5):** ninguno de los dos documentos indica cuál prevalece. La única cita entre pares es C4: el Manual de Depósito remite a la Política de Calidad solo por las temperaturas (cruce X8), y el validador lo reporta como aviso esperado. En las versiones (V1-V15), el documento nuevo puede decir que reemplaza al viejo o no.
+- **Validador:** el match es literal con límites de palabra en los bordes alfanuméricos ("8%" no matchea dentro de "18%"). Solo se normalizan los espacios. La detección de citas entre pares C solo compara el título exacto del catálogo: no ve formas cortas como "la Política de Créditos".
+- **Hechos agregados después del diseño:** H213 en adelante son datos o reglas que los redactores necesitaron. Cada uno lo dice en `notas`.
+- **Herramienta de diseño:** no hay generador versionado. `hechos.csv` se edita directamente (con `csv` de Python, para respetar el quoting).
+- Los documentos los escribieron subagentes en 5 tandas de 10, a partir de la biblia, el catálogo y sus hechos asignados. No podían inventar datos duros fuera de esas fuentes. Una revisión independiente encontró contradicciones accidentales (donación de mercadería, desbloqueo de cuentas), una C que en realidad era versión y matices que indicaban qué documento prevalecía. Todo eso quedó corregido.
 
 ## Comandos
 
