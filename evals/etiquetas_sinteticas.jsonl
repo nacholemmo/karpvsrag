@@ -1,0 +1,6 @@
+{"id": "sint-1", "veredicto": "parcial", "fuente": "correcta", "caso": "Le falta el plazo de 5 días hábiles y el rol de Calidad"}
+{"id": "sint-2", "veredicto": "correcta", "fuente": "incorrecta", "caso": "Respuesta correcta citando un documento que no contiene el dato"}
+{"id": "sint-3", "veredicto": "incorrecta", "fuente": "parcial", "caso": "Dice que no figura cuando el cruce lo resuelve (3% mensual)"}
+{"id": "sint-4", "veredicto": "incorrecta", "fuente": "no_aplica", "caso": "Inventa monto y condiciones en una pregunta sin respuesta"}
+{"id": "sint-5", "veredicto": "incorrecta", "fuente": "parcial", "caso": "Da el valor viejo reemplazado y cita solo el documento viejo"}
+{"id": "sint-6", "veredicto": "parcial", "fuente": "parcial", "caso": "Da un solo lado de la contradicción"}
