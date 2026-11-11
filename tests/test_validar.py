@@ -129,3 +129,31 @@ def test_documento_sin_hechos_falla(tmp_path):
     catalogo = CATALOGO + [("D04", "d.md", "rrhh", "2")]
     inf, _ = v.validar(armar(tmp_path, catalogo=catalogo), parcial=True)
     assert any("d.md" in e and "no tiene hechos" in e for e in inf.errores)
+
+
+def test_hecho_corto_no_matchea_dentro_de_otra_palabra(tmp_path):
+    hechos = HECHOS + [("H007", "8%", "a.md", "ventas", "dato", "no", "", "")]
+    textos = dict(TEXTOS, **{"a.md": TEXTOS["a.md"] + "Descuento del 18%.\n"})
+    inf, _ = v.validar(armar(tmp_path, hechos=hechos, textos=textos))
+    assert any("H007" in e for e in inf.errores)
+
+
+def test_hecho_con_borde_no_alfanumerico_matchea_pegado(tmp_path):
+    hechos = HECHOS + [("H007", "REC-", "a.md", "ventas", "dato", "no", "", "")]
+    textos = dict(TEXTOS, **{"a.md": TEXTOS["a.md"] + "Número REC-0001.\n"})
+    inf, _ = v.validar(armar(tmp_path, hechos=hechos, textos=textos))
+    assert inf.errores == []
+
+
+def test_contradiccion_que_se_cita_avisa(tmp_path):
+    textos = dict(TEXTOS, **{"a.md": TEXTOS["a.md"] + "Ver b.md.\n"})  # en el fixture, titulo == archivo
+    inf, _ = v.validar(armar(tmp_path, textos=textos))
+    assert any("C1" in a for a in inf.avisos)
+
+
+def test_hueco_con_documento_inexistente_falla(tmp_path):
+    raiz = armar(tmp_path)
+    (raiz / "diseno" / "huecos.csv").write_text(
+        "hueco_id,tema,documento_que_lo_roza,que_dice,que_no_dice\nH1,x,zz.md,a,b\n", encoding="utf-8")
+    inf, _ = v.validar(raiz)
+    assert any("zz.md" in e for e in inf.errores)

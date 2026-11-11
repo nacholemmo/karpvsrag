@@ -42,6 +42,17 @@ def normalizar(texto: str) -> str:
     return re.sub(r"\s+", " ", texto)
 
 
+def patron_hecho(texto: str) -> re.Pattern:
+    """Match literal con límites de palabra en los bordes alfanuméricos.
+
+    Así "8%" no matchea dentro de "18%" y "F8" no matchea dentro de "F80", pero "REC-" sí matchea en "REC-0001".
+    """
+    t = normalizar(texto)
+    izq = r"(?<!\w)" if t[:1].isalnum() else ""
+    der = r"(?!\w)" if t[-1:].isalnum() else ""
+    return re.compile(izq + re.escape(t) + der)
+
+
 def leer_csv(ruta: Path, campos: list[str], informe: Informe) -> list[dict]:
     if not ruta.exists():
         informe.error(f"No existe {ruta.name}")
@@ -174,10 +185,26 @@ def validar(raiz: Path, parcial: bool = False, tanda: str | None = None) -> tupl
     for h in hechos:
         if h["documento"] not in textos:
             continue
-        if normalizar(h["texto"]) in textos[h["documento"]]:
+        if patron_hecho(h["texto"]).search(textos[h["documento"]]):
             verificados += 1
         else:
-            inf.error(f"{h['hecho_id']}: '{h['texto']}' no aparece en corpus/{h['documento']}")
+            inf.error(f"{h['hecho_id']}: '{h['texto']}' no aparece (como palabra completa) en corpus/{h['documento']}")
+
+    # --- Contradicciones: los documentos del par no deberían citarse entre sí ---
+    for g in contradicciones:
+        docs = sorted({h["documento"] for h in miembros[g]})
+        for a in docs:
+            for b in docs:
+                if a != b and a in textos and b in por_archivo and por_archivo[b]["titulo"] in textos[a]:
+                    inf.avisos.append(f"{g}: corpus/{a} menciona por título a '{por_archivo[b]['titulo']}'")
+
+    # --- Huecos ---
+    ruta_huecos = raiz / "diseno" / "huecos.csv"
+    if ruta_huecos.exists():
+        for hu in leer_csv(ruta_huecos, ["hueco_id", "tema", "documento_que_lo_roza", "que_dice", "que_no_dice"], inf):
+            for d in (x.strip() for x in hu["documento_que_lo_roza"].split(";") if x.strip()):
+                if d not in por_archivo:
+                    inf.error(f"hueco {hu['hueco_id']}: el documento '{d}' no está en el catálogo")
 
     # --- Estadísticas ---
     palabras_total = chars_total = 0
