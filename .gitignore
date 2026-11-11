@@ -1,0 +1,25 @@
+# Secretos
+.env
+.env.*
+!.env.example
+
+# Entornos y cachés
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Generados (no versionar)
+logs/
+*.log
+indices/
+embeddings/
+*.npy
+*.faiss
+*.pkl
+
+# Sistema
+.DS_Store
