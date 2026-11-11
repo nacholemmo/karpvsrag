@@ -44,23 +44,35 @@ def cargar_jsonl(ruta: Path) -> list[dict]:
     return [json.loads(l) for l in ruta.read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
-def documentos_vigentes(pregunta: dict) -> list[str]:
-    """En preguntas de versión: los documentos de los hechos vigentes (reemplazado=no)."""
-    return sorted({HECHOS[h]["documento"] for h in pregunta["hechos"]
-                   if h in HECHOS and HECHOS[h]["reemplazado"] == "no"})
+def documentos_requeridos(pregunta: dict) -> tuple[list[str], str]:
+    """Qué documentos tiene que citar una respuesta para que la fuente sea correcta, y con qué modo.
+
+    - dato / procedimiento: al menos uno de los documentos fuente.
+    - cruce: todos los documentos destino (los que tienen el dato, no los que solo remiten), sin versiones reemplazadas.
+    - contradiccion: los dos documentos en conflicto.
+    - version: el documento vigente.
+    """
+    tipo, sub = pregunta["tipo"], pregunta.get("subtipo")
+    if tipo == "sin_respuesta":
+        return [], "no_aplica"
+    hs = [HECHOS[h] for h in pregunta["hechos"] if h in HECHOS]
+    if sub == "version":
+        return sorted({h["documento"] for h in hs if h["reemplazado"] == "no"}), "todos"
+    if tipo == "cruce":
+        destino = sorted({h["documento"] for h in hs if h["tipo"] != "referencia_cruzada" and h["reemplazado"] == "no"})
+        return (destino or sorted(pregunta["documentos_fuente"])), "todos"
+    if sub == "contradiccion":
+        return sorted(pregunta["documentos_fuente"]), "todos"
+    return sorted(pregunta["documentos_fuente"]), "al_menos_uno"
 
 
 def fuente_exacta(pregunta: dict, citadas: list[str]) -> str:
     """Control determinístico de la etiqueta fuente (sin LLM). Mismo criterio que la rúbrica."""
-    if pregunta["tipo"] == "sin_respuesta":
+    necesarias, modo = documentos_requeridos(pregunta)
+    if modo == "no_aplica":
         return "no_aplica"
-    citadas = set(citadas)
-    if pregunta.get("subtipo") == "version":
-        necesarias, todas = set(documentos_vigentes(pregunta)), True
-    else:
-        necesarias = set(pregunta["documentos_fuente"])
-        todas = pregunta["tipo"] in ("cruce", "contradiccion_version")
-    if (necesarias <= citadas) if todas else (necesarias & citadas):
+    necesarias, citadas = set(necesarias), set(citadas)
+    if (necesarias <= citadas) if modo == "todos" else (necesarias & citadas):
         return "correcta"
     return "parcial" if (citadas & set(pregunta["documentos_fuente"])) else "incorrecta"
 
@@ -74,7 +86,8 @@ def mensaje_juez(pregunta: dict, respuesta: dict) -> str:
         "elementos_clave": pregunta["elementos_clave"],
         "comportamiento_esperado": pregunta["comportamiento_esperado"],
         "documentos_fuente": pregunta["documentos_fuente"],
-        **({"documentos_vigentes": documentos_vigentes(pregunta)} if pregunta.get("subtipo") == "version" else {}),
+        "documentos_requeridos": documentos_requeridos(pregunta)[0],
+        "modo_fuente": documentos_requeridos(pregunta)[1],
         "respuesta_evaluada": respuesta["respuesta"],
         "fuentes_citadas": respuesta.get("fuentes", []),
     }
@@ -85,14 +98,17 @@ def juzgar(pregunta: dict, respuesta: dict, corrida: Corrida) -> dict:
     response, registro = llamar(
         "juez", pregunta["id"], corrida,
         modelo=config.modelo_juez(),
-        max_tokens=3000,
+        max_tokens=8000,
         system=SISTEMA,
         messages=[{"role": "user", "content": mensaje_juez(pregunta, respuesta)}],
         output_config={"effort": config.esfuerzo(),
                        "format": {"type": "json_schema", "schema": ESQUEMA_JUICIO}},
     )
     datos = parsear_json(response)
+    valido = (registro["stop_reason"] == "end_turn" and "_error" not in datos
+              and datos.get("veredicto") in ("correcta", "parcial", "incorrecta"))
     return {
+        "valido": valido,
         "id": respuesta["id"],
         "pregunta_id": pregunta["id"],
         "brazo": respuesta.get("brazo"),
@@ -121,6 +137,9 @@ def main(argv: list[str] | None = None) -> int:
     with args.salida.open("a", encoding="utf-8") as f:
         for r in pendientes:
             j = juzgar(preguntas[r["pregunta_id"]], r, corrida)
+            if not j.pop("valido"):
+                print(f"  {r['id']}: juicio inválido (stop_reason={j['stop_reason']}); no se guarda, se reintenta en la próxima corrida")
+                continue
             f.write(json.dumps(j, ensure_ascii=False) + "\n")
             print(f"  {r['id']} ({r['pregunta_id']}): {j['veredicto']} / fuente {j['fuente']} (exacta: {j['fuente_exacta']})")
     print(f"Costo de la corrida: USD {corrida.gastado_usd:.4f} en {corrida.llamadas} llamadas")

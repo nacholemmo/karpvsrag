@@ -34,6 +34,7 @@ RESPUESTAS = EVALS / "muestra_respuestas.jsonl"
 SINTETICAS = EVALS / "respuestas_sinteticas.jsonl"
 JUICIOS = EVALS / "juicios_muestra.jsonl"
 REVISION = EVALS / "revision_manual.csv"
+MAPA = EVALS / "mapa_revision.json"  # caso opaco -> id de respuesta (no mirar antes de revisar)
 SEMILLA = 42
 # 9 preguntas reales, estratificadas por tipo (y subtipo en contradiccion_version)
 CUPOS = {"dato": 2, "procedimiento": 1, "cruce": 2, "contradiccion": 1, "version": 1, "sin_respuesta": 2}
@@ -71,10 +72,10 @@ def sistema_con_corpus() -> list[dict]:
 
 
 def estimar() -> None:
-    tokens = json.loads((config.RAIZ / "resultados" / "tokens_corpus.json").read_text())["tokens_corpus_formateado"]
+    tokens = json.loads((config.RAIZ / "resultados" / "tokens_corpus.json").read_text())["tokens_prompt_contexto_completo"]
     modelo = config.modelo_respuesta()
     n = len(elegir_preguntas())
-    extra_in, salida = 400, 1500  # instrucciones + pregunta; salida con thinking en effort bajo (holgado)
+    extra_in, salida = 50, 1500  # instrucciones + pregunta; salida con thinking en effort bajo (holgado)
     primera = costo_usd(modelo, extra_in, salida, cache_escritura=tokens)
     resto = costo_usd(modelo, extra_in, salida, cache_lectura=tokens)
     sin_cache = costo_usd(modelo, tokens + extra_in, salida)
@@ -97,12 +98,15 @@ def responder(limite: int | None) -> None:
         for p in pendientes:
             response, reg = llamar(
                 "muestra_contexto", p["id"], corrida,
-                max_tokens=6000,
+                max_tokens=8000,
                 system=sistema,
                 messages=[{"role": "user", "content": p["pregunta"]}],
                 output_config={"effort": config.esfuerzo(), **FORMATO_RESPUESTA},
             )
             r = normalizar_respuesta(parsear_json(response))
+            if reg["stop_reason"] != "end_turn" or "error" in r:
+                print(f"  {p['id']}: respuesta inválida (stop_reason={reg['stop_reason']}); no se guarda, se reintenta en la próxima corrida")
+                continue
             fila = {"id": f"real-{p['id']}", "pregunta_id": p["id"], "brazo": "muestra_contexto", **r,
                     "costo_usd": reg["costo_usd"], "latencia_s": reg["latencia_s"], "stop_reason": reg["stop_reason"]}
             f.write(json.dumps(fila, ensure_ascii=False) + "\n")
@@ -116,16 +120,18 @@ def exportar() -> None:
     respuestas = cargar_jsonl(RESPUESTAS) + cargar_jsonl(SINTETICAS)
     rng = random.Random(SEMILLA)
     rng.shuffle(respuestas)  # mezcla reales y sintéticas para que no se distingan por posición
+    mapa = {f"caso-{i:02d}": r["id"] for i, r in enumerate(respuestas, 1)}
     with REVISION.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(["caso", "pregunta_id", "tipo", "pregunta", "respuesta_referencia", "elementos_clave",
                     "documentos_fuente", "respuesta", "fuentes_citadas", "tu_veredicto", "tu_fuente", "notas"])
-        for i, r in enumerate(respuestas, 1):
+        for caso, r in zip(mapa, respuestas):
             p = preguntas[r["pregunta_id"]]
             tipo = p["tipo"] + (f"/{p['subtipo']}" if p.get("subtipo") else "")
-            w.writerow([r["id"], p["id"], tipo, p["pregunta"], p["respuesta_referencia"],
+            w.writerow([caso, p["id"], tipo, p["pregunta"], p["respuesta_referencia"],
                         " | ".join(p["elementos_clave"]), " | ".join(p["documentos_fuente"]),
                         r["respuesta"], " | ".join(r.get("fuentes", [])), "", "", ""])
+    MAPA.write_text(json.dumps(mapa, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"Exportadas {len(respuestas)} filas a {REVISION.relative_to(config.RAIZ)}")
 
 

@@ -36,12 +36,12 @@ Evalúa las fuentes citadas contra los documentos fuente de la pregunta.
 
 | Valor | Cuándo |
 |---|---|
-| `correcta` | Cita los documentos necesarios: en `dato` y `procedimiento`, al menos uno de los documentos fuente que contiene la respuesta; en `cruce` y `contradiccion`, todos los documentos fuente; en `version`, el documento vigente (llega como `documentos_vigentes`). Citar además algún documento relacionado, o el documento de la versión vieja, no penaliza. |
-| `parcial` | Cita algunos de los documentos necesarios, pero no todos (en `cruce` o `contradiccion`), o en `version` cita solo el documento viejo, o mezcla el documento correcto con otro irrelevante del que dice haber sacado un dato clave. |
-| `incorrecta` | No cita ninguno de los documentos fuente, o no cita ninguna fuente aunque la pregunta tenía respuesta. |
+| `correcta` | Cita los **documentos requeridos** (llegan en `documentos_requeridos`) según `modo_fuente`: con `al_menos_uno` (preguntas `dato` y `procedimiento`) alcanza uno; con `todos` hay que citarlos todos. En `cruce`, los requeridos son los documentos que tienen el dato final, no el que solo remite. En `contradiccion`, son los dos documentos en conflicto. En `version`, es el documento vigente. Citar además otros documentos de la lista `documentos_fuente`, o relacionados, no penaliza. |
+| `parcial` | Cita algunos documentos de `documentos_fuente`, pero no los requeridos con el modo `todos`. Por ejemplo: un solo documento de una contradicción, o solo el documento viejo en una `version`. |
+| `incorrecta` | No cita ningún documento de `documentos_fuente`, o no cita ninguna fuente aunque la pregunta tenía respuesta. |
 | `no_aplica` | La pregunta es `sin_respuesta`. |
 
-Un documento que no está en la lista de documentos fuente pero que también contiene el mismo dato, y que el juez puede reconocer por el contenido citado, cuenta como fuente válida en `dato` y `procedimiento`.
+Un documento que no está en la lista de documentos fuente pero que también contiene el mismo dato, y que el juez puede reconocer por el contenido citado, cuenta como fuente válida en `dato` y `procedimiento`. El control en código `fuente_exacta` no puede detectar ese caso, así que ahí puede discrepar con el juez. Esas diferencias se revisan a mano.
 
 ## Formato de salida
 

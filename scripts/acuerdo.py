@@ -17,6 +17,10 @@ VEREDICTOS = ["correcta", "parcial", "incorrecta"]
 FUENTES = ["correcta", "parcial", "incorrecta", "no_aplica"]
 
 
+def leer_jsonl(ruta: Path) -> list[dict]:
+    return [json.loads(l) for l in ruta.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
 def kappa(pares: list[tuple[str, str]], categorias: list[str]) -> float | None:
     """Kappa de Cohen. None si no está definido (acuerdo esperado = 1)."""
     n = len(pares)
@@ -46,11 +50,14 @@ def resumen(nombre: str, pares: list[tuple[str, str]], categorias: list[str]) ->
 
 def main() -> int:
     revision = list(csv.DictReader((EVALS / "revision_manual.csv").open(encoding="utf-8")))
-    juicios = {j["id"]: j for j in map(json.loads, (EVALS / "juicios_muestra.jsonl").read_text(encoding="utf-8").splitlines()) if j}
+    mapa = json.loads((EVALS / "mapa_revision.json").read_text(encoding="utf-8"))
+    por_id = {j["id"]: j for j in leer_jsonl(EVALS / "juicios_muestra.jsonl")}
+    juicios = {caso: por_id[rid] for caso, rid in mapa.items() if rid in por_id}
     etiquetas = {}
     ruta_et = EVALS / "etiquetas_sinteticas.jsonl"
     if ruta_et.exists():
-        etiquetas = {e["id"]: e for e in map(json.loads, ruta_et.read_text(encoding="utf-8").splitlines()) if e}
+        et = {e["id"]: e for e in leer_jsonl(ruta_et)}
+        etiquetas = {caso: et[rid] for caso, rid in mapa.items() if rid in et}
 
     incompletas = [r["caso"] for r in revision if r["tu_veredicto"].strip() not in VEREDICTOS
                    or r["tu_fuente"].strip() not in FUENTES]
@@ -58,7 +65,8 @@ def main() -> int:
         print(f"Faltan o son inválidas tus etiquetas en: {incompletas}")
         print(f"Valores válidos: tu_veredicto {VEREDICTOS}; tu_fuente {FUENTES}")
         return 1
-    faltan_juicios = [r["caso"] for r in revision if r["caso"] not in juicios]
+    faltan_juicios = [r["caso"] for r in revision if r["caso"] not in juicios
+                      or juicios[r["caso"]].get("veredicto") not in VEREDICTOS]
     if faltan_juicios:
         print(f"Faltan juicios para: {faltan_juicios}")
         return 1
@@ -77,7 +85,7 @@ def main() -> int:
                   "| caso | pretendida | humano | juez |", "|---|---|---|---|"]
         for r in revision:
             if r["caso"] in etiquetas:
-                lineas.append(f"| {r['caso']} | {etiquetas[r['caso']]['veredicto']} | {r['tu_veredicto']} | "
+                lineas.append(f"| {r['caso']} ({mapa[r['caso']]}) | {etiquetas[r['caso']]['veredicto']} | {r['tu_veredicto']} | "
                               f"{juicios[r['caso']]['veredicto']} |")
         partes.append("\n".join(lineas) + "\n")
 

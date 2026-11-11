@@ -88,3 +88,12 @@ def test_sin_respuesta_debe_ir_vacia(tmp_path):
 def test_conteo_completo_falla_con_una(tmp_path):
     errores, _, _ = vp.validar(RAIZ, escribir(tmp_path, [BASE]), parcial=False)
     assert any("se esperaban 50" in e for e in errores)
+
+
+def test_fuente_exacta_cruce_exige_el_destino_no_el_que_remite():
+    # X1: el instructivo de alta remite (referencia_cruzada) al punto 4 de la Política, que tiene el monto
+    p = P("cruce", ["instructivo-alta-cliente.md", "politica-creditos-cobranzas-v2.md"],
+          hechos=["H151", "H002"])
+    assert juez.documentos_requeridos(p) == (["politica-creditos-cobranzas-v2.md"], "todos")
+    assert juez.fuente_exacta(p, ["politica-creditos-cobranzas-v2.md"]) == "correcta"
+    assert juez.fuente_exacta(p, ["instructivo-alta-cliente.md"]) == "parcial"

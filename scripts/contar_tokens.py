@@ -31,11 +31,19 @@ def main() -> int:
     modelo = config.modelo_respuesta()
     docs = cargar_corpus()
     total = contar(formatear_corpus(docs), modelo)
-    salida = {"modelo": modelo, "documentos": len(docs), "tokens_corpus_formateado": total}
+    # Prompt completo del brazo de contexto (system con instrucciones + corpus + una pregunta corta)
+    sys.path.insert(0, str(config.RAIZ / "evals"))
+    from muestra import sistema_con_corpus  # noqa: E402
+    completo = cliente().messages.count_tokens(
+        model=modelo, system=sistema_con_corpus(),
+        messages=[{"role": "user", "content": "¿Cuál es el pedido mínimo para un almacén?"}],
+    ).input_tokens
+    salida = {"modelo": modelo, "documentos": len(docs), "tokens_corpus_formateado": total,
+              "tokens_prompt_contexto_completo": completo}
     tramo = PRECIOS.get(modelo) and PRECIOS[modelo].tramo_largo
     if tramo:
         salida["umbral_tramo_caro"] = tramo[0]
-        salida["margen_bajo_umbral"] = tramo[0] - total
+        salida["margen_bajo_umbral"] = tramo[0] - completo
     if args.por_documento:
         salida["por_documento"] = {a: contar(t, modelo) for a, t in docs}
     print(json.dumps(salida, ensure_ascii=False, indent=2))

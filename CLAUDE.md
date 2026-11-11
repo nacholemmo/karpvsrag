@@ -50,6 +50,28 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
 - **Herramienta de diseño:** no hay generador versionado. `hechos.csv` se edita directamente (con `csv` de Python, para respetar el quoting).
 - Los documentos los escribieron subagentes en 5 tandas de 10, a partir de la biblia, el catálogo y sus hechos asignados. No podían inventar datos duros fuera de esas fuentes. Una revisión independiente encontró contradicciones accidentales (donación de mercadería, desbloqueo de cuentas), una C que en realidad era versión y matices que indicaban qué documento prevalecía. Todo eso quedó corregido.
 
+## Decisiones de la fase 2 (evals)
+
+- **Presupuesto:** el saldo de la API es chico (USD 3,84 a noviembre de 2026), así que todo va con **Haiku 5.5** (`claude-haiku-5-5`), que responde y juzga.
+  - El sesgo de autoevaluación se declara como límite y se mide con la revisión manual.
+  - Haiku 5.5 cobra 5× más si el prompt supera los 100k tokens: hay que medir con `scripts/contar_tokens.py`.
+- **`comun/`:**
+  - `llm.llamar()` loguea cada llamada en `logs/llamadas.jsonl` (no se versiona) con brazo, pregunta, tokens, caché, costo, latencia, `stop_reason` y `request_id`.
+  - `Corrida` corta si el gasto supera `PRESUPUESTO_USD`. El chequeo es antes de cada llamada, así que se puede pasar por una.
+  - Effort por defecto: `low`.
+- **Formato común de los brazos:** `{"respuesta", "fuentes": [archivo.md]}`, con salida estructurada (`comun/formato.py`).
+- **Preguntas** (`evals/preguntas.jsonl`): 50, 10 por tipo. `contradiccion_version` se divide en 5 contradicciones (C1-C5) y 5 versiones. Las 10 `sin_respuesta` cubren los 8 huecos, más 2 facetas extra de H2 y H4 (a propósito).
+- **Documentos requeridos para la fuente** (`juez.documentos_requeridos`):
+  - dato y procedimiento: al menos uno;
+  - cruce: los documentos destino (con el dato, no el que remite, sin reemplazados);
+  - contradicción: los dos;
+  - versión: el vigente.
+
+  `fuente_exacta` es el control en código. No reconoce documentos alternativos que también contienen el dato, así que puede discrepar con el juez.
+- **Límite conocido:** en varios cruces el documento destino alcanza solo para responder. Se mide la llegada al dato, no el salto obligatorio entre documentos.
+- **Juicios y respuestas con `stop_reason` distinto de `end_turn` o JSON inválido:** no se guardan, y se reintentan al volver a correr.
+- **Revisión manual a ciegas:** `evals/revision_manual.csv` usa ids opacos (`caso-NN`). El mapeo está en `evals/mapa_revision.json` y las etiquetas pretendidas de las 6 sintéticas en `evals/etiquetas_sinteticas.jsonl`. No hay que mirarlos antes de revisar.
+
 ## Comandos
 
 ```bash
@@ -57,4 +79,11 @@ uv venv --python 3.12 .venv && uv pip install --python .venv -r requirements.txt
 .venv/bin/python scripts/validar_hechos.py              # validación completa (criterio de cierre de la fase 1)
 .venv/bin/python scripts/validar_hechos.py --parcial --tanda N
 .venv/bin/python -m pytest -q
+.venv/bin/python scripts/validar_preguntas.py
+.venv/bin/python scripts/contar_tokens.py                  # gratis (count_tokens)
+.venv/bin/python evals/muestra.py estimar                  # costo estimado, sin API
+.venv/bin/python evals/muestra.py responder --limite 5     # primero 5, después sin --limite
+.venv/bin/python evals/juez.py --respuestas evals/muestra_respuestas.jsonl --respuestas evals/respuestas_sinteticas.jsonl --salida evals/juicios_muestra.jsonl
+.venv/bin/python evals/muestra.py exportar                 # revision_manual.csv a ciegas
+.venv/bin/python scripts/acuerdo.py                        # cuando el CSV esté completo
 ```
