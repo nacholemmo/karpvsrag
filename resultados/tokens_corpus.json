@@ -1,0 +1,8 @@
+{
+  "modelo": "claude-haiku-5-5",
+  "documentos": 50,
+  "tokens_corpus_formateado": 91470,
+  "tokens_prompt_contexto_completo": 91737,
+  "umbral_tramo_caro": 100000,
+  "margen_bajo_umbral": 8263
+}

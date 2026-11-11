@@ -35,6 +35,7 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
 
 ## Decisiones de la fase 1 (corpus)
 
+- **Tamaño del corpus:** se midió con `count_tokens` en la fase 2: 130,6k tokens con el tokenizador de Haiku 5.5. La estimación por caracteres/4 de la fase 1 lo subestimaba. Se recortaron 39 documentos, conservando todos los hechos y lo que usan las preguntas, y el prompt completo quedó en **91,7k tokens**, por debajo del umbral de 100k de Haiku. El validador estima con 2,34 caracteres por token, calibrado.
 - **Empresa ficticia:** Distribuidora Quebracho Azul S.A., en el Gran Rosario, Argentina. Montos en ARS con formato `$ 1.500.000`. "Hoy", para el corpus, es noviembre de 2025.
 - **`diseno/`** guarda el diseño y queda fuera de `corpus/`, así ningún brazo lo lee:
   - `empresa.md`: la biblia, con personas, sistemas y línea de tiempo;

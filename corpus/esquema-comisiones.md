@@ -9,9 +9,9 @@ Fecha: 15/01/2025
 
 ## 1. Objetivo
 
-Este documento define cómo se calcula la parte variable de la remuneración de los vendedores de la Empresa durante 2025. Busca que la comisión premie la venta que efectivamente se cobra y que el cliente paga en término, y no solo el volumen facturado.
+Este documento define cómo se calcula la parte variable de la remuneración de los vendedores durante 2025, premiando la venta que efectivamente se cobra.
 
-Con la puesta en marcha de Tacuarí, el cálculo se hace a partir de la información de cobranzas registrada en el sistema. Ya no se usan planillas paralelas: lo que no está imputado en Tacuarí no entra en el cálculo.
+El cálculo se hace con las cobranzas registradas en Tacuarí: lo que no está imputado en Tacuarí no entra en el cálculo.
 
 ## 2. Alcance
 
@@ -19,12 +19,7 @@ Aplica a los vendedores de la fuerza de ventas que tienen cartera de clientes as
 
 ## 3. Componentes de la remuneración variable
 
-La parte variable tiene dos componentes:
-
-1. **Comisión mensual por cobranza.**
-2. **Premio trimestral por cumplimiento de objetivo.**
-
-Ambos son independientes de los viáticos, reintegros y demás conceptos que se rijan por otras políticas.
+La parte variable tiene dos componentes: **comisión mensual por cobranza** y **premio trimestral por cumplimiento de objetivo**. Ambos son independientes de los viáticos y demás conceptos que se rijan por otras políticas.
 
 ## 4. Comisión mensual por cobranza
 
@@ -32,11 +27,11 @@ Ambos son independientes de los viáticos, reintegros y demás conceptos que se 
 
 El vendedor cobra una comisión del **2,5% sobre lo cobrado** a los clientes de su cartera en el mes. Se toma como base el importe neto efectivamente cobrado e imputado en Tacuarí, sin impuestos.
 
-Que la base sea lo cobrado y no lo vendido es una decisión deliberada: una venta que no se cobra no genera comisión, y una venta que se cobra tarde la genera recién cuando entra el dinero.
+Una venta que no se cobra no genera comisión.
 
 ### 4.2. Cobranzas atrasadas
 
-Las cobranzas de facturas con **más de 60 días** de antigüedad, contados desde la fecha de la factura, no comisionan. El cliente puede pagarlas y la Empresa las imputa normalmente, pero ese importe no suma a la base del vendedor.
+Las cobranzas de facturas con **más de 60 días** de antigüedad, contados desde la fecha de la factura, no comisionan. Se imputan normalmente, pero no suman a la base del vendedor.
 
 ### 4.3. Qué no se considera cobrado
 
@@ -60,8 +55,6 @@ Otro vendedor cobra $ 6.000.000, de los cuales $ 1.200.000 corresponden a una fa
 > Base comisionable: $ 6.000.000 − $ 1.200.000 = $ 4.800.000
 > Comisión: 2,5% × $ 4.800.000 = **$ 120.000**
 
-La factura atrasada se cobró igual, pero no comisiona.
-
 **Ejemplo C — cheque rechazado.**
 En un mes se computó un cheque de $ 400.000 que después fue rechazado. Ese importe se resta de la base del cálculo siguiente, es decir, la comisión de ese mes se reduce en 2,5% × $ 400.000 = $ 10.000.
 
@@ -69,7 +62,7 @@ En un mes se computó un cheque de $ 400.000 que después fue rechazado. Ese imp
 
 ### 5.1. Objetivo
 
-Cada vendedor tiene un objetivo trimestral de ventas para su cartera, que la Gerencia Comercial comunica al inicio de cada trimestre junto con el Jefe de Ventas, según la zona y el potencial de los clientes.
+Cada vendedor tiene un objetivo trimestral de ventas para su cartera, que la Gerencia Comercial comunica al inicio de cada trimestre.
 
 ### 5.2. Condición
 
@@ -84,9 +77,9 @@ El importe del premio se informa junto con el objetivo de cada trimestre.
 
 ## 6. Liquidación y consultas
 
-La Gerencia Comercial prepara el cálculo con los datos de Tacuarí y lo envía a Recursos Humanos, que lo remite para su liquidación junto con los haberes. Cada vendedor recibe el detalle de su base comisionable, con las facturas excluidas y el motivo.
+La Gerencia Comercial prepara el cálculo con los datos de Tacuarí y lo envía a Recursos Humanos para su liquidación con los haberes. Cada vendedor recibe el detalle de su base comisionable, con las facturas excluidas.
 
-Las diferencias se plantean por escrito al Jefe de Ventas, con el detalle de los comprobantes. No se reabren cálculos por pagos que no estaban imputados en Tacuarí al momento del cierre.
+Las diferencias se plantean por escrito al Jefe de Ventas. No se reabren cálculos por pagos que no estaban imputados en Tacuarí al momento del cierre.
 
 ## 7. Revisión
 

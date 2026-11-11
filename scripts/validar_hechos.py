@@ -222,7 +222,9 @@ def validar(raiz: Path, parcial: bool = False, tanda: str | None = None) -> tupl
         "hechos_verificados": verificados,
         "hechos_en_alcance": sum(1 for h in hechos if h["documento"] in en_alcance),
         "palabras_corpus": palabras_total,
-        "tokens_estimados": chars_total // 4,
+        # Calibrado con count_tokens de Haiku 5.5 sobre este corpus (2,34 caracteres por token).
+        # El valor exacto está en resultados/tokens_corpus.json (scripts/contar_tokens.py).
+        "tokens_estimados": int(chars_total / 2.34),
         "contradicciones": len(contradicciones),
         "versiones": len([g for g in miembros if g.startswith("V")]),
         "cruces": len([g for g in miembros if g.startswith("X")]),

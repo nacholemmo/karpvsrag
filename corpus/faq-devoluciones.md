@@ -10,10 +10,10 @@ Esta FAQ junta las dudas que más aparecen cuando un cliente quiere devolver mer
 ### Devoluciones comerciales
 
 **P: Un cliente quiere devolver mercadería porque no la vendió. ¿Se acepta?**
-R: No. Las devoluciones comerciales (no se vendió, pidió de más, cambió de idea, le sobró de una promo) no se aceptan, salvo cuando hubo un error de preparación de nuestro lado. Explicáselo con buena onda: la mercadería salió bien y ya es del cliente.
+R: No. Las devoluciones comerciales (no se vendió, pidió de más) no se aceptan, salvo cuando hubo un error de preparación de nuestro lado.
 
 **P: ¿Qué cuenta como error de preparación?**
-R: Que le hayamos mandado algo que no pidió: otro producto, otra presentación, otra marca, o más cantidad de la que figura en el pedido. Se verifica contra el pedido cargado en Tacuarí y contra lo que registró Lapacho en el armado. Si el pedido decía eso y el cliente se equivocó al pedir, no es error de preparación.
+R: Que le hayamos mandado algo que no pidió: otro producto, otra presentación, otra marca, o más cantidad de la que figura en el pedido. Se verifica contra el pedido cargado en Tacuarí. Si el pedido decía eso y el cliente se equivocó al pedir, no es error de preparación.
 
 **P: El vendedor le tomó mal el pedido. ¿Eso es error de preparación?**
 R: No exactamente, pero tampoco es culpa del cliente. Esos casos pasalos a Julieta antes de responder; los vemos con el jefe de ventas.
@@ -26,7 +26,7 @@ R: Las cuentas clave pueden tener condiciones propias. Antes de decir que no, co
 ### Cómo se gestiona
 
 **P: ¿Dónde lo registro?**
-R: En Mostrador, siempre, aunque después la devolución se rechace. Cada caso tiene su número REC- y ese número acompaña todo lo que sigue. Si tenés dudas de cómo cargarlo, mirá el Instructivo de uso de Mostrador.
+R: En Mostrador, siempre, aunque después la devolución se rechace. Cada caso tiene su número REC- y ese número acompaña todo lo que sigue.
 
 **P: ¿Qué le pido al cliente?**
 R: Número de factura, productos y cantidades que quiere devolver, y fotos de la mercadería y de las etiquetas. Que no abra ni use la mercadería que va a devolver.
@@ -38,10 +38,10 @@ R: Se retira en el próximo viaje de reparto a ese cliente. No se mandan viajes 
 R: Solo si ya está aprobada en Mostrador y figura en su hoja. Si el cliente le quiere dar algo que no está aprobado, el chofer no lo carga y le pide que llame a Atención al Cliente.
 
 **P: ¿Qué controla el chofer al retirar?**
-R: Que coincida con lo aprobado (producto y cantidad) y que la mercadería esté en el estado en que se fue. El cliente firma la constancia de retiro y el chofer la trae con la rendición.
+R: Que coincida con lo aprobado. El cliente firma la constancia de retiro.
 
 **P: ¿Qué pasa con la mercadería cuando llega al depósito?**
-R: Depósito la recibe, la revisa y decide si vuelve a stock o si va a mercadería no conforme. Eso ya no es tema nuestro, pero Depósito tiene que confirmar la recepción para que podamos seguir.
+R: Depósito la recibe, la revisa y decide si vuelve a stock o si va a mercadería no conforme. Depósito tiene que confirmar la recepción para que podamos seguir.
 
 ---
 
@@ -66,9 +66,6 @@ R: No es una devolución de mercadería y no pasa por este circuito. Los envases
 
 **P: Un cliente devolvió mercadería directamente al chofer sin avisar a nadie. ¿Qué hago?**
 R: Cargalo en Mostrador igual, con lo que diga la constancia del chofer, y avisá a Julieta. Se analiza como cualquier otro caso.
-
-**P: El cliente insiste y amenaza con no comprar más.**
-R: Escuchalo, registrá todo en Mostrador y escalalo según el Procedimiento de Reclamos de Clientes (v2). No hagas excepciones por tu cuenta.
 
 **P: ¿Las devoluciones por mercadería vencida o dañada son devoluciones comerciales?**
 R: No, son reclamos y tienen sus propios plazos, que están en el procedimiento de reclamos.

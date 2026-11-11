@@ -8,7 +8,7 @@ redacta: Julieta
 
 ## 1. Números del mes
 
-En agosto entraron 142 reclamos por Mostrador, todos los canales sumados (teléfono, mail, vendedores y Televentas). Es más que julio, aunque agosto tuvo el lío de la cámara 3 y eso explica una parte.
+En agosto entraron 142 reclamos por Mostrador, todos los canales sumados (teléfono, mail, vendedores y Televentas). Es más que julio, en parte por el lío de la cámara 3.
 
 Por tipo:
 - faltantes: siguen primeros lejos, el 38% del total
@@ -16,11 +16,11 @@ Por tipo:
 - demoras en la entrega: bajaron respecto de julio
 - otros (error de artículo, bultos golpeados, cosas varias)
 
-Tomás comenta que todavía hay vendedores que pasan el reclamo por mensaje y no lo cargan, y después el cliente llama preguntando por un numero que no existe. Hay que insistir con que todo entra por Mostrador.
+Tomás: todavía hay vendedores que pasan el reclamo por mensaje y no lo cargan. Todo entra por Mostrador.
 
 ## 2. Faltantes
 
-Es el tema de siempre. Rubén dice que mucho del faltante es de pedidos grandes que salieron tarde del picking y se cargaron apurados. Walter dice que tambien hay faltantes que no son faltantes: el cliente firma el remito sin contar y después reclama algo que está en otro bulto.
+Rubén dice que mucho es de pedidos grandes que se cargaron apurados. Walter: a veces el cliente firma sin contar y reclama algo que está en otro bulto.
 
 - Supermercados Hermanos Lutz sigue siendo el que más faltantes reclama, en varias sucursales. Lorena ya está al tanto
 - se revisaron algunos casos al azar contra el control de carga en Lapacho: en la mayoria el faltante era real, en uno no (REC-0... revisar el número, Tomás lo anoto mal en el cuaderno, creo que es el que termina en 81 o 18)
@@ -28,9 +28,7 @@ Es el tema de siempre. Rubén dice que mucho del faltante es de pedidos grandes 
 
 ## 3. Plazos
 
-En general se respondieron en plazo según el Procedimiento de Reclamos de Clientes (v2). Los que se atrasaron fueron los de mal estado de la segunda quincena, porque esperaban la revisión de Calidad y Natalia estaba con la cámara. Julieta habla con Natalia para que en esos casos se mande al menos la primera respuesta al cliente aunque la resolución tarde.
-
-Tomás pregunta qué pasa con los reclamos fuera de plazo que igual se cargan. Se rechazan con fundamento, como dice el procedimiento, pero hay que explicarle bien al cliente.
+En general se respondieron en plazo según el Procedimiento de Reclamos de Clientes (v2). Se atrasaron los de mal estado de la segunda quincena, que esperaban a Calidad. Julieta habla con Natalia para que en esos casos se mande al menos la primera respuesta al cliente aunque la resolución tarde.
 
 ## 4. Errores de facturación
 
@@ -43,9 +41,8 @@ Damián vino por esto. Siguen entrando por Mostrador reclamos que en realidad so
 
 ## 5. Varios
 
-- Rubén pide que los reclamos de producto dañado vengan con foto siempre, si no no puede ver si fue en el depósito o en el camion
-- Walter: se suma un fletero nuevo en zona sur, ojo con los primeros reclamos de esa zona
-- la planilla vieja de reclamos de 2024 se archiva, ya nadie la usa
+- Rubén pide que los reclamos de producto dañado vengan con foto siempre
+- Walter: fletero nuevo en zona sur, ojo con esa zona
 
 ## Pendientes
 
