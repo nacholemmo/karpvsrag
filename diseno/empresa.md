@@ -21,7 +21,7 @@
 | **Tacuarí** | ERP: ventas, facturación electrónica, cuentas corrientes, compras | enero 2025 |
 | **Fénix** | ERP anterior, hoy apagado. Lo mencionan los documentos viejos | hasta diciembre 2024 |
 | **Lapacho** | WMS del depósito: recepción, ubicaciones, picking, inventario | 2024 |
-| **Mostrador** | Mesa de reclamos de clientes. Los números tienen la forma `REC-` | 2025 |
+| **Mostrador** | Mesa de reclamos de clientes. Los números tienen la forma `REC-` | enero 2025 |
 
 ## Áreas y personas (todas ficticias)
 
@@ -36,7 +36,7 @@
 | Rocío Almirón | Facturista | Administración | |
 | Claudio Mansilla | Gerente de Operaciones | Operaciones | Depósito, Compras, Calidad y Distribución dependen de él |
 | Ernesto Saldías | Jefe de Compras | Operaciones | |
-| Florencia Ledesma | Compradora (almacén seco) | Operaciones | |
+| Florencia Lescano | Compradora (almacén seco) | Operaciones | |
 | Iván Zárate | Comprador (frescos y refrigerados) | Operaciones | |
 | Rubén Kowalczyk | Jefe de Depósito | Operaciones | Le dicen "el Ruso" |
 | Matías Guiñazú | Supervisor de turno noche | Operaciones | |
@@ -85,8 +85,9 @@ Almacén seco (harinas, aceites, conservas, fideos, yerba), lácteos y refrigera
 | 2024 | Circular de pedido mínimo. Política de Calidad e Inocuidad (07/2024). Calidad pasa a reportar a Operaciones. Se implementa Lapacho |
 | 01/2025 | Migración de Fénix a Tacuarí. Nuevo Manual de Depósito y Esquema de comisiones |
 | 02/2025 | Nuevo Manual de Facturación y Reglamento interno |
-| 03-06/2025 | Política de Compras, Procedimiento de alta de proveedores, Manual del vendedor, Procedimiento de reclamos v2, Circular 04/2025 de notas de crédito y Política de cuentas clave |
+| 03-06/2025 | Política de Compras, Procedimiento de alta de proveedores, Circular 04/2025 de notas de crédito (05/2025), Procedimiento de reclamos v2 y Política de cuentas clave |
 | 07/2025 | Comité de créditos: se decide la Política de Créditos y Cobranzas v2, vigente desde el 01/08/2025 |
+| 09/2025 | Nueva edición del Manual del Vendedor (ya remite a la Política de Créditos v2) |
 | 08-11/2025 | Actas, mails, instructivos y FAQs varias |
 
 "Hoy", para el corpus, es mediados de noviembre de 2025.

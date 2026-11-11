@@ -7,8 +7,8 @@ H005,6. Mora e intereses,politica-creditos-cobranzas-v2.md,cobranzas,seccion,no,
 H006,3% mensual,politica-creditos-cobranzas-v2.md,cobranzas,version,no,,V9,Interés punitorio por mora (vigente).
 H007,más de 45 días de atraso,politica-creditos-cobranzas-v2.md,cobranzas,plazo,no,,,Con más de 45 días de atraso Tacuarí bloquea la cuenta automáticamente.
 H008,$ 5.000.000,politica-creditos-cobranzas-v2.md,cobranzas,monto,no,,,Límites de crédito por encima de este monto requieren aprobación de la Gerente de Administración y Finanzas.
-H009,Gerente de Administración y Finanzas,politica-creditos-cobranzas-v2.md,cobranzas,responsable,no,,,Aprueba límites de crédito superiores a $ 5.000.000.
-H010,hasta 60 días de plazo,politica-creditos-cobranzas-v2.md,cobranzas,version,no,,V2,Plazo máximo aceptado para cheques diferidos (vigente).
+H009,Gerente de Administración y Finanzas,politica-creditos-cobranzas-v2.md,cobranzas,version,no,,V13,Aprueba límites de crédito superiores a $ 5.000.000.
+H010,hasta 60 días de plazo,politica-creditos-cobranzas-v2.md,cobranzas,version,no,,V2;X17,Plazo máximo aceptado para cheques diferidos (vigente).
 H011,2% de descuento,politica-creditos-cobranzas-v2.md,cobranzas,porcentaje,no,,,Descuento por pronto pago.
 H012,dentro de los 5 días hábiles,politica-creditos-cobranzas-v2.md,cobranzas,plazo,no,,,Plazo para acceder al descuento por pronto pago (desde la fecha de factura).
 H013,reemplaza al Manual de Créditos de marzo de 2023,politica-creditos-cobranzas-v2.md,cobranzas,version,no,,V1,Marca explícita de reemplazo de versión.
@@ -16,7 +16,7 @@ H014,Jefa de Créditos y Cobranzas,politica-creditos-cobranzas-v2.md,cobranzas,r
 H015,$ 800.000,manual-creditos-2023.md,cobranzas,version,si,H002,V1,Límite inicial para clientes nuevos según la versión 2023 (reemplazado).
 H016,hasta 90 días de plazo,manual-creditos-2023.md,cobranzas,version,si,H010,V2,Plazo máximo de cheques diferidos en 2023 (reemplazado).
 H017,"2,5% mensual",manual-creditos-2023.md,cobranzas,version,si,H006,V9,Interés por mora en 2023 (reemplazado).
-H018,Jefa de Créditos y Cobranzas,manual-creditos-2023.md,cobranzas,responsable,no,,,En 2023 aprobaba todas las altas de crédito.
+H018,Jefa de Créditos y Cobranzas,manual-creditos-2023.md,cobranzas,version,si,H009,V13,En 2023 la Jefa de Créditos y Cobranzas aprobaba todas las altas de crédito (reemplazado: hoy los límites superiores a $ 5.000.000 los aprueba la Gerente de Administración y Finanzas).
 H019,30 días fecha factura,manual-creditos-2023.md,cobranzas,plazo,no,,,Plazo de pago estándar (no cambió).
 H020,7 días de vencida,manual-cobranzas.md,cobranzas,contradiccion,no,,C1,Primer llamado al cliente cuando la factura tiene 7 días de vencida. Contradice D04 (10 días).
 H021,punto 6 de la Política de Créditos y Cobranzas,manual-cobranzas.md,cobranzas,referencia_cruzada,no,,X3,Remite al punto 6 de D01 para la tasa de interés por mora (no la repite).
@@ -56,7 +56,7 @@ H054,hasta $ 350.000,circular-notas-credito-2025.md,facturacion,version,no,,V3;X
 H055,reemplaza al procedimiento PR-FAC-03,circular-notas-credito-2025.md,facturacion,version,no,,V3,Marca explícita de reemplazo.
 H056,número de reclamo de Mostrador,circular-notas-credito-2025.md,facturacion,referencia_cruzada,no,,X5,Toda NC originada en un reclamo debe llevar el número de reclamo de Mostrador (formato en D40).
 H057,dentro de los 3 días hábiles,circular-notas-credito-2025.md,facturacion,plazo,no,,,Plazo para emitir la NC una vez aprobada.
-H058,dentro de las 24 horas,acta-reunion-facturacion-logistica.md,facturacion,contradiccion,no,,C2,Plazo para conciliar remitos con facturas según la minuta. Contradice D08 (48 horas).
+H058,dentro de las 24 horas,acta-reunion-facturacion-logistica.md,facturacion,contradiccion,no,,C2,Plazo para conciliar remitos con facturas según la minuta (regla que Facturación da por vigente). Contradice D08 (48 horas). Ninguno menciona al otro.
 H059,Walter Insaurralde,acta-reunion-facturacion-logistica.md,facturacion,responsable,no,,,Se encarga de que los choferes entreguen los remitos firmados.
 H060,remitos firmados escaneados,acta-reunion-facturacion-logistica.md,facturacion,paso_procedimiento,no,,,Los choferes suben los remitos firmados escaneados.
 H061,Ventas > Comprobantes > Nueva factura,instructivo-facturacion-tacuari.md,facturacion,paso_procedimiento,no,,,Ruta de menú para emitir una factura.
@@ -92,7 +92,7 @@ H090,martes y viernes,instructivo-reposicion-stock.md,compras,plazo,no,,,Días e
 H091,niveles de aprobación de la Política de Compras,instructivo-reposicion-stock.md,compras,referencia_cruzada,no,,X10,Remite a D15 para quién aprueba cada OC.
 H092,domingos de 7:00 a 10:00,mail-proveedor-lacteos.md,compras,excepcion,no,,,"La Tranquera puede entregar los domingos en esa franja, fuera del horario de recepción."
 H093,Matías Guiñazú,mail-proveedor-lacteos.md,compras,responsable,no,,,Recibe las entregas del domingo.
-H094,Florencia Ledesma,acta-compras-quincenal.md,compras,responsable,no,,,Queda a cargo de los proveedores de almacén seco.
+H094,Florencia Lescano,acta-compras-quincenal.md,compras,responsable,no,,,Queda a cargo de los proveedores de almacén seco.
 H095,Molinos Santa Clotilde,acta-compras-quincenal.md,compras,dato,no,,,Proveedor mencionado en la reunión.
 H096,6%,notas-chat-compras.md,compras,porcentaje,no,,,Aumento anunciado por La Tranquera.
 H097,1/12,notas-chat-compras.md,compras,plazo,no,,,Fecha desde la que rige el aumento.
@@ -105,11 +105,11 @@ H103,16:00 hs,manual-deposito.md,deposito,version,no,,V11,Corte de pedidos para 
 H104,dos veces por año,manual-deposito.md,deposito,version,no,,V5,Frecuencia del inventario general (vigente).
 H105,Política de Calidad e Inocuidad Alimentaria,manual-deposito.md,deposito,referencia_cruzada,no,,X8,Remite a D26 para las temperaturas de conservación.
 H106,reemplaza al Manual de Depósito de 2023,manual-deposito.md,deposito,version,no,,V5,Marca explícita de reemplazo.
-H107,Lapacho,manual-deposito.md,deposito,dato,no,,,WMS.
+H107,Lapacho,manual-deposito.md,deposito,version,no,,V14,WMS del depósito (reemplaza a las planillas en papel de 2023).
 H108,curso de autoelevador,manual-deposito.md,deposito,paso_procedimiento,no,,,Requisito para manejar el autoelevador.
 H109,una vez por año,manual-deposito-2023.md,deposito,version,si,H104,V5,Frecuencia del inventario general en 2023 (reemplazado).
 H110,15:00 hs,manual-deposito-2023.md,deposito,version,si,H103,V11,Corte de pedidos en 2023 (reemplazado).
-H111,planillas en papel,manual-deposito-2023.md,deposito,dato,no,,,Registro anterior a Lapacho.
+H111,planillas en papel,manual-deposito-2023.md,deposito,version,si,H107,V14,En 2023 el depósito registraba en planillas en papel (reemplazado por Lapacho).
 H112,7 °C,instructivo-recepcion-mercaderia.md,deposito,dato,no,,,Temperatura máxima de recepción de refrigerados.
 H113,-18 °C,instructivo-recepcion-mercaderia.md,deposito,dato,no,,,Temperatura máxima de recepción de congelados.
 H114,Gabriel Ocampo,instructivo-recepcion-mercaderia.md,deposito,responsable,no,,,Encargado de Recepción.
@@ -121,7 +121,7 @@ H119,más de 80 bultos,instructivo-preparacion-pedidos.md,deposito,dato,no,,,Los
 H120,doble chequeo,instructivo-preparacion-pedidos.md,deposito,paso_procedimiento,no,,,
 H121,Política Comercial para Cuentas Clave,instructivo-preparacion-pedidos.md,deposito,referencia_cruzada,no,,X13,Remite a D32.
 H122,la destrucción de mercadería vencida la aprueba la Responsable de Calidad,politica-calidad-inocuidad.md,deposito,contradiccion,no,,C4,Contradice D22 (Jefe de Depósito).
-H123,7 °C,politica-calidad-inocuidad.md,deposito,dato,no,,X8;X14,Temperatura máxima de conservación y recepción de refrigerados.
+H123,7 °C,politica-calidad-inocuidad.md,deposito,dato,no,,X8;X14;X18,Temperatura máxima de conservación y recepción de refrigerados.
 H124,-18 °C,politica-calidad-inocuidad.md,deposito,dato,no,,X8;X14,Temperatura máxima de conservación y recepción de congelados.
 H125,auditoría anual,politica-calidad-inocuidad.md,deposito,paso_procedimiento,no,,X9,Auditoría anual a proveedores.
 H126,control de plagas mensual,politica-calidad-inocuidad.md,deposito,paso_procedimiento,no,,,
@@ -157,7 +157,7 @@ H155,entrega en 72 horas,faq-atencion-clientes.md,ventas,contradiccion,no,,C5,Pl
 H156,48 horas hábiles,faq-atencion-clientes.md,ventas,plazo,no,,,Plazo para reclamar faltantes (coincide con D38).
 H157,8:00 a 16:00,faq-atencion-clientes.md,ventas,plazo,no,,,Horario de televentas.
 H158,8:00 a 16:00,acta-reunion-comercial-2025-10.md,ventas,plazo,no,,,Horario de televentas decidido en la reunión.
-H159,Mariela Sosa,acta-reunion-comercial-2025-10.md,ventas,responsable,no,,,Televentas.
+H159,Mariela Sosa,acta-reunion-comercial-2025-10.md,ventas,responsable,no,,,El acta ratifica el horario de televentas (que ya se informaba a clientes).
 H160,$ 120.000,mail-descuento-especial.md,ventas,excepcion,no,,,Pedido mínimo especial para clientes gastronómicos.
 H161,Verónica Etchart,mail-descuento-especial.md,ventas,responsable,no,,,Aprueba la excepción.
 H162,"lunes, miércoles y viernes",zonas-reparto.md,ventas,plazo,no,,,Días de reparto de la Zona 1 Centro.
@@ -175,7 +175,7 @@ H173,Circular 04/2025,procedimiento-reclamos-v2.md,reclamos,referencia_cruzada,n
 H174,reemplaza al procedimiento de reclamos de 2023,procedimiento-reclamos-v2.md,reclamos,version,no,,V7,Marca explícita de reemplazo.
 H175,24 horas de recibida,procedimiento-reclamos-2023.md,reclamos,version,si,H166,V7,Plazo para reclamar faltantes en 2023 (reemplazado).
 H176,$ 300.000,procedimiento-reclamos-2023.md,reclamos,version,si,H170,V12,Umbral de escalamiento en 2023 (reemplazado).
-H177,planilla compartida,procedimiento-reclamos-2023.md,reclamos,dato,no,,,Registro anterior a Mostrador.
+H177,planilla compartida,procedimiento-reclamos-2023.md,reclamos,version,si,H224,V15,En 2023 los reclamos se registraban en una planilla compartida (reemplazado por Mostrador).
 H178,REC-,instructivo-mostrador.md,reclamos,dato,no,,X5,Prefijo del número de reclamo.
 H179,prioridad alta,instructivo-mostrador.md,reclamos,paso_procedimiento,no,,,Los reclamos de cadena de frío se cargan con prioridad alta.
 H180,Julieta Acosta,instructivo-mostrador.md,reclamos,responsable,no,,,Administra Mostrador.
@@ -211,3 +211,16 @@ H209,"6,2%",acta-rrhh-presentismo.md,rrhh,porcentaje,no,,,Ausentismo del depósi
 H210,turno noche,acta-rrhh-presentismo.md,rrhh,dato,no,,,El turno con más ausentismo.
 H211,45 horas,mail-horas-extras-cierre.md,rrhh,excepcion,no,,,Tope especial de horas extras para diciembre.
 H212,Graciela Toledo,mail-horas-extras-cierre.md,rrhh,responsable,no,,,Aprueba la excepción.
+H213,cuatro zonas,zonas-reparto.md,ventas,dato,no,,,Cantidad de zonas de reparto (agregado por el redactor de la tanda 2).
+H214,punto 7 de la Política de Créditos y Cobranzas,faq-cobranzas-vendedores.md,cobranzas,referencia_cruzada,no,,X17,Remite a D01 para el plazo máximo de cheques diferidos (agregado por el redactor de la tanda 3).
+H215,se escalan a la Gerencia Comercial,procedimiento-reclamos-2023.md,reclamos,responsable,no,,,En 2023 los reclamos sobre el umbral escalaban a la Gerencia Comercial (no cambió en la v2). Agregado por el redactor de la tanda 3.
+H216,Un cheque rechazado no comisiona,esquema-comisiones.md,rrhh,excepcion,no,,,"Si ya se había computado, se descuenta en el cálculo siguiente (agregado por el redactor de la tanda 4)."
+H217,no hay premio parcial ni proporcional,esquema-comisiones.md,rrhh,dato,no,,,Por debajo del 105% no hay premio (agregado por el redactor de la tanda 4).
+H218,Los importes que siguen son ilustrativos,esquema-comisiones.md,rrhh,dato,no,,,"Los montos de los ejemplos de cálculo (8.000.000, 400.000, etc.) son ilustrativos, no reglas."
+H219,NO se lo intima,instructivo-gestion-mora.md,cobranzas,excepcion,no,,,Si hay un reclamo abierto en Mostrador por esa factura no se intima al cliente hasta resolverlo (agregado por el redactor de la tanda 4).
+H220,no por otro cheque,mail-cheques-rechazados.md,cobranzas,excepcion,no,,,"El cliente con cheque rechazado debe reemplazarlo por transferencia o efectivo, no por otro cheque (agregado por el redactor de la tanda 5)."
+H221,queda para el lunes,mail-proveedor-lacteos.md,compras,excepcion,no,,,Si el camión de La Tranquera llega después de la franja del domingo no se descarga y queda para el lunes (agregado por el redactor de la tanda 5).
+H222,aprobado y vigente,instructivo-onboarding.md,rrhh,paso_procedimiento,no,,,Solo maneja autoelevadores quien tiene el curso aprobado y vigente (agregado por el redactor de la tanda 5).
+H223,la mercadería vuelve al depósito,faq-atencion-clientes.md,ventas,paso_procedimiento,no,,,Si el chofer encuentra el local cerrado (agregado por el redactor de la tanda 5).
+H224,Mostrador,procedimiento-reclamos-v2.md,reclamos,version,no,,V15,Sistema donde se registran los reclamos (reemplaza a la planilla compartida de 2023).
+H225,máximo de temperatura de refrigerados,mail-temperatura-camara.md,deposito,referencia_cruzada,no,,X18,El mail no repite la cifra: el máximo (7 °C) está en la Política de Calidad e Inocuidad Alimentaria.
