@@ -32,8 +32,7 @@ def main() -> int:
     docs = cargar_corpus()
     total = contar(formatear_corpus(docs), modelo)
     # Prompt completo del brazo de contexto (system con instrucciones + corpus + una pregunta corta)
-    sys.path.insert(0, str(config.RAIZ / "evals"))
-    from muestra import sistema_con_corpus  # noqa: E402
+    from brazos.contexto.brazo import sistema_con_corpus  # noqa: E402
     completo = cliente().messages.count_tokens(
         model=modelo, system=sistema_con_corpus(),
         messages=[{"role": "user", "content": "¿Cuál es el pedido mínimo para un almacén?"}],

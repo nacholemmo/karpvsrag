@@ -23,8 +23,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from comun import config  # noqa: E402
-from comun.corpus import cargar_corpus, formatear_corpus  # noqa: E402
-from comun.formato import FORMATO_RESPUESTA, INSTRUCCIONES_FORMATO, normalizar_respuesta, parsear_json  # noqa: E402
+from brazos.contexto.brazo import sistema_con_corpus  # noqa: E402
+from comun.formato import FORMATO_RESPUESTA, normalizar_respuesta, parsear_json  # noqa: E402
 from comun.llm import Corrida, llamar  # noqa: E402
 from comun.precios import costo_usd  # noqa: E402
 
@@ -38,12 +38,6 @@ MAPA = EVALS / "mapa_revision.json"  # caso opaco -> id de respuesta (no mirar a
 SEMILLA = 42
 # 9 preguntas reales, estratificadas por tipo (y subtipo en contradiccion_version)
 CUPOS = {"dato": 2, "procedimiento": 1, "cruce": 2, "contradiccion": 1, "version": 1, "sin_respuesta": 2}
-
-SISTEMA = (
-    "Sos un asistente que responde preguntas de empleados de Distribuidora Quebracho Azul S.A. "
-    "usando únicamente los documentos internos que siguen. " + INSTRUCCIONES_FORMATO
-)
-
 
 def cargar_jsonl(ruta: Path) -> list[dict]:
     if not ruta.exists():
@@ -61,14 +55,6 @@ def elegir_preguntas() -> list[dict]:
                       and (p.get("subtipo") == clase or (p["tipo"] == clase and p.get("subtipo") is None))]
         elegidas += rng.sample(candidatas, n)
     return sorted(elegidas, key=lambda p: p["id"])
-
-
-def sistema_con_corpus() -> list[dict]:
-    corpus = formatear_corpus(cargar_corpus())
-    return [
-        {"type": "text", "text": SISTEMA},
-        {"type": "text", "text": f"<corpus>\n{corpus}\n</corpus>", "cache_control": {"type": "ephemeral"}},
-    ]
 
 
 def estimar() -> None:

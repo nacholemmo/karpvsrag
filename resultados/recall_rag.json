@@ -1,0 +1,38 @@
+{
+  "top_5": {
+    "total": "36/40",
+    "contradiccion": "4/5",
+    "cruce": "7/10",
+    "dato": "10/10",
+    "procedimiento": "10/10",
+    "version": "5/5",
+    "fallos": [
+      "P26",
+      "P30",
+      "P32",
+      "P36"
+    ]
+  },
+  "top_8": {
+    "total": "39/40",
+    "contradiccion": "5/5",
+    "cruce": "9/10",
+    "dato": "10/10",
+    "procedimiento": "10/10",
+    "version": "5/5",
+    "fallos": [
+      "P32"
+    ]
+  },
+  "top_12": {
+    "total": "39/40",
+    "contradiccion": "5/5",
+    "cruce": "9/10",
+    "dato": "10/10",
+    "procedimiento": "10/10",
+    "version": "5/5",
+    "fallos": [
+      "P32"
+    ]
+  }
+}
