@@ -10,7 +10,7 @@ from pathlib import Path
 
 from comun import config
 
-MAX_CARACTERES = 12_000
+MAX_CARACTERES = 40_000  # el índice de la wiki ronda los 15-20k caracteres; no puede truncarse
 
 
 class RutaInvalida(ValueError):

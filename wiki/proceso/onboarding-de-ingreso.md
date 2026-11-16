@@ -1,6 +1,6 @@
 # Onboarding de ingreso (primeros días, semana y mes)
 
-Guía de bienvenida para personas que se suman a Distribuidora Quebracho Azul S.A. Coordina el onboarding Ezequiel Moyano, de Recursos Humanos. Cubre la checklist del primer día, la primera semana, el primer mes, reglas para quienes trabajan en depósito y cómo funciona la liquidación de sueldos. La guía es informativa: las reglas de fondo están en el Reglamento Interno de Personal y en los manuales del sector.
+Guía de bienvenida para personas que se suman a Distribuidora Quebracho Azul S.A. Coordina el onboarding Ezequiel Moyano, de Recursos Humanos. Cubre la checklist del primer día, la primera semana, el primer mes, reglas para quienes trabajan en depósito y cómo funciona la liquidación de sueldos. La guía es informativa: las reglas de fondo están en el Reglamento Interno de Personal y en los manuales del sector [fuente: instructivo-onboarding.md] [fuente: reglamento-interno.md].
 
 ## Quién acompaña el ingreso
 - Coordina el onboarding Ezequiel Moyano, de Recursos Humanos, que recibe a la persona el primer día [fuente: instructivo-onboarding.md]
@@ -24,11 +24,11 @@ Guía de bienvenida para personas que se suman a Distribuidora Quebracho Azul S.
 - Regla del Reglamento: informar a Recursos Humanos todo cambio de domicilio, estado civil, cargas de familia o datos de contacto [fuente: reglamento-interno.md]
 
 ## Si va a trabajar en el depósito
-- Las reglas de trabajo del depósito (recepción, almacenamiento, preparación de pedidos, inventarios y seguridad) están en el "Manual de Depósito y Operaciones de Almacén". El supervisor explica cada parte en la práctica [fuente: instructivo-onboarding.md]
+- Las reglas de trabajo del depósito (recepción, almacenamiento, preparación de pedidos, inventarios y seguridad) están en el "Manual de Depósito y Operaciones de Almacén" [fuente: instructivo-onboarding.md]. Ese manual es el documento `manual-deposito.md`, emitido el 13/01/2025 por el Jefe de Depósito y que reemplaza al Manual de Depósito de 2023 [fuente: manual-deposito.md]. El supervisor explica cada parte en la práctica [fuente: instructivo-onboarding.md].
 - Elementos de protección personal: se usan siempre [fuente: instructivo-onboarding.md]
-- Autoelevadores: solo los maneja quien tiene el curso habilitante aprobado y vigente. El curso se renueva cada 2 años y Recursos Humanos lleva el registro de los vencimientos. Si el curso se hizo en otro lugar, traer la constancia para revisarla. Sin curso, no subirse a un autoelevador [fuente: instructivo-onboarding.md]. Ver [Seguridad y orden en depósito](../politica/seguridad-y-orden-en-deposito.md).
+- Autoelevadores: solo los maneja quien tiene el curso habilitante aprobado y vigente. El curso se renueva cada 2 años y Recursos Humanos lleva el registro de los vencimientos. Si el curso se hizo en otro lugar, traer la constancia para revisarla. Sin curso, no subirse a un autoelevador [fuente: instructivo-onboarding.md]. El Manual de Depósito exige el curso de autoelevador "dictado o reconocido por la Empresa" y la habilitación interna correspondiente [fuente: manual-deposito.md]. Ver [Seguridad y orden en depósito](../politica/seguridad-y-orden-en-deposito.md).
 - Cámaras de frío: tienen reglas propias de ingreso y de control de temperatura [fuente: instructivo-onboarding.md]. Ver [Almacenamiento en depósito](almacenamiento-en-deposito.md).
-- Capacitación en seguridad para personal de depósito: el Reglamento remite al "Manual de Depósito y Operaciones de Almacén" [fuente: reglamento-interno.md]
+- Capacitación en seguridad para personal de depósito: el Reglamento remite al "Manual de Depósito y Operaciones de Almacén" [fuente: reglamento-interno.md] [fuente: manual-deposito.md]
 
 ## Sueldo y recibo
 - La liquidación de sueldos la hace un estudio externo, Estudio Alonso & Ríos [fuente: instructivo-onboarding.md]
@@ -47,10 +47,9 @@ Guía de bienvenida para personas que se suman a Distribuidora Quebracho Azul S.
 - Cuidarse y cuidar a los demás: en el depósito, la seguridad es responsabilidad de todos [fuente: instructivo-onboarding.md]
 
 ## Huecos
-- No definido en la documentación: el nombre y contenido del "Manual de Depósito y Operaciones de Almacén". No se identifica en el corpus qué documento lo corresponde; el manual del depósito que sí está en el corpus figura como manual-deposito-2023.md, pero la guía no lo vincula [fuente: instructivo-onboarding.md] [fuente: reglamento-interno.md]
-- No definido en la documentación: la relación entre la autorización del jefe de depósito para manejar el autoelevador y el curso habilitante; la guía exige el curso, el manual de seguridad exige la autorización, y no dice si ambos son necesarios [fuente: instructivo-onboarding.md] [fuente: seguridad-y-orden-en-deposito.md]
-- No definido en la documentación: la fecha, el lugar y el responsable de dictar el curso habilitante de autoelevadores [fuente: instructivo-onboarding.md]
 - No definido en la documentación: el contenido de la capacitación de inducción en seguridad e higiene y de la de manipulación de alimentos [fuente: instructivo-onboarding.md]
+- No definido en la documentación: la fecha, el lugar y el responsable de dictar el curso habilitante de autoelevadores [fuente: instructivo-onboarding.md]
+- No definido en la documentación: si la habilitación interna del Manual de Depósito la otorga el Jefe de Depósito y cómo se relaciona con el curso habilitante; el Manual exige ambos requisitos y no aclara si uno reemplaza al otro [fuente: manual-deposito.md] [fuente: instructivo-onboarding.md]
 - No definido en la documentación: el procedimiento de registro de vencimientos de cursos en Recursos Humanos [fuente: instructivo-onboarding.md]
 
 ## Relacionado

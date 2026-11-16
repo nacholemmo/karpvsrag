@@ -61,6 +61,7 @@ def guardar_estado(estado: dict) -> None:
         "segundos": round(sum(d["segundos"] for d in docs), 1),
         "turnos": sum(d["turnos"] for d in docs),
         "sesiones_cortadas": [a for a, d in estado["documentos"].items() if d["cortada"]],
+        "sesiones_sin_escrituras": [a for a, d in estado["documentos"].items() if not d["escritos"]],
     }
     ESTADO.parent.mkdir(parents=True, exist_ok=True)
     ESTADO.write_text(json.dumps(estado, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -86,10 +87,12 @@ def main(argv: list[str] | None = None) -> int:
     for archivo in pendientes:
         inicio = time.perf_counter()
         h = Herramientas("ingesta")
-        r = sesion("wiki_ingesta", archivo, corrida, h, SISTEMA, MENSAJE.format(archivo=archivo), MAX_TURNOS)
+        r = sesion("wiki_ingesta", archivo, corrida, h, SISTEMA, MENSAJE.format(archivo=archivo), MAX_TURNOS,
+                   exigir_escritura=True)
         estado["documentos"][archivo] = {
             "costo_usd": round(r.costo_usd, 6), "turnos": r.turnos, "segundos": round(time.perf_counter() - inicio, 1),
             "max_prompt_tokens": r.max_prompt, "cortada": r.cortada, "escritos": sorted(set(r.escritos)),
+            "avisos_sin_escritura": r.avisos_sin_escritura, "cortes_por_largo": r.cortes_por_largo,
             "etiqueta": args.etiqueta,
         }
         guardar_estado(estado)

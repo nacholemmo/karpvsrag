@@ -37,6 +37,15 @@ Define qué clientes son cuenta clave, quién los gestiona y los beneficios come
 
 ## Reclamos
 - Se registran y tramitan por el circuito general de reclamos, identificando la sucursal. La Jefatura es informada de cada reclamo y acompaña su gestión ante el cliente [fuente: politica-comercial-cuentas-clave.md]. Ver [Reclamos de clientes](../proceso/reclamos-de-clientes.md).
+- Caso registrado: reclamo de la sucursal 4 de Supermercados Hermanos Lutz por la entrega del viernes 26/09/2025 (faltantes de lácteos: yogures y postres; dos pallets de conservas con latas abolladas). El reclamo fue cargado en Mostrador por Tomás Vidal, con fotos; el número de reclamo REC- no figura en el documento [fuente: mail-reclamo-supermercado.md].
+  - El encargado de la sucursal, Hernán Quintana, señaló que es la segunda vez en el mes que ocurre algo similar [fuente: mail-reclamo-supermercado.md].
+  - El remito fue firmado con observación [fuente: mail-reclamo-supermercado.md].
+  - Tomás Vidal derivó la resolución a Lorena Castagnino, por el tipo e importe del reclamo; pidió al cliente no descartar ni poner en góndola las latas golpeadas, que se retirarían con el próximo reparto [fuente: mail-reclamo-supermercado.md].
+  - Lorena Castagnino escalará el caso el 30/09/2025 y lo tratará con el comprador central de Lutz, no con la sucursal. La reposición de lácteos se coordina con Ruso para el próximo camión, sin esperar la resolución de la nota de crédito [fuente: mail-reclamo-supermercado.md].
+  - Julieta Acosta fue informada de que en septiembre ya son dos reclamos de esta sucursal, para la revisión mensual [fuente: mail-reclamo-supermercado.md]. Ver [Reclamos de clientes](../proceso/reclamos-de-clientes.md) para la revisión mensual.
+  - No definido en la documentación: el monto del reclamo (el mail dice que es "importante" pero no lo cuantifica) y, por lo tanto, si supera el umbral de escalamiento [fuente: mail-reclamo-supermercado.md].
+  - No definido en la documentación: qué versión del "Procedimiento de Reclamos de Clientes" citó Tomás Vidal como base del escalamiento; el mail no lo identifica [fuente: mail-reclamo-supermercado.md].
+  - No definido en la documentación: importe y número de la nota de crédito, si corresponde; el mail dice solo que la NC está pendiente [fuente: mail-reclamo-supermercado.md].
 
 ## Vigencia y revisión
 - Vigente desde su fecha de emisión, 16/06/2025 [fuente: politica-comercial-cuentas-clave.md].

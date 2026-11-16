@@ -46,3 +46,4 @@ Resumen de 1 a 2 líneas.
 - Los enlaces son relativos: `[texto](../tipo/pagina.md)` desde una página de carpeta, y `[texto](tipo/pagina.md)` desde `index.md`.
 - **`index.md`** tiene una línea por página: `- [Título](tipo/pagina.md): de qué trata, con palabras clave`. Cada página nueva se agrega al índice en la misma sesión. El índice es lo primero que lee quien consulta, así que las descripciones tienen que permitir encontrar el tema: montos, plazos, aprobaciones o excepciones.
 - Ninguna página puede quedar fuera del índice.
+- Escribí pocas páginas por turno, una o dos: una respuesta con muchas páginas largas se corta y se pierde.

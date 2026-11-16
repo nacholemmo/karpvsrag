@@ -1,9 +1,9 @@
 # Ausentismo en el depósito
 
-Seguimiento del ausentismo del depósito: tercer trimestre con 6,2 %, el más alto de la empresa, concentrado en el turno noche. Las causas detectadas son avisos tardíos o ausentes y falta de reemplazos. Datos de la reunión del 15/10/2025.
+Seguimiento del ausentismo del depósito: tercer trimestre con 6,2%, el más alto de la empresa, concentrado en el turno noche. Las causas detectadas son avisos tardíos o ausentes y falta de reemplazos. Datos de la reunión del 15/10/2025 [fuente: acta-rrhh-presentismo.md].
 
 ## Indicadores
-- Ausentismo del depósito, tercer trimestre: 6,2 %, contando ausencias justificadas y sin justificar. Es el más alto de la empresa [fuente: acta-rrhh-presentismo.md]
+- Ausentismo del depósito, tercer trimestre: 6,2%, contando ausencias justificadas y sin justificar. Es el más alto de la empresa [fuente: acta-rrhh-presentismo.md]
 - Por turno: el turno noche está peor, "lejos". Mañana y tarde son parecidos entre sí [fuente: acta-rrhh-presentismo.md]
 - El número incluye licencias largas; Ezequiel Moyano quedó en rehacerlo sin esas licencias. Resultado pendiente [fuente: acta-rrhh-presentismo.md]
 
@@ -32,7 +32,7 @@ Seguimiento del ausentismo del depósito: tercer trimestre con 6,2 %, el más al
 - No definido en la documentación: el rol de Matías dentro de la empresa [fuente: acta-rrhh-presentismo.md]
 
 ## Premio por presentismo
-- La propuesta de premio por presentismo para el depósito está en discusión y sin aprobar. Ver [Premio por presentismo](../politica/premio-por-presentismo.md)
+- La propuesta de premio por presentismo para el depósito está en discusión y sin aprobar [fuente: acta-rrhh-presentismo.md]. Ver [Premio por presentismo](../politica/premio-por-presentismo.md)
 
 ## Relacionado
 - [Premio por presentismo](../politica/premio-por-presentismo.md)
