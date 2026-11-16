@@ -121,3 +121,22 @@ def test_lint_no_toma_el_punto_final_como_parte_del_monto(repo):
     (w / "index.md").write_text("- [P](p.md): x\n", encoding="utf-8")
     (w / "p.md").write_text("# P\n- El mínimo es $ 250.000. [fuente: doc.md]\n", encoding="utf-8")
     assert lint.chequear(w, repo / "corpus") == []
+
+
+def test_no_escribe_ocultos_y_errores_de_archivo_no_cortan(repo):
+    h = Herramientas("ingesta", raiz=repo)
+    _, error = h.ejecutar("escribir", {"ruta": "wiki/.oculto.md", "contenido": "x"})
+    assert error
+    salida, error = h.ejecutar("leer", {"ruta": "wiki/x\x00.md"})
+    assert error and "Error" in salida
+    (repo / "wiki" / "carpeta.md").mkdir()
+    _, error = h.ejecutar("leer", {"ruta": "wiki/carpeta.md"})
+    assert error is False or error is True  # no lanza excepción
+
+
+def test_esquema_no_contiene_respuestas_de_referencia():
+    import json
+    esquema = (RAIZ / "ESQUEMA.md").read_text(encoding="utf-8")
+    for l in (RAIZ / "evals" / "preguntas.jsonl").read_text(encoding="utf-8").splitlines():
+        for clave in json.loads(l)["elementos_clave"]:
+            assert clave not in esquema, clave

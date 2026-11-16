@@ -104,10 +104,17 @@ def main(argv: list[str] | None = None) -> int:
     for e in errores:
         print(f"  - {e}")
     if args.corregir and errores:
+        antes = len(errores)
         res = corregir(errores)
         print(f"Corrección con agente: {json.dumps(res, ensure_ascii=False)}")
         errores = chequear(wiki, corpus)
         print(f"Después de corregir: {len(errores)} errores")
+        registro = config.RAIZ / "resultados" / "lint_wiki.json"
+        historial = json.loads(registro.read_text(encoding="utf-8")) if registro.exists() else []
+        from datetime import datetime, timezone
+        historial.append({"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                          "errores_antes": antes, "errores_despues": len(errores), **res})
+        registro.write_text(json.dumps(historial, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         for e in errores:
             print(f"  - {e}")
     return 1 if errores else 0

@@ -9,6 +9,10 @@ from comun.llm import Corrida, llamar
 
 # Haiku 5.5 cobra 5x por encima de 100k tokens de prompt: si una sesión se acerca, se le pide que cierre.
 LIMITE_PROMPT = 70_000
+# Antes de enviar se estima el prompt siguiente (prompt actual + salida + resultados de herramientas).
+# Si superaría este valor, los resultados se reemplazan por un aviso de contexto lleno.
+LIMITE_DURO = 90_000
+CARACTERES_POR_TOKEN = 2.34  # calibrado con count_tokens de Haiku 5.5 sobre el corpus
 
 
 @dataclass
@@ -81,7 +85,14 @@ def sesion(brazo: str, etiqueta: str, corrida: Corrida, herramientas: Herramient
         if cerrar:  # ya se pidió cerrar y aun así pidió herramientas
             res.cortada = res.cortada or "no cerró"
             break
-        if res.turnos >= max_turnos or prompt >= LIMITE_PROMPT:
+        estimado = prompt + reg["tokens_salida"] + sum(len(r["content"]) for r in resultados) / CARACTERES_POR_TOKEN
+        if estimado > LIMITE_DURO:
+            for r in resultados:
+                r["content"], r["is_error"] = "Contexto lleno: no se puede mostrar este resultado.", True
+            res.cortada = "contexto"
+            cerrar = True
+            resultados.append({"type": "text", "text": mensaje_cierre})
+        elif res.turnos >= max_turnos or prompt >= LIMITE_PROMPT:
             res.cortada = "turnos" if res.turnos >= max_turnos else "contexto"
             cerrar = True
             resultados.append({"type": "text", "text": mensaje_cierre})

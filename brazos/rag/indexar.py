@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 import numpy as np  # noqa: E402
 
-from brazos.rag.fragmentar import Fragmento, fragmentar_corpus  # noqa: E402
+from brazos.rag.fragmentar import MAX_PALABRAS, Fragmento, fragmentar_corpus  # noqa: E402
 from comun import config  # noqa: E402
 from comun.corpus import cargar_corpus  # noqa: E402
 
@@ -53,7 +53,7 @@ def tokenizar(texto: str) -> list[str]:
 
 
 def hash_corpus(docs: list[tuple[str, str]]) -> str:
-    h = hashlib.sha256()
+    h = hashlib.sha256(f"{MODELO_EMBEDDINGS}|max_palabras={MAX_PALABRAS}".encode())  # parámetros del índice
     for archivo, texto in docs:
         h.update(archivo.encode())
         h.update(texto.encode())

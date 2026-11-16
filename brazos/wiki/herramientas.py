@@ -97,6 +97,8 @@ class Herramientas:
         p = self._resolver(ruta, self.permisos.escritura)
         if p.suffix != ".md":
             raise RutaInvalida("Solo se pueden escribir archivos .md")
+        if any(parte.startswith(".") for parte in p.relative_to(self.raiz).parts):
+            raise RutaInvalida("No se pueden escribir archivos ni carpetas ocultos")
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(contenido, encoding="utf-8")
         self.escritos.append(str(p.relative_to(self.raiz)))
@@ -110,3 +112,5 @@ class Herramientas:
             return getattr(self, nombre)(**entrada), False
         except (RutaInvalida, TypeError) as e:
             return str(e), True
+        except (OSError, ValueError) as e:  # incluye UnicodeDecodeError, IsADirectoryError, nombres inválidos
+            return f"Error de archivo: {type(e).__name__}: {e}", True

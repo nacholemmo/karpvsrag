@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 from dataclasses import asdict, dataclass
 
-MAX_PALABRAS = 350
+MAX_PALABRAS = 300  # e5-small trunca a 512 tokens; con 350 palabras algunos fragmentos se pasaban
 TITULO = re.compile(r"^(#{1,3})\s+(.*\S)\s*$")
 
 

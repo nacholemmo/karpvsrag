@@ -48,7 +48,8 @@ def recuperar(consulta: str, k: int | None = None) -> list:
     e = _cargar()
     q = indexar.modelo().encode([f"query: {consulta}"], normalize_embeddings=True)[0]
     denso = list(np.argsort(-(e["emb"] @ q)))
-    lexico = list(np.argsort(-e["bm25"].get_scores(indexar.tokenizar(consulta))))
+    puntajes = e["bm25"].get_scores(indexar.tokenizar(consulta))
+    lexico = [i for i in np.argsort(-puntajes) if puntajes[i] > 0]  # sin coincidencias léxicas no suma
     orden = rrf([[int(i) for i in denso], [int(i) for i in lexico]])
     return [e["frags"][i] for i in orden[: (k or top_k())]]
 
