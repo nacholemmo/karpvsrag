@@ -73,6 +73,8 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
 - **Juicios y respuestas con `stop_reason` distinto de `end_turn` o JSON inválido:** no se guardan, y se reintentan al volver a correr.
 - **Revisión manual a ciegas:** `evals/revision_manual.csv` usa ids opacos (`caso-NN`). El mapeo está en `evals/mapa_revision.json` y las etiquetas pretendidas de las 6 sintéticas en `evals/etiquetas_sinteticas.jsonl`. No hay que mirarlos antes de revisar.
 
+- **Calibración del juez:** con la revisión manual se corrigieron P01 y P22 y se ajustó la rúbrica (v1 → v2). El juez Haiku no es determinista, así que conviene reportar su variación cuando se re-juzgue.
+
 ## Comandos
 
 ```bash

@@ -15,13 +15,15 @@ El juez compara la respuesta de un brazo con la respuesta de referencia de la pr
 | Valor | Cuándo |
 |---|---|
 | `correcta` | Dice todos los elementos clave, con valores exactos (montos, plazos, responsables) o equivalentes sin ambigüedad, y cumple el comportamiento esperado. No afirma nada que contradiga la referencia. |
-| `parcial` | Acierta en lo central pero le falta algún elemento clave, o agrega una imprecisión menor que no cambia la respuesta principal. |
+| `parcial` | Acierta en lo central pero le falta algún elemento clave, o agrega una imprecisión menor que no cambia la respuesta principal. Omitir pasos o elementos, sin afirmar nada falso, es `parcial`, no `incorrecta`. |
 | `incorrecta` | Da un valor equivocado, omite lo central, contradice la referencia, inventa datos o no responde lo que se preguntó. |
+
+Información adicional: si la respuesta agrega datos que no están en la referencia pero no la contradicen (por ejemplo, otra condición o una persona mencionada en los documentos), no se penaliza. Se penaliza solo lo que contradice la referencia, o lo que en una `sin_respuesta` completa el hueco con una regla, un monto o un responsable.
 
 Reglas por tipo:
 
 - **`dato`:** el valor tiene que ser el exacto. Un monto, plazo o responsable distinto es `incorrecta`, aunque el resto esté bien. Pasar "$ 1.500.000" a "1,5 millones de pesos" está permitido.
-- **`procedimiento`:** con todos los pasos o condiciones clave, `correcta`. Con la mayoría pero faltando alguno relevante, `parcial`. Con pasos inventados o equivocados que cambian el procedimiento, `incorrecta`.
+- **`procedimiento`:** con todos los pasos o condiciones clave, `correcta`. Si faltan uno o más pasos relevantes, sin pasos falsos, es `parcial`. Con pasos inventados o equivocados que cambian el procedimiento, `incorrecta`.
 - **`cruce`:** tiene que llegar al dato final, que vive en el documento al que se remite. Si solo dice "consultar la Política X", sin el dato, es `incorrecta`. Si da el dato sin el contexto del primer documento, puede ser `correcta` siempre que el dato sea el correcto para lo que se preguntó.
 - **`contradiccion_version` / `contradiccion`:** `correcta` solo si menciona **los dos valores** en conflicto, idealmente con su documento, y no presenta uno como la única verdad. Si da un solo valor, aunque sea uno de los dos, es `parcial`. Si da un valor que no es ninguno de los dos, es `incorrecta`.
 - **`contradiccion_version` / `version`:** tiene que dar el valor **vigente**.

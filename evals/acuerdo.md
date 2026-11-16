@@ -1,14 +1,20 @@
-# Acuerdo humano vs. juez (muestra de 15)
+# Acuerdo humano vs. juez (muestra de 15), versión 2
+
+**Contexto, para leer los números con cuidado:**
+- **v1** (`evals/acuerdo_v1.md`): rúbrica original. Veredicto: 11/15 (73%), kappa 0,49.
+- **v2** (este archivo): se corrigieron las referencias de P01 y P22 y se ajustó la rúbrica en dos puntos (omitir sin errar es `parcial`; la información extra que no contradice no penaliza), mirando los desacuerdos de estas mismas 15. Por eso el acuerdo de v2 está algo inflado.
+- El juez no es determinista: caso-11 coincidía en v1 y discrepa en v2 sin que cambiara su pregunta.
+- Las etiquetas de fuente, y el veredicto de caso-07, los marcó Claude con la regla de la rúbrica, a pedido del usuario. El acuerdo de fuente no es una medición humana independiente.
 
 Juez: claude-haiku-5-5. Casos: 15.
 
 ### Veredicto (humano vs. juez)
 
-Acuerdo: 11/15 (73%). Kappa de Cohen: 0.49.
+Acuerdo: 12/15 (80%). Kappa de Cohen: 0.58.
 
 | humano \ juez | correcta | parcial | incorrecta |
 |---|---|---|---|
-| correcta | 8 | 2 | 2 |
+| correcta | 9 | 2 | 1 |
 | parcial | 0 | 1 | 0 |
 | incorrecta | 0 | 0 | 2 |
 
@@ -41,13 +47,12 @@ Acuerdo: 15/15 (100%). Kappa de Cohen: 1.00.
 | caso-02 (sint-5) | incorrecta | correcta | incorrecta |
 | caso-05 (sint-6) | parcial | parcial | parcial |
 | caso-06 (sint-4) | incorrecta | incorrecta | incorrecta |
-| caso-09 (sint-1) | parcial | correcta | incorrecta |
+| caso-09 (sint-1) | parcial | correcta | parcial |
 | caso-12 (sint-3) | incorrecta | incorrecta | incorrecta |
 | caso-15 (sint-2) | correcta | correcta | correcta |
 
 ### Desacuerdos de veredicto
 
-- **caso-02** (contradiccion_version/version): humano `correcta`, juez `incorrecta`. Juez: La respuesta da solo el valor viejo de 24 horas, presentándolo como vigente, cuando el valor vigente es 48 horas hábiles según el Procedimiento v2. Además cita únicamente el documento de 2023, que no es el requerido, por lo que ningún documento requerido aparece. Notas: fuente marcada por Claude con la regla de la rúbrica, a pedido del usuario
-- **caso-09** (procedimiento): humano `correcta`, juez `incorrecta`. Juez: Menciona la constancia de inscripción y la habilitación bromatológica, pero omite el circuito (solicitud del comprador, evaluación de Calidad, carga por Administración) y el plazo de 5 días hábiles, que son elementos clave; además presenta el alta como inmediata con esos dos documentos. Cita el documento requerido, por lo que la fuente es correcta. Notas: fuente marcada por Claude con la regla de la rúbrica, a pedido del usuario
-- **caso-10** (sin_respuesta): humano `correcta`, juez `parcial`. Juez: Dice correctamente que no hay responsable definido para la presentación, pero agrega que Ernesto Saldías tiene la tarea de hablarlo con Claudio Mansilla, un dato que no está en la referencia y que sugiere una asignación de responsabilidad sobre el tema que la referencia descarta. Notas: fuente marcada por Claude con la regla de la rúbrica, a pedido del usuario
-- **caso-13** (dato): humano `correcta`, juez `parcial`. Juez: Da el monto exacto de $ 25.000 y aclara que se suma al importe del cheque, pero luego afirma que es una decisión puntual del caso y que los documentos no fijan un monto general, lo que contradice la referencia que presenta el gasto como regla aplicable al cheque rechazado; además cita el documento requerido, por lo que la fuente es correcta. Notas: fuente marcada por Claude con la regla de la rúbrica, a pedido del usuario
+- **caso-02** (contradiccion_version/version): humano `correcta`, juez `incorrecta`. Juez: La respuesta da solo el valor viejo de 24 horas, sin aclarar que fue reemplazado, cuando el valor vigente es 48 horas hábiles; además cita únicamente el documento de 2023 y no el documento v2 requerido. Notas: fuente marcada por Claude con la regla de la rúbrica, a pedido del usuario
+- **caso-09** (procedimiento): humano `correcta`, juez `parcial`. Juez: La respuesta menciona la constancia de inscripción y la habilitación bromatológica, pero omite el circuito (comprador, Calidad, Administración) y el plazo de 5 días hábiles, que son elementos clave de la referencia. No afirma nada falso, por lo que es parcial; la fuente citada es el documento requerido. Notas: fuente marcada por Claude con la regla de la rúbrica, a pedido del usuario
+- **caso-11** (cruce): humano `correcta`, juez `parcial`. Juez: Acierta los dos elementos clave (hasta $ 350.000 y Jefe de Facturación) y cita la circular requerida, pero no identifica como aprobador superior vigente a la Gerente de Administración y Finanzas según la referencia; además afirma que el documento no dice cuál es ese nivel y agrega un Gerente Comercial para casos de más de $ 500.000 que no figura en la referencia. Notas: fuente marcada por Claude con la regla de la rúbrica, a pedido del usuario
