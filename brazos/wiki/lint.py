@@ -27,7 +27,7 @@ from validar_hechos import normalizar, patron_hecho  # noqa: E402
 
 ENLACE = re.compile(r"\[[^\]]*\]\(([^)#\s]+\.md)(?:#[^)]*)?\)")
 CITA = re.compile(r"\[fuente:\s*([^\]\s]+\.md)\s*\]")
-DATO_DURO = re.compile(r"\$ ?\d[\d.]*(?:,\d+)?|\d+(?:,\d+)?\s?%|\b\d{1,2}:\d{2}\b")
+DATO_DURO = re.compile(r"\$ ?\d{1,3}(?:\.\d{3})*(?:,\d+)?|\d+(?:,\d+)?\s?%|\b\d{1,2}:\d{2}\b")
 MAX_TURNOS_CORRECCION = 25
 
 

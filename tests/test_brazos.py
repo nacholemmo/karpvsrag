@@ -114,3 +114,10 @@ def test_lint_wiki_limpia(repo):
     (w / "index.md").write_text("- [Pedidos](pedidos.md): mínimo\n", encoding="utf-8")
     (w / "pedidos.md").write_text("# Pedidos\n- Mínimo: $ 250.000, corte 16:00 [fuente: doc.md]\n", encoding="utf-8")
     assert lint.chequear(w, repo / "corpus") == []
+
+
+def test_lint_no_toma_el_punto_final_como_parte_del_monto(repo):
+    w = repo / "wiki"
+    (w / "index.md").write_text("- [P](p.md): x\n", encoding="utf-8")
+    (w / "p.md").write_text("# P\n- El mínimo es $ 250.000. [fuente: doc.md]\n", encoding="utf-8")
+    assert lint.chequear(w, repo / "corpus") == []
