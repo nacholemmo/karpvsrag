@@ -1,94 +1,71 @@
-# Créditos y cobranzas (cuenta corriente)
+# Política de créditos y cobranzas
 
-Reglas del sector Créditos y Cobranzas para otorgar, limitar, cobrar y suspender la cuenta corriente de clientes. Primera versión del manual, de 15/03/2023 [fuente: manual-creditos-2023.md]. Desde el acta del Comité de Créditos del 22/07/2025, el límite inicial vigente es $ 1.500.000, el plazo de gastronómicos es 15 días fecha factura, y el manual será reemplazado por una nueva Política de Créditos y Cobranzas con vigencia desde el 01/08/2025 [fuente: acta-comite-creditos-2025-07.md]. Incluye el criterio aplicado a cheques rechazados en el caso Don Beto (12/05/2025) [fuente: mail-cheques-rechazados.md].
+Reglas vigentes para la cuenta corriente de clientes: límite inicial de $ 1.500.000, plazo de 30 días fecha factura (15 días fecha factura para gastronómicos), descuento de 2% por pronto pago, interés punitorio de 3% mensual, bloqueo automático con más de 45 días de atraso, cheques diferidos de hasta 60 días. La versión vigente es la POL-ADM-01 versión 2, vigente desde el 01/08/2025 y aprobada por el Comité de Créditos en julio de 2025; reemplaza al Manual de Créditos de 2023, que quedó sin efecto [fuente: politica-creditos-cobranzas-v2.md].
 
-## Cambios vigentes desde el Comité de Créditos (acta 3/2025, 22/07/2025)
-- Decisión: reemplazar el Manual de Créditos de marzo de 2023 por una nueva Política de Créditos y Cobranzas, a cargo de la Gerencia de Administración y Finanzas [fuente: acta-comite-creditos-2025-07.md].
-- Vigencia de los cambios: desde el 01/08/2025, formalizados en la nueva Política de Créditos y Cobranzas [fuente: acta-comite-creditos-2025-07.md].
-- Límite inicial para clientes nuevos: $ 1.500.000 [fuente: acta-comite-creditos-2025-07.md]. Antes (reemplazado): $ 800.000 [fuente: manual-creditos-2023.md].
-- Clientes gastronómicos (restaurantes, bares, rotiserías): pagan a 15 días fecha factura, como excepción al plazo general [fuente: acta-comite-creditos-2025-07.md].
-- Supermercados Hermanos Lutz (cuenta clave, 6 sucursales): límite especial de $ 12.000.000. Es una excepción puntual para esta cuenta, no un criterio para el resto de las cuentas clave, que seguirán analizándose caso por caso [fuente: acta-comite-creditos-2025-07.md]. Ver [Jefa de Créditos y Cobranzas](../rol/jefa-de-creditos-y-cobranzas.md).
-- Condonación de intereses por mora: postergada para una próxima reunión del comité. Hasta entonces no se fija ningún criterio nuevo [fuente: acta-comite-creditos-2025-07.md]. Ver Huecos.
+## Vigencia de documentos
+- Vigente: Política de Créditos y Cobranzas POL-ADM-01, versión 2, vigente desde el 01/08/2025, aprobada por el Comité de Créditos (julio 2025). Código POL-ADM-01; elaboró Silvina Arrúa; revisó Marta Ifrán; distribución: Administración, Comercial, Dirección [fuente: politica-creditos-cobranzas-v2.md]
+- Alcance: aplicación obligatoria para todas las operaciones de venta en cuenta corriente, cualquiera sea el canal comercial y el tipo de cliente [fuente: politica-creditos-cobranzas-v2.md]
+- El Comité de Créditos acordó el 22/07/2025 reemplazar el Manual de Créditos de marzo de 2023 por esta Política, a cargo de la Gerencia de Administración y Finanzas, con vigencia desde el 01/08/2025 [fuente: acta-comite-creditos-2025-07.md]
+- Reemplazado: Manual de Créditos, primera versión, 15/03/2023 (sistema Fénix). La Política v2 indica que toda referencia a dicho manual en documentos internos debe entenderse hecha a esta Política [fuente: politica-creditos-cobranzas-v2.md] [fuente: manual-creditos-2023.md]
+- Pendiente según el acta: redactar la Política v2 (Silvina Arrúa, con apoyo de Marta Ifrán) [fuente: acta-comite-creditos-2025-07.md]
+- Revisión: el Comité de Créditos la revisa cuando las condiciones lo aconsejen [fuente: politica-creditos-cobranzas-v2.md]
+- No definido en la documentación: periodicidad de la revisión periódica de cartera y de la Política a cargo del Comité [fuente: politica-creditos-cobranzas-v2.md]
+- Fuera de alcance: las condiciones comerciales (precios, descuentos comerciales, pedido mínimo) no las regula esta Política; corresponden a la Gerencia Comercial [fuente: politica-creditos-cobranzas-v2.md]
 
-## Alcance y principios
-- El manual aplica a todas las ventas en cuenta corriente, cualquiera sea el canal y el tipo de cliente [fuente: manual-creditos-2023.md].
-- Las ventas de contado no requieren evaluación crediticia, pero el cliente debe estar dado de alta en Fénix con sus datos fiscales completos [fuente: manual-creditos-2023.md].
-- Todo crédito se otorga sobre información verificada y se revisa periódicamente [fuente: manual-creditos-2023.md].
-- Ningún vendedor está autorizado a comprometer condiciones de crédito con un cliente; una promesa que no pasó por el sector no obliga a la empresa [fuente: manual-creditos-2023.md].
+## Definiciones
+- Límite de crédito: monto máximo de deuda total (vencida y a vencer, incluidos valores en cartera pendientes de acreditación) que un cliente puede mantener con la Empresa en un momento dado [fuente: politica-creditos-cobranzas-v2.md]
+- Cliente nuevo: el que se incorpora a la cartera sin historial comercial previo con la Empresa, o que regresa luego de haber sido dado de baja [fuente: politica-creditos-cobranzas-v2.md]
+- Bloqueo de cuenta: estado de la cuenta del cliente en Tacuarí que impide la registración de nuevos pedidos en cuenta corriente [fuente: politica-creditos-cobranzas-v2.md]
 
-## Alta de cuenta corriente
-- Solicitud: el vendedor completa la solicitud en papel, con la firma del titular o del responsable del comercio, y la entrega en el sector con la documentación. La solicitud incompleta no se procesa [fuente: manual-creditos-2023.md].
-- Documentación: constancia de inscripción ante AFIP, habilitación del comercio cuando corresponda, copia del documento del titular y referencias comerciales [fuente: manual-creditos-2023.md].
-- Legajo: carpeta física por cliente, en los armarios del sector ordenada alfabéticamente por razón social. Las carpetas no salen del sector. Al dar de baja a un cliente, la carpeta pasa al archivo de inactivos, en el entrepiso [fuente: manual-creditos-2023.md].
-- Evaluación: la Analista de Créditos revisa la documentación, consulta antecedentes comerciales y pide referencias a los proveedores indicados por el cliente, y arma una nota de evaluación que propone límite y condiciones [fuente: manual-creditos-2023.md].
-- Aprobación: todas las altas de crédito, sin excepción, las aprueba la [Jefa de Créditos y Cobranzas](../rol/jefa-de-creditos-y-cobranzas.md), que firma la nota de evaluación en el legajo. Recién con esa firma se carga la cuenta corriente en Fénix. Mientras tanto, el cliente opera de contado [fuente: manual-creditos-2023.md].
+## Límites de crédito
+- Todo cliente en cuenta corriente debe tener un límite de crédito vigente registrado en Tacuarí; no se admiten operaciones en cuenta corriente con clientes que carezcan de límite asignado [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): los datos de la cuenta corriente se cargaban en Fénix [fuente: manual-creditos-2023.md]
+- Límite inicial para clientes nuevos: $ 1.500.000. Se asigna una vez completado el alta del cliente y aprobado su legajo [fuente: politica-creditos-cobranzas-v2.md] [fuente: acta-comite-creditos-2025-07.md]. Antes (reemplazado): $ 800.000 [fuente: manual-creditos-2023.md]. El acta indica que el límite anterior había quedado chico por la inflación acumulada desde 2023 [fuente: acta-comite-creditos-2025-07.md]
+- La asignación de cualquier límite, inicial o ampliado, requiere legajo completo y actualizado en Tacuarí [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): legajo en carpeta física en el sector [fuente: manual-creditos-2023.md]
+- Niveles de aprobación de límites [fuente: politica-creditos-cobranzas-v2.md]:
+  - Hasta $ 5.000.000 (inclusive): Jefa de Créditos y Cobranzas
+  - Superior a $ 5.000.000: Gerente de Administración y Finanzas
+  - Antes (reemplazado): todas las altas de crédito, sin excepción, las aprueba la Jefa de Créditos y Cobranzas [fuente: manual-creditos-2023.md]
+- Ampliaciones: las presentan el vendedor o el responsable de la cuenta a través de Tacuarí, con indicación de la justificación comercial. Créditos analiza el comportamiento de pago del cliente [fuente: politica-creditos-cobranzas-v2.md]. No definido en la documentación: criterios concretos de ese análisis. Antes (reemplazado): la ampliación se trataba igual que un alta [fuente: manual-creditos-2023.md]
+- Los límites asignados pueden revisarse en cualquier momento, de oficio o a pedido del área comercial [fuente: politica-creditos-cobranzas-v2.md]
+- Excesos: no se autorizan pedidos que, sumados a la deuda existente, excedan el límite asignado. Las excepciones puntuales las aprueba quien corresponda según el nivel de aprobación, considerando el límite resultante de la operación [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): los pedidos que superaban el límite quedaban retenidos hasta liberación o rechazo por el sector, y Facturación no los procesaba sin esa liberación [fuente: manual-creditos-2023.md]
+- Límite especial para Supermercados Hermanos Lutz (cuenta clave, 6 sucursales): $ 12.000.000, aprobado por el Comité de Créditos el 22/07/2025 como excepción puntual para esa cuenta, no como criterio para otras cuentas clave, que siguen analizándose caso por caso [fuente: acta-comite-creditos-2025-07.md]. La carga en Tacuarí la hace Paula Gorosito [fuente: acta-comite-creditos-2025-07.md]. Ver [política de cuentas clave](cuentas-clave.md).
+- No definido en la documentación: si el límite especial de $ 12.000.000 para Hermanos Lutz debe pasar por el nivel de aprobación superior a $ 5.000.000 (Gerente de Administración y Finanzas) de la Política v2; el acta no lo indica [fuente: acta-comite-creditos-2025-07.md] [fuente: politica-creditos-cobranzas-v2.md]
 
-## Límite de crédito
-- Límite inicial de todo cliente nuevo: $ 1.500.000 [fuente: acta-comite-creditos-2025-07.md]. Antes (reemplazado): $ 800.000, salvo que la evaluación aconseje uno menor [fuente: manual-creditos-2023.md].
-- Excepción puntual: Supermercados Hermanos Lutz, límite especial de $ 12.000.000 [fuente: acta-comite-creditos-2025-07.md].
-- El límite se carga en la ficha del cliente en Fénix. Si un pedido supera el límite, el sistema avisa, el pedido queda retenido hasta que el sector lo libere o lo rechace, y Facturación no lo procesa sin esa liberación [fuente: manual-creditos-2023.md].
-- El límite no es fijo. El vendedor puede pedir una ampliación tras un tiempo de buen comportamiento; se trata igual que un alta [fuente: manual-creditos-2023.md].
-- El límite también puede reducirse si el cliente empieza a atrasarse [fuente: manual-creditos-2023.md].
-- Todo cambio de límite queda anotado en el legajo [fuente: manual-creditos-2023.md].
-- Aprobación de altas, ampliaciones y reducciones: [Jefa de Créditos y Cobranzas](../rol/jefa-de-creditos-y-cobranzas.md) [fuente: manual-creditos-2023.md].
-- Cargar el límite especial de Hermanos Lutz en Tacuarí y actualizar los parámetros de límites en Tacuarí: tarea asignada a Paula Gorosito [fuente: acta-comite-creditos-2025-07.md].
+## Cuentas clave
+- Para las cuentas clave, en todo lo relativo a límites, plazos y mora, se aplica la Política de Créditos y Cobranzas v2 [fuente: politica-creditos-cobranzas-v2.md]. Ver [política comercial para cuentas clave](cuentas-clave.md), que indica que sus beneficios comerciales no alcanzan a límites ni plazos [fuente: politica-comercial-cuentas-clave.md].
 
 ## Condiciones de pago
-- Plazo de pago estándar en cuenta corriente: 30 días fecha factura [fuente: manual-creditos-2023.md].
-- Excepción para clientes gastronómicos: 15 días fecha factura [fuente: acta-comite-creditos-2025-07.md].
-- Comunicar el nuevo plazo a los clientes gastronómicos: tarea asignada a Verónica Etchart (vía vendedores) [fuente: acta-comite-creditos-2025-07.md].
-- Cualquier condición distinta debe justificarse en la nota de evaluación y queda sujeta a la misma aprobación que el alta [fuente: manual-creditos-2023.md].
-- Medios de pago aceptados: transferencia bancaria, depósito en la cuenta de la empresa, efectivo y cheques [fuente: manual-creditos-2023.md].
-- Cheques diferidos: se aceptan con hasta 90 días de plazo contados desde la fecha de entrega, y siempre que el librador sea el propio cliente o un tercero que el sector conozca [fuente: manual-creditos-2023.md].
-- Los cheques de terceros desconocidos no se reciben [fuente: manual-creditos-2023.md].
-
-## Seguimiento de la cuenta corriente
-- Cada semana el sector saca de Fénix el listado de saldos vencidos, lo revisa y lo reparte entre las analistas [fuente: manual-creditos-2023.md].
-- A los clientes con atraso se los llama primero por teléfono. Si no hay respuesta, se pide al vendedor que pase personalmente [fuente: manual-creditos-2023.md].
-- Las gestiones se anotan en la planilla de seguimiento del sector [fuente: manual-creditos-2023.md].
+- Plazo estándar: 30 días fecha factura [fuente: politica-creditos-cobranzas-v2.md] [fuente: manual-creditos-2023.md]
+- Clientes gastronómicos (restaurantes, bares, rotiserías y afines): 15 días fecha factura [fuente: politica-creditos-cobranzas-v2.md]. El acta lo define como excepción al plazo general, a partir de la vigencia del 01/08/2025 [fuente: acta-comite-creditos-2025-07.md]. Comunicación a clientes: Verónica Etchart, vía vendedores [fuente: acta-comite-creditos-2025-07.md]
+- Descuento por pronto pago: 2% de descuento sobre el importe neto de la factura, para clientes que la cancelen dentro de los 5 días hábiles contados desde la fecha de factura. Solo procede si el pago se acredita efectivamente dentro de ese plazo [fuente: politica-creditos-cobranzas-v2.md]
+- Medios de pago: transferencia, depósito, efectivo (exclusivamente contra recibo oficial) y valores [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): transferencia, depósito, efectivo y cheques [fuente: manual-creditos-2023.md]
+- Cheques de pago diferido, físicos o electrónicos: hasta 60 días de plazo contados desde la fecha de recepción. No se recibirán valores con plazos superiores [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): hasta 90 días contados desde la fecha de entrega [fuente: manual-creditos-2023.md]
+- Cheques de terceros: solo cuando el librador sea un cliente o firma conocida por el sector [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): los de terceros desconocidos no se reciben; el librador debe ser el propio cliente o un tercero conocido [fuente: manual-creditos-2023.md]
+- Los valores recibidos se computan dentro del límite de crédito hasta su efectiva acreditación [fuente: politica-creditos-cobranzas-v2.md]
+- Valores rechazados: el rechazo se comunica de inmediato al vendedor responsable y al cliente [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): el cliente debía reemplazar el cheque rechazado por efectivo o transferencia, con cuenta suspendida mientras tanto; el cheque original se guardaba en el legajo [fuente: manual-creditos-2023.md]. Caso documentado: [cheques rechazados](../proceso/cheques-rechazados.md)
 
 ## Mora e intereses
-- Interés por mora: 2,5% mensual, calculado desde el vencimiento hasta el día del pago [fuente: manual-creditos-2023.md].
-- El sector prepara la liquidación y pide a Facturación la nota de débito correspondiente, con referencia a las facturas que originaron el atraso [fuente: manual-creditos-2023.md].
-- Suspensión: ante atraso repetido o monto preocupante, la Jefa de Créditos y Cobranzas puede suspender la cuenta corriente en Fénix. El cliente pasa a operar de contado hasta regularizar [fuente: manual-creditos-2023.md].
-- Si la gestión amistosa no da resultado, el caso se deriva al estudio para gestión judicial, previa consulta con la Gerencia de Administración y Finanzas [fuente: manual-creditos-2023.md].
-- Condonación de intereses por mora: no definido; postergado en el comité del 22/07/2025. Marta Ifrán prepara la propuesta para la próxima reunión [fuente: acta-comite-creditos-2025-07.md].
-
-## Cheques rechazados
-- Regla general (manual 2023):
-  - Se informa en el día al vendedor y al cliente [fuente: manual-creditos-2023.md].
-  - El cliente debe reemplazarlo por pago en efectivo o transferencia; mientras tanto, su cuenta corriente queda suspendida [fuente: manual-creditos-2023.md].
-  - El cheque original se guarda en el legajo [fuente: manual-creditos-2023.md].
-- Caso Don Beto (Autoservicio Don Beto; rechazo registrado el 12/05/2025 por falta de fondos; es el segundo cheque rechazado de este cliente en el año, el otro fue cubierto de inmediato) [fuente: mail-cheques-rechazados.md]:
-  - Gasto administrativo: se carga $ 25.000 por el cheque rechazado, aparte del importe del cheque [fuente: mail-cheques-rechazados.md].
-  - Reemplazo: el cliente tiene que reemplazar el cheque por transferencia o efectivo, no por otro cheque [fuente: mail-cheques-rechazados.md].
-  - Modalidad de operación: desde el 12/05/2025 opera solo contado, por tres meses. Pasado ese tiempo se revisa con el historial si se le devuelve la cuenta corriente [fuente: mail-cheques-rechazados.md].
-  - Pedidos: no se toman pedidos a cuenta mientras dure la medida, aunque el cliente diga que paga el viernes. No se suspendió del todo la relación comercial por ser buen cliente [fuente: mail-cheques-rechazados.md].
-  - Registro: el gasto se debitó en la cuenta corriente en [Tacuarí](../sistema/tacuari.md) y se dejó observación en la ficha del cliente para que la vea quien le cargue un pedido [fuente: mail-cheques-rechazados.md].
-  - Aviso al cliente: Nicolás Pereyra debía avisarle al dueño en la visita siguiente, para que no se entere cuando le rebota un pedido [fuente: mail-cheques-rechazados.md].
-- Efecto en comisiones: un cheque rechazado no se considera cobrado para el cálculo de comisiones de vendedores. Ver [Comisiones de vendedores 2025](comisiones-vendedores.md), que tiene una contradicción sin resolver sobre en qué cálculo se descuenta [fuente: esquema-comisiones.md].
+- Configuración de la mora: el cliente incurre en mora de pleno derecho por el solo vencimiento del plazo de pago, sin necesidad de interpelación previa [fuente: politica-creditos-cobranzas-v2.md]
+- Interés punitorio: 3% mensual sobre los saldos vencidos, calculado en forma proporcional a los días efectivos de atraso, desde la fecha de vencimiento hasta la efectiva cancelación. Se documenta con nota de débito emitida conforme al Manual de Facturación [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): interés por mora del 2,5% mensual [fuente: manual-creditos-2023.md]
+- Bloqueo automático: cuando un cliente registra facturas con más de 45 días de atraso, Tacuarí bloquea la cuenta en forma automática. Mientras dure el bloqueo no se registran nuevos pedidos en cuenta corriente. Se desbloquea al regularizarse la deuda o por decisión del sector de Créditos y Cobranzas [fuente: politica-creditos-cobranzas-v2.md]. Antes (reemplazado): la Jefa podía suspender la cuenta en Fénix ante atrasos repetidos o montos preocupantes, con pase a operar de contado [fuente: manual-creditos-2023.md]
+- Gestión de la mora: la secuencia de acciones de cobranza la define el sector de Créditos y Cobranzas en sus procedimientos operativos [fuente: politica-creditos-cobranzas-v2.md]. No definido en la documentación: esa secuencia, ya que los procedimientos operativos no están en el corpus
+- Derivación a gestión judicial (versión 2023): si la gestión amistosa no da resultado, el caso va al estudio, previa consulta con la Gerencia de Administración y Finanzas [fuente: manual-creditos-2023.md]. La Política v2 no lo menciona [fuente: politica-creditos-cobranzas-v2.md]
+- Condonación de intereses por mora: postergada. El Comité de Créditos (22/07/2025) no fijó ningún criterio nuevo; el tema se tratará en una próxima reunión, y Marta Ifrán prepara la propuesta [fuente: acta-comite-creditos-2025-07.md]
+- No definido en la documentación: regla para condonar intereses por mora, incluido quién podría autorizarlo y con qué criterios. Según el acta, hoy a veces se condonan y a veces no, según quién lo pida [fuente: acta-comite-creditos-2025-07.md]
 
 ## Responsabilidades
-- [Jefa de Créditos y Cobranzas](../rol/jefa-de-creditos-y-cobranzas.md): aprueba altas, ampliaciones y reducciones de límite; decide suspensiones; mantiene actualizado el manual [fuente: manual-creditos-2023.md]. En el caso Don Beto, decidió la modalidad de solo contado y el gasto administrativo [fuente: mail-cheques-rechazados.md]. Participa del Comité de Créditos y prepara la propuesta sobre condonación de intereses [fuente: acta-comite-creditos-2025-07.md].
-- Gerencia de Administración y Finanzas: a cargo de la nueva Política de Créditos y Cobranzas, con apoyo de la Jefa de Créditos y Cobranzas en la redacción [fuente: acta-comite-creditos-2025-07.md]. Ver [Gerente de Administración y Finanzas](../rol/gerente-de-administracion-y-finanzas.md).
-- Analista de Créditos: arma y mantiene los legajos, hace las evaluaciones, controla los saldos y realiza las gestiones de cobro [fuente: manual-creditos-2023.md]. En el caso Don Beto, Lucas Ferreyra Doce (Analista de Cobranzas) hizo el débito y la observación en la ficha [fuente: mail-cheques-rechazados.md].
-- Vendedores: traen la documentación completa y acompañan las gestiones de cobro [fuente: manual-creditos-2023.md]. En el caso Don Beto, Nicolás Pereyra avisa al cliente y no toma pedidos a cuenta [fuente: mail-cheques-rechazados.md].
-- Facturación: no libera pedidos retenidos por límite sin autorización del sector, y emite las notas de débito que el sector pida [fuente: manual-creditos-2023.md].
+- Gerente de Administración y Finanzas: aprueba la Política y sus modificaciones, y los límites de crédito que superen $ 5.000.000 [fuente: politica-creditos-cobranzas-v2.md]. Ver también [Jefa de Créditos y Cobranzas](../rol/jefa-de-creditos-y-cobranzas.md) para su nivel de aprobación.
+- Jefa de Créditos y Cobranzas: administra la cartera de créditos, aprueba los límites dentro de su nivel y supervisa la gestión de la mora [fuente: politica-creditos-cobranzas-v2.md]
+- Analistas de Créditos y de Cobranzas: mantienen actualizados los legajos y ejecutan las acciones de cobranza [fuente: politica-creditos-cobranzas-v2.md]
+- Gerencia Comercial y vendedores: informan a los clientes las condiciones de la Política y no comprometen condiciones de crédito distintas de las aprobadas [fuente: politica-creditos-cobranzas-v2.md]
+- Comité de Créditos: revisa periódicamente la evolución de la cartera y la adecuación de la Política [fuente: politica-creditos-cobranzas-v2.md]. En la reunión 3/2025 (22/07/2025) estuvieron presentes Silvina Arrúa (preside), Marta Ifrán, Verónica Etchart, Lorena Castagnino, Lucas Ferreyra Doce y Paula Gorosito (secretaria de actas); Sergio Bazán ausente con aviso [fuente: acta-comite-creditos-2025-07.md]
+- Antes (reemplazado): Facturación no liberaba pedidos retenidos por límite sin autorización del sector y emitía las notas de débito que el sector pidiera [fuente: manual-creditos-2023.md]
 
-## Huecos
-- No definido en la documentación: nombre de la Analista de Créditos y de quien ocupa el puesto. [fuente: manual-creditos-2023.md]
-- No definido en la documentación: el criterio para fijar un límite menor a $ 1.500.000 (antes $ 800.000) y el significado de "tiempo de buen comportamiento" para pedir una ampliación. [fuente: manual-creditos-2023.md] [fuente: acta-comite-creditos-2025-07.md]
-- No definido en la documentación: consultas sobre el manual se derivan a "la jefatura del sector", sin nombre ni canal. [fuente: manual-creditos-2023.md]
-- No definido en la documentación: si el gasto administrativo de $ 25.000 por cheque rechazado aplica a todos los clientes o solo al caso Don Beto, y cómo se calcula en otros casos. [fuente: mail-cheques-rechazados.md]
-- No definido en la documentación: qué pasa con la cuenta corriente de Don Beto una vez vencidos los tres meses de operación solo contado; el documento dice que se "revisa con el historial" sin criterio. [fuente: mail-cheques-rechazados.md]
-- No definido en la documentación: si la medida de solo contado y el gasto de $ 25.000 quedan registrados formalmente en el manual o en un procedimiento escrito. [fuente: mail-cheques-rechazados.md]
-- No definido en la documentación: condonación de intereses por mora; quién podría autorizarla y con qué criterios, y si se condona o no. Postergado para una próxima reunión del comité. [fuente: acta-comite-creditos-2025-07.md]
-- No definido en la documentación: criterio para otorgar límites especiales a cuentas clave distintas de Hermanos Lutz; se seguirán analizando caso por caso. [fuente: acta-comite-creditos-2025-07.md]
-- No definido en la documentación: el contenido final de la nueva Política de Créditos y Cobranzas; el acta fija su existencia, responsable y fecha de vigencia, pero no su detalle. [fuente: acta-comite-creditos-2025-07.md]
+## Incumplimiento
+- El incumplimiento de la Política por parte del personal se considera falta conforme al Reglamento Interno de Personal [fuente: politica-creditos-cobranzas-v2.md]. Ver [reglamento interno de personal](reglamento-interno-personal.md)
 
 ## Relacionado
 - [Jefa de Créditos y Cobranzas](../rol/jefa-de-creditos-y-cobranzas.md)
-- [Gerente de Administración y Finanzas](../rol/gerente-de-administracion-y-finanzas.md)
-- [Fénix](../sistema/fenix.md)
-- [Tacuarí](../sistema/tacuari.md)
-- [Comisiones de vendedores 2025](comisiones-vendedores.md)
+- [Política comercial para cuentas clave](cuentas-clave.md) (límite especial de Hermanos Lutz)
+- [Cheques rechazados](../proceso/cheques-rechazados.md)
+- [Reglamento interno de personal](reglamento-interno-personal.md)
