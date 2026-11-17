@@ -1,41 +1,42 @@
-# Actualización de la lista de precios (noviembre 2025)
+# Actualización de la lista de precios
 
-Cambio puntual de la fecha de carga de la lista de precios de noviembre de 2025: no se carga el primer lunes sino el segundo lunes de noviembre, por el feriado. La semana del feriado se factura con la lista de octubre. Aumento promedio de 4,5% sobre la lista vigente, con diferencias por categoría.
+Cómo y cuándo se carga la lista de precios nueva en Tacuarí. La regla general es el primer lunes de cada mes; para noviembre de 2025 la carga se corre al segundo lunes por el feriado, y hasta ese día rige la lista de octubre.
 
-## Fecha de carga
-- Regla general: la lista se actualiza el primer lunes de cada mes [fuente: manual-facturacion.md]. Ver [Facturación](facturacion.md).
-- Noviembre de 2025 (excepción puntual): la lista no se carga el primer lunes "como siempre" sino el **segundo lunes de noviembre**, por el feriado [fuente: mail-cambio-lista-precios.md].
-- Semana del feriado: se sigue facturando con la **lista de octubre**. No cargar nada antes, aunque llegue el archivo [fuente: mail-cambio-lista-precios.md].
-- Sistemas fue avisado del cambio de fecha [fuente: mail-cambio-lista-precios.md].
+## Regla general
+- La lista de precios vigente se carga en Tacuarí y se actualiza el primer lunes de cada mes [fuente: manual-facturacion.md].
+- La Gerencia Comercial remite la lista aprobada al Sector con la anticipación necesaria [fuente: manual-facturacion.md].
+- No definido en la documentación: la anticipación con la que la Gerencia Comercial debe remitir la lista aprobada [fuente: manual-facturacion.md].
 
-## Contenido de la lista de noviembre
-- Aumento promedio del **4,5%** sobre la lista vigente, con diferencias según la categoría [fuente: mail-cambio-lista-precios.md].
-- No definido en la documentación: el porcentaje por categoría (el mail solo informa el promedio) [fuente: mail-cambio-lista-precios.md].
-- Comercial enviará el archivo definitivo una vez terminada su revisión [fuente: mail-cambio-lista-precios.md].
+## Actualización de noviembre de 2025 (excepción por feriado)
+- Este mes no se actualiza el primer lunes: por el feriado, la carga pasa al **segundo lunes de noviembre** [fuente: mail-cambio-lista-precios.md].
+- Verónica Etchart (Gerente Comercial) lo confirmó: la lista "no la cargamos el primer lunes de cada mes como dice el Manual de Facturación, sino una semana después" [fuente: mail-cambio-lista-precios.md].
+- La semana del feriado se sigue facturando con la **lista de octubre**. No cargar nada antes, aunque llegue el archivo [fuente: mail-cambio-lista-precios.md].
+- Sistemas fue avisado del cambio de fecha por Damián Quiroga Vela [fuente: mail-cambio-lista-precios.md].
+- Antes de cargarla se hace el control con Comercial, como siempre. Damián envía el archivo a Rocío Almirón apenas esté final [fuente: mail-cambio-lista-precios.md].
+- Aumento: la lista de noviembre trae un aumento promedio del **4,5%** sobre la vigente, con diferencias según la categoría [fuente: mail-cambio-lista-precios.md].
+- No definido en la documentación: el archivo definitivo de la lista de noviembre (Comercial lo enviará "en cuanto lo terminemos de revisar") y los porcentajes por categoría [fuente: mail-cambio-lista-precios.md].
+- Es una excepción de un solo mes ("este mes"): el mail no modifica la regla general del primer lunes [fuente: mail-cambio-lista-precios.md] [fuente: manual-facturacion.md].
 
-## Pasos y responsables
-1. Gerencia Comercial (Verónica Etchart) envía el archivo definitivo de la lista al Sector Facturación [fuente: mail-cambio-lista-precios.md]. El manual indica que la Gerencia Comercial remite la lista aprobada con anticipación [fuente: manual-facturacion.md].
-2. Antes de cargarla en Tacuarí se hace el control con Comercial, como siempre [fuente: mail-cambio-lista-precios.md].
-3. Carga de la lista en Tacuarí por Rocío Almirón, una vez hecho el control [fuente: mail-cambio-lista-precios.md]. Ver [Sistema Tacuarí](../sistema/tacuari.md).
-4. Damián Quiroga Vela coordina el cambio y avisa a los destinatarios del mail (Rocío Almirón, Facturación, Sergio Bazán, Mariela Sosa) [fuente: mail-cambio-lista-precios.md].
+## Confirmación a vendedores y televentas
+- Sergio Bazán y Mariela Sosa avisan a los vendedores y a Televentas que **no se confirmen precios nuevos a nadie hasta ese lunes** [fuente: mail-cambio-lista-precios.md].
+- Motivo: el mes pasado hubo pedidos con precio cruzado, después hubo que hacer notas de crédito [fuente: mail-cambio-lista-precios.md]. Ver [Emisión de notas de crédito](emision-notas-de-credito.md).
 
-## Comunicación a la fuerza de ventas
-- Sergio Bazán y Mariela Sosa avisan a los vendedores y a Televentas [fuente: mail-cambio-lista-precios.md]. Ver [Televentas](televentas.md).
-- Hasta el segundo lunes de noviembre no se confirma a nadie precios nuevos [fuente: mail-cambio-lista-precios.md].
-- Motivo: en el mes anterior hubo pedidos con precio cruzado que después requirieron notas de crédito [fuente: mail-cambio-lista-precios.md]. Ver [Emisión de notas de crédito](emision-de-notas-de-credito.md).
+## Pedidos durante la transición
+- Pedidos registrados antes de la actualización se facturan con la lista vigente al momento de su registro, si se facturan dentro del ciclo habitual [fuente: manual-facturacion.md].
+- Ver también [Facturación diaria](facturacion-diaria.md) para el corte de las 18:00 hs.
 
-## ⚠ Contradicción
-No hay contradicción registrada entre el mail y los documentos vigentes: el mail indica expresamente que esta vez la carga se corre por el feriado, y el manual fija el primer lunes como regla general [fuente: mail-cambio-lista-precios.md] [fuente: manual-facturacion.md].
-
-## No definido en la documentación
-- No definido en la documentación: el porcentaje de aumento por categoría [fuente: mail-cambio-lista-precios.md].
-- No definido en la documentación: la fecha del archivo definitivo de la lista de noviembre (el mail dice "en cuanto lo terminemos de revisar") [fuente: mail-cambio-lista-precios.md].
-- No definido en la documentación: la fecha exacta del feriado que motiva el corrimiento [fuente: mail-cambio-lista-precios.md].
-- No definido en la documentación: qué pasa con los pedidos de precio nuevo ya registrados antes de la carga (el mail solo pide no confirmar precios nuevos) [fuente: mail-cambio-lista-precios.md].
+## Responsables (noviembre de 2025)
+| Responsable | Tarea | Fuente |
+|---|---|---|
+| Verónica Etchart (Gerente Comercial) | Envía el archivo definitivo y el aumento | [fuente: mail-cambio-lista-precios.md] |
+| Damián Quiroga Vela | Coordina; avisó a Sistemas; hace el control con Comercial antes de la carga | [fuente: mail-cambio-lista-precios.md] |
+| Rocío Almirón | Carga la lista en Tacuarí una vez hecho el control | [fuente: mail-cambio-lista-precios.md] |
+| Sergio Bazán y Mariela Sosa | Avisan a vendedores y Televentas | [fuente: mail-cambio-lista-precios.md] |
+| Facturación | Recibe copia del aviso | [fuente: mail-cambio-lista-precios.md] |
 
 ## Relacionado
-- [Facturación: ciclo, remitos, duplicados y anulaciones](facturacion.md)
+- [Facturación diaria](facturacion-diaria.md)
 - [Sistema Tacuarí](../sistema/tacuari.md)
-- [Descuentos y precios para la fuerza de ventas](../politica/descuentos-y-precios.md)
-- [Televentas](televentas.md)
-- [Índice](../index.md)
+- [Descuentos sobre lista de precios](../politica/descuentos-sobre-lista.md)
+- [Reunión quincenal de compras (14/10)](reunion-compras-quincenal.md): lista de precios de proveedores para noviembre (distinta de la lista de venta).
+- [Emisión de notas de crédito](emision-notas-de-credito.md)

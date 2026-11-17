@@ -1,53 +1,57 @@
 {
  "documentos": {
   "manual-deposito-2023.md": {
-   "costo_usd": 0.00486,
-   "turnos": 5,
-   "segundos": 28.8,
-   "max_prompt_tokens": 15379,
+   "costo_usd": 0.003131,
+   "turnos": 4,
+   "segundos": 18.9,
+   "max_prompt_tokens": 8822,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/operacion-deposito.md"
+    "wiki/proceso/armado-de-pedidos.md",
+    "wiki/proceso/recepcion-de-mercaderia.md",
+    "wiki/sistema/fenix.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "manual-creditos-2023.md": {
-   "costo_usd": 0.005428,
-   "turnos": 5,
-   "segundos": 29.5,
-   "max_prompt_tokens": 16185,
+   "costo_usd": 0.005476,
+   "turnos": 6,
+   "segundos": 30.8,
+   "max_prompt_tokens": 13692,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/creditos-y-cobranzas.md",
-    "wiki/rol/jefa-de-creditos-y-cobranzas.md"
+    "wiki/politica/credito-cuenta-corriente.md",
+    "wiki/proceso/alta-cuenta-corriente.md",
+    "wiki/sistema/fenix.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "manual-compras-2023.md": {
-   "costo_usd": 0.004802,
+   "costo_usd": 0.004266,
    "turnos": 5,
-   "segundos": 28.5,
-   "max_prompt_tokens": 15406,
+   "segundos": 24.7,
+   "max_prompt_tokens": 12525,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/compras.md"
+    "wiki/politica/aprobacion-de-compras.md",
+    "wiki/proceso/circuito-de-compra.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "procedimiento-reclamos-2023.md": {
-   "costo_usd": 0.004796,
+   "costo_usd": 0.003769,
    "turnos": 4,
-   "segundos": 26.0,
-   "max_prompt_tokens": 11872,
+   "segundos": 22.5,
+   "max_prompt_tokens": 10318,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
@@ -58,71 +62,81 @@
    "etiqueta": "ingesta"
   },
   "circular-vacaciones-2023.md": {
-   "costo_usd": 0.001916,
-   "turnos": 3,
-   "segundos": 10.4,
-   "max_prompt_tokens": 6626,
+   "costo_usd": 0.002246,
+   "turnos": 4,
+   "segundos": 15.8,
+   "max_prompt_tokens": 7275,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/solicitud-de-vacaciones.md"
+    "wiki/proceso/pedido-de-vacaciones.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "procedimiento-notas-credito-2023.md": {
-   "costo_usd": 0.005936,
+   "costo_usd": 0.00636,
    "turnos": 5,
-   "segundos": 33.9,
-   "max_prompt_tokens": 15578,
+   "segundos": 30.6,
+   "max_prompt_tokens": 16981,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/emision-de-notas-de-credito.md"
+    "wiki/proceso/emision-notas-de-credito.md",
+    "wiki/proceso/procedimiento-de-reclamos.md",
+    "wiki/sistema/fenix.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "circular-pedido-minimo-2024.md": {
-   "costo_usd": 0.002547,
-   "turnos": 5,
-   "segundos": 16.2,
-   "max_prompt_tokens": 7699,
+   "costo_usd": 0.003856,
+   "turnos": 4,
+   "segundos": 21.1,
+   "max_prompt_tokens": 11824,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/pedido-minimo.md"
+    "wiki/politica/pedido-minimo.md",
+    "wiki/sistema/fenix.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "politica-calidad-inocuidad.md": {
-   "costo_usd": 0.006042,
-   "turnos": 4,
-   "segundos": 31.7,
-   "max_prompt_tokens": 17737,
+   "costo_usd": 0.010149,
+   "turnos": 5,
+   "segundos": 49.6,
+   "max_prompt_tokens": 25255,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/calidad-inocuidad.md",
-    "wiki/rol/responsable-de-calidad.md"
+    "wiki/politica/calidad-e-inocuidad.md",
+    "wiki/proceso/procedimiento-de-reclamos.md",
+    "wiki/proceso/recepcion-de-mercaderia.md",
+    "wiki/rol/responsable-de-calidad.md",
+    "wiki/sistema/fenix.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "manual-deposito.md": {
-   "costo_usd": 0.010499,
-   "turnos": 5,
-   "segundos": 50.2,
-   "max_prompt_tokens": 29153,
+   "costo_usd": 0.014094,
+   "turnos": 6,
+   "segundos": 65.3,
+   "max_prompt_tokens": 36009,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/operacion-deposito.md",
+    "wiki/politica/calidad-e-inocuidad.md",
+    "wiki/proceso/armado-de-pedidos.md",
+    "wiki/proceso/recepcion-de-mercaderia.md",
+    "wiki/rol/responsable-de-calidad.md",
+    "wiki/sistema/fenix.md",
     "wiki/sistema/lapacho.md"
    ],
    "avisos_sin_escritura": 0,
@@ -130,28 +144,31 @@
    "etiqueta": "ingesta"
   },
   "esquema-comisiones.md": {
-   "costo_usd": 0.00398,
+   "costo_usd": 0.003781,
    "turnos": 4,
-   "segundos": 23.4,
-   "max_prompt_tokens": 11385,
+   "segundos": 21.4,
+   "max_prompt_tokens": 11246,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/comisiones-vendedores.md"
+    "wiki/politica/comisiones-vendedores-2025.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "manual-facturacion.md": {
-   "costo_usd": 0.007073,
-   "turnos": 5,
-   "segundos": 38.3,
-   "max_prompt_tokens": 19498,
+   "costo_usd": 0.011823,
+   "turnos": 6,
+   "segundos": 56.1,
+   "max_prompt_tokens": 30932,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/facturacion.md",
+    "wiki/proceso/conciliacion-de-remitos.md",
+    "wiki/proceso/emision-notas-de-credito.md",
+    "wiki/proceso/facturacion-diaria.md",
+    "wiki/sistema/fenix.md",
     "wiki/sistema/tacuari.md"
    ],
    "avisos_sin_escritura": 0,
@@ -159,43 +176,44 @@
    "etiqueta": "ingesta"
   },
   "instructivo-recepcion-mercaderia.md": {
-   "costo_usd": 0.009355,
+   "costo_usd": 0.009648,
    "turnos": 5,
-   "segundos": 42.7,
-   "max_prompt_tokens": 27307,
+   "segundos": 45.4,
+   "max_prompt_tokens": 29111,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/recepcion-de-mercaderia.md"
+    "wiki/proceso/recepcion-de-mercaderia.md",
+    "wiki/rol/encargado-de-recepcion.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "reglamento-interno.md": {
-   "costo_usd": 0.007692,
+   "costo_usd": 0.007978,
    "turnos": 5,
-   "segundos": 42.7,
-   "max_prompt_tokens": 22455,
+   "segundos": 42.0,
+   "max_prompt_tokens": 20740,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
     "wiki/politica/reglamento-interno-personal.md",
-    "wiki/proceso/solicitud-de-vacaciones.md"
+    "wiki/proceso/pedido-de-vacaciones.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "politica-viaticos-vendedores.md": {
-   "costo_usd": 0.007488,
-   "turnos": 4,
-   "segundos": 40.2,
-   "max_prompt_tokens": 20038,
+   "costo_usd": 0.006867,
+   "turnos": 6,
+   "segundos": 33.4,
+   "max_prompt_tokens": 20085,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/comisiones-vendedores.md",
+    "wiki/politica/comisiones-vendedores-2025.md",
     "wiki/politica/viaticos-vendedores.md"
    ],
    "avisos_sin_escritura": 0,
@@ -203,14 +221,15 @@
    "etiqueta": "ingesta"
   },
   "instructivo-facturacion-tacuari.md": {
-   "costo_usd": 0.006878,
-   "turnos": 4,
-   "segundos": 33.4,
-   "max_prompt_tokens": 20928,
+   "costo_usd": 0.010953,
+   "turnos": 5,
+   "segundos": 51.6,
+   "max_prompt_tokens": 30092,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/emision-de-factura-en-tacuari.md",
+    "wiki/proceso/emision-de-factura-tacuari.md",
+    "wiki/proceso/facturacion-diaria.md",
     "wiki/sistema/tacuari.md"
    ],
    "avisos_sin_escritura": 0,
@@ -218,42 +237,43 @@
    "etiqueta": "ingesta"
   },
   "politica-compras.md": {
-   "costo_usd": 0.005592,
-   "turnos": 4,
-   "segundos": 26.2,
-   "max_prompt_tokens": 19642,
+   "costo_usd": 0.010311,
+   "turnos": 5,
+   "segundos": 51.9,
+   "max_prompt_tokens": 26742,
    "cortada": null,
    "escritos": [
-    "wiki/politica/compras.md"
+    "wiki/index.md",
+    "wiki/politica/aprobacion-de-compras.md",
+    "wiki/politica/politica-de-compras.md",
+    "wiki/proceso/circuito-de-compra.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "zonas-reparto.md": {
-   "costo_usd": 0.006358,
-   "turnos": 5,
-   "segundos": 33.3,
-   "max_prompt_tokens": 17116,
+   "costo_usd": 0.006204,
+   "turnos": 4,
+   "segundos": 30.7,
+   "max_prompt_tokens": 18990,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/zonas-de-reparto.md",
-    "wiki/sistema/tacuari.md"
+    "wiki/politica/zonas-de-reparto.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "procedimiento-alta-proveedores.md": {
-   "costo_usd": 0.013716,
-   "turnos": 6,
-   "segundos": 62.5,
-   "max_prompt_tokens": 38021,
+   "costo_usd": 0.01149,
+   "turnos": 4,
+   "segundos": 53.5,
+   "max_prompt_tokens": 35685,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/compras.md",
     "wiki/proceso/alta-de-proveedores.md",
     "wiki/rol/responsable-de-calidad.md"
    ],
@@ -262,14 +282,14 @@
    "etiqueta": "ingesta"
   },
   "faq-facturacion-clientes.md": {
-   "costo_usd": 0.009897,
+   "costo_usd": 0.011415,
    "turnos": 5,
-   "segundos": 45.9,
-   "max_prompt_tokens": 30057,
+   "segundos": 53.2,
+   "max_prompt_tokens": 29975,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/faq-facturacion-atencion-al-cliente.md",
+    "wiki/proceso/facturacion-diaria.md",
     "wiki/proceso/procedimiento-de-reclamos.md"
    ],
    "avisos_sin_escritura": 0,
@@ -277,15 +297,14 @@
    "etiqueta": "ingesta"
   },
   "circular-notas-credito-2025.md": {
-   "costo_usd": 0.014471,
+   "costo_usd": 0.011676,
    "turnos": 5,
-   "segundos": 67.3,
-   "max_prompt_tokens": 37054,
+   "segundos": 55.4,
+   "max_prompt_tokens": 30517,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/emision-de-notas-de-credito.md",
-    "wiki/proceso/facturacion.md",
+    "wiki/proceso/emision-notas-de-credito.md",
     "wiki/proceso/procedimiento-de-reclamos.md"
    ],
    "avisos_sin_escritura": 0,
@@ -293,13 +312,14 @@
    "etiqueta": "ingesta"
   },
   "instructivo-reposicion-stock.md": {
-   "costo_usd": 0.007407,
+   "costo_usd": 0.011281,
    "turnos": 5,
-   "segundos": 36.6,
-   "max_prompt_tokens": 24691,
+   "segundos": 48.4,
+   "max_prompt_tokens": 34944,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
+    "wiki/proceso/circuito-de-compra.md",
     "wiki/proceso/reposicion-de-stock.md"
    ],
    "avisos_sin_escritura": 0,
@@ -307,24 +327,24 @@
    "etiqueta": "ingesta"
   },
   "mail-cheques-rechazados.md": {
-   "costo_usd": 0.008964,
-   "turnos": 6,
-   "segundos": 43.6,
-   "max_prompt_tokens": 27643,
+   "costo_usd": 0.007944,
+   "turnos": 4,
+   "segundos": 37.3,
+   "max_prompt_tokens": 22640,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/cheques-rechazados.md"
+    "wiki/politica/credito-cuenta-corriente.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "procedimiento-reclamos-v2.md": {
-   "costo_usd": 0.01489,
-   "turnos": 5,
-   "segundos": 88.3,
-   "max_prompt_tokens": 24739,
+   "costo_usd": 0.019842,
+   "turnos": 6,
+   "segundos": 107.8,
+   "max_prompt_tokens": 33371,
    "cortada": null,
    "escritos": [
     "wiki/proceso/procedimiento-de-reclamos.md"
@@ -334,10 +354,10 @@
    "etiqueta": "ingesta"
   },
   "instructivo-mostrador.md": {
-   "costo_usd": 0.008108,
+   "costo_usd": 0.007178,
    "turnos": 4,
-   "segundos": 39.8,
-   "max_prompt_tokens": 24491,
+   "segundos": 31.2,
+   "max_prompt_tokens": 23459,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
@@ -348,31 +368,30 @@
    "etiqueta": "ingesta"
   },
   "instructivo-onboarding.md": {
-   "costo_usd": 0.014625,
-   "turnos": 5,
-   "segundos": 66.2,
-   "max_prompt_tokens": 37459,
+   "costo_usd": 0.010151,
+   "turnos": 6,
+   "segundos": 45.2,
+   "max_prompt_tokens": 29378,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/reglamento-interno-personal.md",
-    "wiki/proceso/onboarding-nuevo-ingreso.md",
-    "wiki/proceso/operacion-deposito.md"
+    "wiki/politica/curso-habilitante-autoelevadores.md",
+    "wiki/proceso/onboarding-nuevo-ingreso.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "politica-comercial-cuentas-clave.md": {
-   "costo_usd": 0.008504,
-   "turnos": 4,
-   "segundos": 41.3,
-   "max_prompt_tokens": 22133,
+   "costo_usd": 0.010095,
+   "turnos": 5,
+   "segundos": 45.7,
+   "max_prompt_tokens": 29001,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/cuentas-clave.md",
     "wiki/politica/pedido-minimo.md",
+    "wiki/politica/politica-cuentas-clave.md",
     "wiki/rol/jefa-de-cuentas-clave.md"
    ],
    "avisos_sin_escritura": 0,
@@ -380,15 +399,14 @@
    "etiqueta": "ingesta"
   },
   "acta-inventario-2025.md": {
-   "costo_usd": 0.013866,
+   "costo_usd": 0.009413,
    "turnos": 6,
-   "segundos": 59.4,
-   "max_prompt_tokens": 37591,
+   "segundos": 42.1,
+   "max_prompt_tokens": 27808,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
     "wiki/proceso/inventario-general.md",
-    "wiki/proceso/operacion-deposito.md",
     "wiki/sistema/lapacho.md"
    ],
    "avisos_sin_escritura": 0,
@@ -396,10 +414,10 @@
    "etiqueta": "ingesta"
   },
   "faq-devoluciones.md": {
-   "costo_usd": 0.006337,
-   "turnos": 3,
-   "segundos": 28.8,
-   "max_prompt_tokens": 17862,
+   "costo_usd": 0.009577,
+   "turnos": 5,
+   "segundos": 37.7,
+   "max_prompt_tokens": 33899,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
@@ -410,43 +428,46 @@
    "etiqueta": "ingesta"
   },
   "acta-comite-creditos-2025-07.md": {
-   "costo_usd": 0.014012,
+   "costo_usd": 0.015572,
    "turnos": 6,
-   "segundos": 61.9,
-   "max_prompt_tokens": 39532,
+   "segundos": 65.6,
+   "max_prompt_tokens": 43935,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/creditos-y-cobranzas.md",
-    "wiki/politica/cuentas-clave.md",
-    "wiki/rol/jefa-de-creditos-y-cobranzas.md"
+    "wiki/politica/credito-cuenta-corriente.md",
+    "wiki/politica/politica-cuentas-clave.md",
+    "wiki/politica/politica-de-creditos-y-cobranzas.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "politica-creditos-cobranzas-v2.md": {
-   "costo_usd": 0.00885,
-   "turnos": 4,
-   "segundos": 40.0,
-   "max_prompt_tokens": 31381,
+   "costo_usd": 0.018204,
+   "turnos": 6,
+   "segundos": 77.6,
+   "max_prompt_tokens": 51034,
    "cortada": null,
    "escritos": [
-    "wiki/politica/creditos-y-cobranzas.md"
+    "wiki/index.md",
+    "wiki/politica/credito-cuenta-corriente.md",
+    "wiki/politica/politica-de-creditos-y-cobranzas.md",
+    "wiki/proceso/alta-cuenta-corriente.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "mail-temperatura-camara.md": {
-   "costo_usd": 0.011833,
+   "costo_usd": 0.013129,
    "turnos": 5,
-   "segundos": 55.9,
-   "max_prompt_tokens": 34367,
+   "segundos": 61.3,
+   "max_prompt_tokens": 35425,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/calidad-inocuidad.md",
+    "wiki/politica/calidad-e-inocuidad.md",
     "wiki/proceso/falla-de-camara-de-frio.md"
    ],
    "avisos_sin_escritura": 0,
@@ -454,57 +475,57 @@
    "etiqueta": "ingesta"
   },
   "acta-reunion-facturacion-logistica.md": {
-   "costo_usd": 0.011945,
-   "turnos": 5,
-   "segundos": 56.0,
-   "max_prompt_tokens": 33196,
+   "costo_usd": 0.008443,
+   "turnos": 4,
+   "segundos": 38.6,
+   "max_prompt_tokens": 23574,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/facturacion.md",
-    "wiki/proceso/remitos-firmados-escaneados.md"
+    "wiki/proceso/conciliacion-de-remitos.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "instructivo-alta-cliente.md": {
-   "costo_usd": 0.010929,
+   "costo_usd": 0.012036,
    "turnos": 5,
-   "segundos": 44.5,
-   "max_prompt_tokens": 37593,
+   "segundos": 49.7,
+   "max_prompt_tokens": 38392,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/alta-de-cliente.md"
+    "wiki/proceso/alta-cuenta-corriente.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "mail-proveedor-lacteos.md": {
-   "costo_usd": 0.009433,
-   "turnos": 4,
-   "segundos": 44.8,
-   "max_prompt_tokens": 30176,
+   "costo_usd": 0.012277,
+   "turnos": 5,
+   "segundos": 53.8,
+   "max_prompt_tokens": 34210,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/recepcion-domingos-la-tranquera.md"
+    "wiki/proceso/recepcion-de-mercaderia.md",
+    "wiki/proceso/recepcion-domingos-lacteos-la-tranquera.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "manual-vendedor.md": {
-   "costo_usd": 0.009554,
+   "costo_usd": 0.010831,
    "turnos": 5,
-   "segundos": 46.2,
-   "max_prompt_tokens": 26206,
+   "segundos": 44.7,
+   "max_prompt_tokens": 34662,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/descuentos-y-precios.md",
+    "wiki/politica/descuentos-sobre-lista.md",
     "wiki/politica/pedido-minimo.md"
    ],
    "avisos_sin_escritura": 0,
@@ -512,69 +533,67 @@
    "etiqueta": "ingesta"
   },
   "faq-atencion-clientes.md": {
-   "costo_usd": 0.014702,
+   "costo_usd": 0.013247,
    "turnos": 5,
-   "segundos": 67.2,
-   "max_prompt_tokens": 43827,
+   "segundos": 57.9,
+   "max_prompt_tokens": 43748,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/devoluciones-comerciales.md",
-    "wiki/proceso/faq-atencion-clientes.md"
+    "wiki/proceso/atencion-al-cliente-consultas.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "acta-reclamos-mensual.md": {
-   "costo_usd": 0.010943,
+   "costo_usd": 0.01119,
    "turnos": 5,
-   "segundos": 45.7,
-   "max_prompt_tokens": 37237,
+   "segundos": 54.3,
+   "max_prompt_tokens": 43491,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/revision-mensual-de-reclamos.md"
+    "wiki/proceso/revision-mensual-reclamos.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "manual-cobranzas.md": {
-   "costo_usd": 0.013197,
+   "costo_usd": 0.012618,
    "turnos": 5,
-   "segundos": 60.4,
-   "max_prompt_tokens": 36277,
+   "segundos": 60.6,
+   "max_prompt_tokens": 34606,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/cobranza-de-mora.md",
-    "wiki/proceso/recibos-y-conciliacion-bancaria.md",
-    "wiki/rol/jefa-de-creditos-y-cobranzas.md"
+    "wiki/proceso/gestion-de-mora.md",
+    "wiki/proceso/recibos-y-conciliacion-bancaria.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "instructivo-preparacion-pedidos.md": {
-   "costo_usd": 0.012165,
-   "turnos": 5,
-   "segundos": 48.1,
-   "max_prompt_tokens": 42850,
+   "costo_usd": 0.016537,
+   "turnos": 6,
+   "segundos": 71.9,
+   "max_prompt_tokens": 51182,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/preparacion-de-pedidos.md"
+    "wiki/proceso/armado-de-pedidos.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "mail-descuento-especial.md": {
-   "costo_usd": 0.012466,
+   "costo_usd": 0.010983,
    "turnos": 5,
-   "segundos": 55.1,
-   "max_prompt_tokens": 35916,
+   "segundos": 45.3,
+   "max_prompt_tokens": 34546,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
@@ -585,24 +604,24 @@
    "etiqueta": "ingesta"
   },
   "mail-reclamo-supermercado.md": {
-   "costo_usd": 0.01031,
+   "costo_usd": 0.0154,
    "turnos": 4,
-   "segundos": 48.2,
-   "max_prompt_tokens": 35710,
+   "segundos": 116.7,
+   "max_prompt_tokens": 39559,
    "cortada": null,
    "escritos": [
-    "wiki/politica/cuentas-clave.md",
-    "wiki/rol/jefa-de-cuentas-clave.md"
+    "wiki/index.md",
+    "wiki/proceso/reclamo-hermanos-lutz-sucursal-4.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "notas-turno-noche.md": {
-   "costo_usd": 0.010109,
+   "costo_usd": 0.011189,
    "turnos": 5,
-   "segundos": 46.2,
-   "max_prompt_tokens": 31678,
+   "segundos": 51.9,
+   "max_prompt_tokens": 31889,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
@@ -613,14 +632,13 @@
    "etiqueta": "ingesta"
   },
   "acta-reunion-comercial-2025-10.md": {
-   "costo_usd": 0.010955,
-   "turnos": 4,
-   "segundos": 107.6,
-   "max_prompt_tokens": 32537,
+   "costo_usd": 0.018539,
+   "turnos": 7,
+   "segundos": 80.8,
+   "max_prompt_tokens": 52678,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/acta-reunion-comercial-octubre-2025.md",
     "wiki/proceso/televentas.md"
    ],
    "avisos_sin_escritura": 0,
@@ -628,73 +646,73 @@
    "etiqueta": "ingesta"
   },
   "acta-compras-quincenal.md": {
-   "costo_usd": 0.013235,
-   "turnos": 5,
-   "segundos": 54.5,
-   "max_prompt_tokens": 44603,
+   "costo_usd": 0.016763,
+   "turnos": 6,
+   "segundos": 68.9,
+   "max_prompt_tokens": 48663,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/reunion-de-compras-quincenal.md"
+    "wiki/proceso/circuito-de-compra.md",
+    "wiki/proceso/reunion-compras-quincenal.md",
+    "wiki/rol/florencia-lescano.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "acta-rrhh-presentismo.md": {
-   "costo_usd": 0.011292,
+   "costo_usd": 0.011794,
    "turnos": 5,
-   "segundos": 53.1,
-   "max_prompt_tokens": 32185,
+   "segundos": 46.6,
+   "max_prompt_tokens": 39029,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/premio-por-presentismo.md",
-    "wiki/proceso/acta-rrhh-presentismo-octubre-2025.md"
+    "wiki/politica/premio-por-presentismo.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "instructivo-gestion-mora.md": {
-   "costo_usd": 0.013985,
+   "costo_usd": 0.015256,
    "turnos": 5,
-   "segundos": 66.5,
-   "max_prompt_tokens": 35191,
+   "segundos": 60.4,
+   "max_prompt_tokens": 48566,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/cobranza-de-mora.md",
-    "wiki/rol/jefa-de-creditos-y-cobranzas.md"
+    "wiki/proceso/gestion-de-mora.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "mail-cambio-lista-precios.md": {
-   "costo_usd": 0.016096,
+   "costo_usd": 0.014934,
    "turnos": 5,
-   "segundos": 73.8,
-   "max_prompt_tokens": 41107,
+   "segundos": 63.9,
+   "max_prompt_tokens": 40147,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
     "wiki/proceso/actualizacion-lista-de-precios.md",
-    "wiki/proceso/facturacion.md",
-    "wiki/sistema/tacuari.md"
+    "wiki/proceso/facturacion-diaria.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "mail-horas-extras-cierre.md": {
-   "costo_usd": 0.01274,
+   "costo_usd": 0.012406,
    "turnos": 5,
-   "segundos": 52.4,
-   "max_prompt_tokens": 39691,
+   "segundos": 56.5,
+   "max_prompt_tokens": 32608,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
+    "wiki/politica/horas-extras.md",
     "wiki/politica/reglamento-interno-personal.md"
    ],
    "avisos_sin_escritura": 0,
@@ -702,28 +720,29 @@
    "etiqueta": "ingesta"
   },
   "faq-cobranzas-vendedores.md": {
-   "costo_usd": 0.0134,
-   "turnos": 4,
-   "segundos": 60.6,
-   "max_prompt_tokens": 40700,
+   "costo_usd": 0.018565,
+   "turnos": 5,
+   "segundos": 82.6,
+   "max_prompt_tokens": 51360,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/cobranza-en-visita-vendedores.md"
+    "wiki/proceso/cobranza-en-visita.md",
+    "wiki/proceso/recibos-y-conciliacion-bancaria.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
    "etiqueta": "ingesta"
   },
   "notas-chat-compras.md": {
-   "costo_usd": 0.012628,
+   "costo_usd": 0.012473,
    "turnos": 5,
-   "segundos": 53.9,
-   "max_prompt_tokens": 40390,
+   "segundos": 52.0,
+   "max_prompt_tokens": 40842,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/proceso/aumento-de-precios-la-tranquera.md"
+    "wiki/proceso/aumento-proveedor-la-tranquera.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
@@ -732,9 +751,9 @@
  },
  "resumen": {
   "documentos_ingeridos": 50,
-  "costo_usd": 0.486806,
-  "segundos": 2357.7,
-  "turnos": 237,
+  "costo_usd": 0.54336,
+  "segundos": 2530.9,
+  "turnos": 252,
   "sesiones_cortadas": [],
   "sesiones_sin_escrituras": []
  }

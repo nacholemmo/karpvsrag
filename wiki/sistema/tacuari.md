@@ -1,38 +1,34 @@
-# Sistema Tacuarí
+# Tacuarí
 
-Sistema de gestión de la Empresa desde enero de 2025, que reemplazó a Fénix. Emite todos los comprobantes desde el módulo Ventas, con autorización electrónica de ARCA (ex AFIP) [fuente: manual-facturacion.md]. Cómo emitir una factura paso a paso está en [Emisión de una factura en Tacuarí](../proceso/emision-de-factura-en-tacuari.md) [fuente: instructivo-facturacion-tacuari.md]. La lista de precios se carga en este sistema; la de noviembre de 2025 se carga el segundo lunes de noviembre [fuente: mail-cambio-lista-precios.md]. Ver [Actualización de lista de precios](../proceso/actualizacion-lista-de-precios.md).
-
-## Datos de la ficha de cliente
-- Campo "Zona de reparto": se carga en el alta del cliente. Si el cliente se muda, el vendedor debe avisar para corregirla [fuente: zonas-reparto.md]. Ver [Zonas de reparto](../proceso/zonas-de-reparto.md).
+Sistema de gestión de la Empresa desde enero de 2025, que reemplazó a Fénix. Desde el módulo Ventas se emiten todos los comprobantes electrónicos (con autorización de ARCA, ex AFIP), y determina el tipo de comprobante según la condición frente al IVA de la ficha del cliente [fuente: manual-facturacion.md].
 
 ## Uso en facturación
-- Módulo Ventas: emisión de facturas, notas de crédito y débito, remitos [fuente: manual-facturacion.md]. Ruta de emisión de factura: Ventas > Comprobantes > Nueva factura [fuente: instructivo-facturacion-tacuari.md].
-- Punto de venta de facturación electrónica: 0004 [fuente: manual-facturacion.md]. Está precargado en la pantalla de Nueva factura y no se cambia [fuente: instructivo-facturacion-tacuari.md].
-- Determina el tipo de comprobante (A o B) según la condición frente al IVA de la ficha del cliente; no se cambia a mano [fuente: manual-facturacion.md] [fuente: instructivo-facturacion-tacuari.md].
-- Bloquea la emisión si la ficha no tiene razón social, CUIT, condición fiscal, domicilios y correo electrónico [fuente: manual-facturacion.md].
-- Al traer un pedido por número, carga cliente, condición de pago de la ficha, lista de precios e ítems con cantidades preparadas [fuente: instructivo-facturacion-tacuari.md]. Solo factura pedidos con leyenda "Pedido preparado - listo para facturar" [fuente: instructivo-facturacion-tacuari.md].
-- Recibe pedidos del área comercial, que pasan a [Lapacho](lapacho.md) para preparación [fuente: manual-facturacion.md].
-- Genera el reporte de control de cada lote antes de la emisión definitiva [fuente: manual-facturacion.md].
-- Al confirmar (F8 y "Sí"), envía el comprobante a ARCA para autorización; con CAE asignado envía el PDF al correo de la ficha e impacta la cuenta corriente [fuente: instructivo-facturacion-tacuari.md] [fuente: manual-facturacion.md].
-- Comprobantes rechazados por ARCA quedan en estado "Rechazado" en Ventas > Comprobantes > Consultar; no se borran [fuente: instructivo-facturacion-tacuari.md].
-- Gestiona los reenvíos del PDF [fuente: manual-facturacion.md].
-- Registra precios especiales (condición especial del cliente o descuento autorizado en el pedido) y la lista de precios vigente. Regla general: la lista se actualiza el primer lunes de cada mes [fuente: manual-facturacion.md]. Excepción de noviembre de 2025: la carga se hace el segundo lunes de noviembre, no el primero, por el feriado [fuente: mail-cambio-lista-precios.md]. Ítems sin precio ("s/p") no se emiten [fuente: instructivo-facturacion-tacuari.md].
-- Vincula cada NC o ND al comprobante que corrige [fuente: manual-facturacion.md].
+- Todos los comprobantes se emiten desde Tacuarí, módulo Ventas, con autorización electrónica de ARCA (ex AFIP) [fuente: manual-facturacion.md].
+- Ruta de emisión de factura: **Ventas > Comprobantes > Nueva factura**; consulta de comprobantes en **Ventas > Comprobantes > Consultar** [fuente: instructivo-facturacion-tacuari.md].
+- Punto de venta vigente para la facturación electrónica: **0004**. Los puntos de venta del sistema Fénix quedan inactivos [fuente: manual-facturacion.md].
+- El tipo de comprobante (Factura A/B, Nota de crédito A/B, Nota de débito A/B) lo determina Tacuarí según la condición frente al IVA de la ficha del cliente; el Sector no lo modifica manualmente [fuente: manual-facturacion.md]. Lo mismo para la factura: no se cambia a mano [fuente: instructivo-facturacion-tacuari.md].
+- Sin razón social, CUIT, condición fiscal, domicilios y correo electrónico en la ficha, Tacuarí no permite la emisión [fuente: manual-facturacion.md].
+- Tacuarí envía la factura en PDF al correo registrado en la ficha del cliente [fuente: manual-facturacion.md]. Con el CAE asignado, también impacta la deuda en la cuenta corriente [fuente: instructivo-facturacion-tacuari.md].
+- Al traer un pedido, Tacuarí toma cliente, condición de pago, lista de precios e ítems con las cantidades preparadas [fuente: instructivo-facturacion-tacuari.md].
+- Confirmación de comprobante con **F8** y ventana de confirmación; al confirmar, el comprobante se envía a ARCA [fuente: instructivo-facturacion-tacuari.md].
+- Comprobante sin CAE no es válido. Si ARCA rechaza, Tacuarí muestra "Comprobante rechazado" con el motivo y el comprobante queda en estado "Rechazado" [fuente: instructivo-facturacion-tacuari.md].
+- Los comprobantes electrónicos autorizados no pueden eliminarse ni modificarse; las correcciones se hacen con notas de crédito o débito, vinculadas en Tacuarí al comprobante que corrigen [fuente: manual-facturacion.md].
+- Los pedidos se registran en Tacuarí por el área comercial; validados, pasan a Lapacho para su preparación [fuente: manual-facturacion.md].
+- Los remitos los emite Tacuarí, vinculados al pedido y a la factura [fuente: manual-facturacion.md].
+- La liberación de pedidos preparados en Lapacho habilita la facturación en Tacuarí [fuente: manual-deposito.md].
 
-## Versiones
-- Sistema vigente desde enero de 2025 [fuente: manual-facturacion.md].
-- Antes (reemplazado): Fénix. Sus puntos de venta quedan inactivos [fuente: manual-facturacion.md].
-- ⚠ Contradicción: el [procedimiento PR-FAC-03 (rev. 00, 14/06/2023)](../proceso/emision-de-notas-de-credito.md) indica emitir las NC en Fénix [fuente: procedimiento-notas-credito-2023.md]; el Manual MAN-FAC-01 indica Tacuarí para todos los comprobantes [fuente: manual-facturacion.md]. Ver detalle en [Facturación](../proceso/facturacion.md).
+## Excepciones
+- No está permitida la emisión de comprobantes manuales, salvo contingencia declarada por el Jefe de Facturación [fuente: manual-facturacion.md].
+- No definido en la documentación: procedimiento de contingencia (cómo se declara, cómo se registran los comprobantes emitidos en contingencia y cómo se regularizan) [fuente: manual-facturacion.md].
+- Si el comprobante no responde tras F8, el instructivo indica esperar y consultar en "Consultar" antes de reintentar; no define un procedimiento de contingencia [fuente: instructivo-facturacion-tacuari.md].
 
-## No definido en la documentación
-- Ver huecos de [Facturación](../proceso/facturacion.md): criterios de contingencia declarada y registros de control [fuente: manual-facturacion.md].
-- Ver huecos de [Emisión de una factura en Tacuarí](../proceso/emision-de-factura-en-tacuari.md): rol de Damián Quiroga Vela, plazos para reintentar comprobantes rechazados, tiempo de espera de ARCA [fuente: instructivo-facturacion-tacuari.md].
-- No definido en la documentación: el porcentaje de aumento por categoría de la lista de noviembre de 2025 [fuente: mail-cambio-lista-precios.md].
+## Cambios respecto de Fénix
+- Valor vigente: comprobantes y notas de crédito se emiten en Tacuarí [fuente: manual-facturacion.md]. Antes (reemplazado): comprobantes y notas de crédito se emitían en Fénix [fuente: procedimiento-notas-credito-2023.md].
 
 ## Relacionado
-- [Emisión de una factura en Tacuarí](../proceso/emision-de-factura-en-tacuari.md)
-- [Facturación: ciclo, remitos, duplicados y anulaciones](../proceso/facturacion.md)
-- [Actualización de lista de precios (noviembre 2025)](../proceso/actualizacion-lista-de-precios.md)
-- [Zonas de reparto](../proceso/zonas-de-reparto.md)
-- [Sistema Lapacho](lapacho.md)
-- [Índice](../index.md)
+- [Sistema Fénix](fenix.md): sistema anterior, reemplazado por Tacuarí en enero de 2025.
+- [Sistema Lapacho](lapacho.md): depósito; integración con Tacuarí.
+- [Facturación diaria](../proceso/facturacion-diaria.md)
+- [Emisión de factura en Tacuarí (paso a paso)](../proceso/emision-de-factura-tacuari.md)
+- [Conciliación de remitos](../proceso/conciliacion-de-remitos.md)
+- [Emisión de notas de crédito](../proceso/emision-notas-de-credito.md)

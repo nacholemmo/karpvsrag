@@ -1,0 +1,41 @@
+[
+ {
+  "ts": "2026-11-17T23:28:52+00:00",
+  "errores_antes": 13,
+  "errores_despues": 12,
+  "costo_usd": 0.022362,
+  "turnos": 6,
+  "cortada": null,
+  "escritos": [
+   "wiki/politica/descuentos-sobre-lista.md"
+  ]
+ },
+ {
+  "ts": "2026-11-17T23:30:20+00:00",
+  "errores_antes": 12,
+  "errores_despues": 5,
+  "costo_usd": 0.02186,
+  "turnos": 5,
+  "cortada": "contexto",
+  "escritos": [
+   "wiki/politica/zonas-de-reparto.md",
+   "wiki/proceso/atencion-al-cliente-consultas.md",
+   "wiki/proceso/recepcion-de-mercaderia.md",
+   "wiki/proceso/recepcion-domingos-lacteos-la-tranquera.md"
+  ]
+ },
+ {
+  "ts": "2026-11-17T23:31:15+00:00",
+  "errores_antes": 5,
+  "errores_despues": 0,
+  "costo_usd": 0.01589,
+  "turnos": 6,
+  "cortada": null,
+  "escritos": [
+   "wiki/proceso/novedades-turno-noche-octubre-2025.md",
+   "wiki/proceso/recibos-y-conciliacion-bancaria.md",
+   "wiki/proceso/reclamo-hermanos-lutz-sucursal-4.md",
+   "wiki/proceso/televentas.md"
+  ]
+ }
+]

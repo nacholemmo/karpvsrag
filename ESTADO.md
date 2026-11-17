@@ -1,19 +1,26 @@
 # ESTADO
 
-**Fase actual:** 2 (Evals) cerrada con el OK del usuario. Próxima: fase 3 (brazos), con plan a aprobar.
+**Fase actual:** 3 (Brazos) implementada y revisada. Falta el OK del usuario para cerrarla. Próxima: fase 4 (corrida y resultados), con plan a aprobar.
 
 ## Hecho
-- **Fase 1 (corpus):** cerrada con el OK del usuario. El 11/11/2026 el corpus se recortó a 91,7k tokens de Haiku 5.5, para quedar bajo el umbral de precio de 100k.
-- **Fase 2:**
-  - `comun/`: configuración, precios, cliente con log JSONL y tope por corrida, formato de respuesta.
-  - 50 preguntas en `evals/preguntas.jsonl`, con su validador.
-  - Rúbrica (`evals/RUBRICA.md`) y juez (`evals/juez.py`), con el control en código `fuente_exacta`.
-  - Revisión independiente hecha y sus correcciones aplicadas.
-  - **Muestra:** 9 respuestas reales (Haiku con contexto completo y caché) más 6 sintéticas, las 15 juzgadas por Haiku. Se exportó `evals/revision_manual.csv` a ciegas.
-- **Caché:** funciona. La primera llamada escribe ~92k tokens y las siguientes cuestan ~USD 0,001.
+- **Fase 1** (corpus, 91,7k tokens) y **fase 2** (50 preguntas, juez Haiku, acuerdo humano vs. juez de 80% en v2): cerradas.
+- **Fase 3:**
+  - Tres brazos con formato común: `brazos/contexto`, `brazos/rag` y `brazos/wiki`.
+  - Las 5 preguntas de prueba (P03, P14, P27, P37, P48) dan correcta en los tres brazos con la wiki v3 (`resultados/prueba_fase3/`).
+  - Revisión independiente hecha y corregida: filtración en `ESQUEMA.md`, tope de contexto, excepciones de archivos, RAG con e5 a 512 tokens.
+  - Wiki v3 reconstruida con el harness y el esquema finales: ingesta USD 0,543, lint USD 0,06, 52 páginas, lint sin errores.
+- **Gasto real acumulado de la API:** USD 1,876. Por brazo, en `logs/llamadas.jsonl`: la ingesta de la wiki suma 1,61 entre las tres versiones y el lint 0,16. Saldo aproximado: USD 1,96.
 
-- **Acuerdo humano vs. juez en veredicto:** v1 11/15 (73%, kappa 0,49); v2 12/15 (80%, kappa 0,58), después de corregir P01 y P22 y ajustar la rúbrica (algo inflado: se ajustó mirando estas 15). Contra las 6 sintéticas, el juez acierta 6/6 en v2 (5/6 en v1). Detalles en `evals/acuerdo.md` y `evals/acuerdo_v1.md`.
-- **Gasto real acumulado de la API:** ver `logs/llamadas.jsonl`. Cerca de USD 0,04 al cierre de la fase 2.
+## Pendiente
+- [ ] OK del usuario para cerrar la fase 3.
+- [ ] Plan de la fase 4: 50 preguntas × 3 brazos, juicios, `results.json`, prueba de actualización (3 documentos modificados y 10 preguntas nuevas) y `fallos.md`.
 
-## Próximos pasos
-Plan de la fase 3: contexto completo, RAG con embeddings locales y BM25, y wiki con ingesta, consulta y lint.
+## Notas para la fase 4
+- **Errores de contenido de la wiki que detectó la revisión de la fase 3** (sobre la v2; revisar si siguen en la v3):
+  - V6 registrada como contradicción;
+  - C5 no registrada;
+  - huecos desactualizados por la ingesta cronológica.
+- **Candidatos para `fallos.md`:** las sesiones de ingesta sin escrituras (v1), el índice truncado (v1), la filtración del esquema (v2) y el agente de lint que corrige de a poco.
+- **Inconsistencias accidentales del corpus que encontró la revisión:**
+  - orden de compra en Lapacho vs. Tacuarí;
+  - efectivo "exclusivamente contra recibo oficial" vs. la constancia del FAQ de vendedores.

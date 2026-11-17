@@ -75,6 +75,31 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
 
 - **Calibración del juez:** con la revisión manual se corrigieron P01 y P22 y se ajustó la rúbrica (v1 → v2). El juez Haiku no es determinista, así que conviene reportar su variación cuando se re-juzgue.
 
+## Decisiones de la fase 3 (brazos)
+
+- **Interfaz común:** `brazos/<brazo>/brazo.py` expone `responder(pregunta, corrida)` y devuelve `{respuesta, fuentes, costo_usd, latencia_s, llamadas, extra}`.
+  - `brazos/correr.py` escribe `resultados/respuestas_<brazo>.jsonl` y saltea lo ya hecho.
+  - Las 5 preguntas de prueba son P03, P14, P27, P37 y P48. Sus respuestas de la fase 3 están en `resultados/prueba_fase3/`.
+- **Contexto:** el corpus completo va en el system prompt con caché. Cuesta ~USD 0,001 por pregunta con la caché caliente.
+- **RAG:**
+  - Fragmentos por sección Markdown, de hasta 300 palabras, para no pasar los 512 tokens de e5.
+  - Embeddings `intfloat/multilingual-e5-small` en CPU, con los prefijos `query:`/`passage:`, más BM25 (sin tildes ni stopwords) fusionados con RRF (k=60).
+  - `TOP_K=8` por defecto.
+  - Índice en `indices/rag/`, que no se versiona y se reconstruye si cambian el corpus o los parámetros.
+  - `scripts/recall_rag.py` mide gratis la recuperación: con top-8, 39/40.
+- **Wiki** (patrón Karpathy):
+  - `ESQUEMA.md` es el contrato. **No puede contener respuestas de referencia** (hay un test que lo verifica): una versión anterior filtraba P43, P26 y P45.
+  - Herramientas `listar`/`leer`/`escribir` con rutas validadas. La consulta solo lee `wiki/`, y nada escribe en `corpus/`.
+  - Ingesta: una sesión por documento, en orden cronológico, con un tope de 15 turnos y guardias para tres casos: sesiones sin escrituras, respuestas cortadas por `max_tokens` y contexto estimado antes de enviar (70k / 90k, por el umbral de 100k de Haiku).
+  - Lint: chequeo en código más un agente que corrige.
+- **Historia de la wiki** (va para `fallos.md`):
+  - v1: 6 documentos sin escribir y el índice truncado a 12k caracteres.
+  - v2: harness corregido, pero el esquema filtraba respuestas.
+  - **v3, la vigente:** ingesta de USD 0,543 en 42 minutos, lint de USD 0,06 en 3 pasadas, 52 páginas y lint sin errores.
+  - Las métricas de cada versión están en `resultados/ingesta_wiki*.json` y `resultados/lint_wiki.json`.
+- **Errores de contenido de la wiki:** no se corrigen a mano, porque sesgaría el experimento; se reportan como resultado.
+- **Red:** el DNS del proveedor del usuario bloquea `files.pythonhosted.org`. Para instalar paquetes hace falta una entrada temporal en `/etc/hosts` (la agrega y la quita el usuario).
+
 ## Comandos
 
 ```bash
@@ -89,4 +114,9 @@ uv venv --python 3.12 .venv && uv pip install --python .venv -r requirements.txt
 .venv/bin/python evals/juez.py --respuestas evals/muestra_respuestas.jsonl --respuestas evals/respuestas_sinteticas.jsonl --salida evals/juicios_muestra.jsonl
 .venv/bin/python evals/muestra.py exportar                 # revision_manual.csv a ciegas
 .venv/bin/python scripts/acuerdo.py                        # cuando el CSV esté completo
+.venv/bin/python brazos/rag/indexar.py                     # índice RAG local (gratis)
+.venv/bin/python scripts/recall_rag.py                     # recuperación del RAG (gratis)
+.venv/bin/python brazos/wiki/ingesta.py                    # compila la wiki (usa la API; PRESUPUESTO_USD=1.00)
+.venv/bin/python brazos/wiki/lint.py [--corregir]          # lint (en código gratis; --corregir usa la API)
+.venv/bin/python brazos/correr.py --brazo contexto|rag|wiki --prueba|--todas|--preguntas P01,P02 [--estimar]
 ```
