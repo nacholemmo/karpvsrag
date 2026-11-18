@@ -1,0 +1,131 @@
+:root {
+  color-scheme: light;
+  --pagina: #f9f9f7;
+  --superficie: #fcfcfb;
+  --tinta: #0b0b0b;
+  --tinta-2: #52514e;
+  --tinta-suave: #6b6a65;
+  --linea: #e1e0d9;
+  --eje: #c3c2b7;
+  --borde: rgba(11, 11, 11, 0.10);
+  --acento: #1c5cab;
+  --s-contexto: #2a78d6;
+  --s-rag: #eb6834;
+  --s-wiki: #1baf7a;
+  --ok: #0ca30c;
+  --parcial: #fab219;
+  --mal: #d03b3b;
+  --en-ok: #ffffff;
+  --en-parcial: #0b0b0b;
+  --en-mal: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --pagina: #0d0d0d;
+    --superficie: #1a1a19;
+    --tinta: #f0efec;
+    --tinta-2: #c3c2b7;
+    --tinta-suave: #a3a29b;
+    --linea: #2c2c2a;
+    --eje: #383835;
+    --borde: rgba(255, 255, 255, 0.10);
+    --acento: #86b6ef;
+    --s-contexto: #3987e5;
+    --s-rag: #d95926;
+    --s-wiki: #199e70;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --pagina: #0d0d0d;
+  --superficie: #1a1a19;
+  --tinta: #f0efec;
+  --tinta-2: #c3c2b7;
+  --tinta-suave: #a3a29b;
+  --linea: #2c2c2a;
+  --eje: #383835;
+  --borde: rgba(255, 255, 255, 0.10);
+  --acento: #86b6ef;
+  --s-contexto: #3987e5;
+  --s-rag: #d95926;
+  --s-wiki: #199e70;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--pagina);
+  color: var(--tinta);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main, header.cabecera, footer { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+header.cabecera { padding-top: 48px; padding-bottom: 8px; }
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; margin: 48px 0 12px; line-height: 1.25; }
+h3 { font-size: 1.05rem; margin: 24px 0 8px; }
+p, li { color: var(--tinta-2); }
+strong { color: var(--tinta); }
+a { color: var(--acento); }
+.bajada { font-size: 1.1rem; }
+.meta { font-size: 0.9rem; color: var(--tinta-suave); }
+code { font-size: 0.9em; background: var(--superficie); border: 1px solid var(--borde); border-radius: 4px; padding: 0 4px; }
+
+.cifras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 24px 0 8px; }
+.cifra { background: var(--superficie); border: 1px solid var(--borde); border-radius: 10px; padding: 14px; }
+.cifra .nombre { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; color: var(--tinta-2); }
+.cifra .valor { font-size: 2rem; font-weight: 650; color: var(--tinta); line-height: 1.1; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.cifra .detalle { font-size: 0.85rem; color: var(--tinta-suave); }
+.punto { width: 10px; height: 10px; border-radius: 50%; flex: none; display: inline-block; }
+
+.brazos { list-style: none; padding: 0; display: grid; gap: 12px; }
+.brazos li { background: var(--superficie); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; }
+.brazos li strong { display: flex; align-items: center; gap: 8px; }
+
+.tabla-envoltura { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--borde); border-radius: 10px; background: var(--superficie); }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--linea); white-space: nowrap; color: var(--tinta); }
+th:first-child, td:first-child { text-align: left; }
+thead th { color: var(--tinta-2); font-weight: 600; font-size: 0.82rem; }
+tbody tr:last-child td { border-bottom: none; }
+
+figure.grafico { margin: 24px 0; background: var(--superficie); border: 1px solid var(--borde); border-radius: 10px; padding: 16px; }
+figure.grafico figcaption { font-weight: 600; color: var(--tinta); margin-bottom: 4px; }
+figure.grafico .sub { font-size: 0.85rem; color: var(--tinta-suave); margin: 0 0 8px; }
+.leyenda { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.85rem; color: var(--tinta-2); margin: 4px 0 8px; padding: 0; list-style: none; }
+.leyenda li { display: flex; align-items: center; gap: 6px; }
+.leyenda .muestra { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+svg { display: block; max-width: 100%; height: auto; overflow: visible; }
+svg text { fill: var(--tinta-2); font-size: 13px; font-family: inherit; }
+svg .valor { fill: var(--tinta); font-size: 12px; }
+svg .rejilla { stroke: var(--linea); stroke-width: 1; }
+svg .eje { stroke: var(--eje); stroke-width: 1; }
+svg .marca:hover, svg .marca:focus { opacity: 0.85; outline: none; }
+details { margin-top: 10px; font-size: 0.9rem; }
+details summary { cursor: pointer; color: var(--acento); }
+details .tabla-envoltura { margin-top: 8px; }
+
+.globo { position: fixed; pointer-events: none; background: var(--tinta); color: var(--pagina); font-size: 0.82rem; padding: 6px 9px; border-radius: 6px; max-width: 260px; z-index: 10; opacity: 0; transition: opacity 0.08s; }
+.globo.visible { opacity: 1; }
+
+.aviso { border-left: 3px solid var(--parcial); background: var(--superficie); padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
+.fallos { display: grid; gap: 12px; padding: 0; list-style: none; }
+.fallos li { background: var(--superficie); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; }
+.fallos li strong { display: block; margin-bottom: 4px; }
+.fallos li p { margin: 0; font-size: 0.95rem; }
+.etiqueta { display: inline-block; font-size: 0.75rem; border: 1px solid var(--borde); border-radius: 999px; padding: 0 8px; margin-bottom: 6px; color: var(--tinta-2); }
+
+footer { margin-top: 56px; padding-top: 16px; padding-bottom: 48px; border-top: 1px solid var(--linea); font-size: 0.9rem; color: var(--tinta-suave); }
+.error { color: var(--mal); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.55rem; }
+  .cifras { grid-template-columns: 1fr; }
+  .cifra { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .cifra .valor { font-size: 1.6rem; margin-top: 0; }
+}
+@media (forced-colors: active) {
+  .punto, .leyenda .muestra { forced-color-adjust: none; }
+}

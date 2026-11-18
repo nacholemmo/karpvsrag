@@ -246,7 +246,11 @@ def main() -> int:
         out["actualizacion"] = {"brazos": act, "costo_y_tiempo_de_actualizar": datos_act,
                                 "brazos_referencias_originales": armar("_actualizacion", "preguntas_actualizacion.jsonl",
                                                                        "juicios_actualizacion_referencias_originales.jsonl")}
-    (RES / "results.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    texto = json.dumps(out, ensure_ascii=False, indent=2) + "\n"
+    (RES / "results.json").write_text(texto, encoding="utf-8")
+    copia = RAIZ / "site" / "datos" / "results.json"  # la landing lee esta copia
+    copia.parent.mkdir(parents=True, exist_ok=True)
+    copia.write_text(texto, encoding="utf-8")
     (RES / "resumen.md").write_text(resumen(out), encoding="utf-8")
     print((RES / "resumen.md").read_text(encoding="utf-8"))
     return 0

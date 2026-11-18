@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contexto vs RAG vs Wiki</title>
+  <meta name="description" content="Experimento que compara contexto completo, RAG híbrido y una wiki LLM estilo Karpathy respondiendo preguntas sobre 50 documentos sintéticos de procesos de una empresa.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='8' width='3' height='7' rx='1' fill='%232a78d6'/%3E%3Crect x='6.5' y='4' width='3' height='11' rx='1' fill='%23eb6834'/%3E%3Crect x='12' y='1' width='3' height='14' rx='1' fill='%231baf7a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <p class="meta">Experimento · noviembre de 2026 · todo el contenido es sintético</p>
+    <h1>Contexto completo, RAG o wiki LLM: ¿cuál responde mejor sobre los procesos de una empresa?</h1>
+    <p class="bajada">Comparé tres formas de responder 50 preguntas sobre 50 documentos internos de una distribuidora de alimentos inventada, con el mismo modelo en los tres casos. Los números de esta página salen de la corrida real.</p>
+    <div class="cifras" id="cifras" aria-live="polite"></div>
+    <p class="meta" id="nota-cifras"></p>
+    <p><a class="repo" href="#">Código, datos y respuestas en GitHub</a></p>
+  </header>
+
+  <main>
+    <section aria-labelledby="t-que">
+      <h2 id="t-que">Qué se comparó</h2>
+      <ul class="brazos">
+        <li><strong><span class="punto" style="background:var(--s-contexto)"></span>Contexto completo</strong>
+          Los 50 documentos van enteros en el prompt (unos 92 mil tokens, con caché) y el modelo responde en una sola llamada.</li>
+        <li><strong><span class="punto" style="background:var(--s-rag)"></span>RAG híbrido</strong>
+          Los documentos se cortan por secciones. Se buscan los 8 fragmentos más relevantes combinando embeddings locales (multilingual-e5-small) y BM25 con fusión de rankings, y solo esos llegan al modelo.</li>
+        <li><strong><span class="punto" style="background:var(--s-wiki)"></span>Wiki LLM (estilo Karpathy)</strong>
+          Un agente lee el corpus y lo compila en una wiki Markdown con índice, citas y datos copiados textualmente. Para responder, otro agente navega solo esa wiki, sin acceso a los documentos originales.</li>
+      </ul>
+      <p>Los tres brazos usan el mismo modelo, Claude Haiku 5.5, y devuelven el mismo formato: respuesta más documentos citados.</p>
+    </section>
+
+    <section aria-labelledby="t-como">
+      <h2 id="t-como">Cómo se midió</h2>
+      <ul>
+        <li><strong>Corpus:</strong> 50 documentos sintéticos (manuales, políticas, instructivos, actas, mails, notas desprolijas) con defectos plantados: procesos con versión vieja y nueva, 5 contradicciones, referencias cruzadas y huecos.</li>
+        <li><strong>Preguntas:</strong> 50, diez de cada tipo: dato puntual, procedimiento, cruce de 2-3 documentos, contradicción o versión, y sin respuesta en el corpus (lo correcto es decir que no figura).</li>
+        <li><strong>Juez:</strong> un modelo compara cada respuesta con la referencia según una rúbrica escrita y la marca como correcta, parcial o incorrecta. Se corrió tres veces y vale el voto mayoritario.</li>
+        <li><strong>Puntaje:</strong> correctas + 0,5 × parciales, sobre el total de preguntas.</li>
+        <li id="acuerdo"></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="t-res">
+      <h2 id="t-res">Resultados</h2>
+      <div class="tabla-envoltura"><table id="tabla-resultados" aria-label="Resultados por brazo"></table></div>
+      <p class="meta" id="nota-tabla"></p>
+
+      <figure class="grafico" id="g-tipos">
+        <figcaption>Puntaje por tipo de pregunta</figcaption>
+        <p class="sub">Puntaje de 0 a 1 en cada tipo (10 preguntas por tipo; 5 en contradicción y 5 en versión).</p>
+      </figure>
+
+      <figure class="grafico" id="g-veredictos">
+        <figcaption>Cómo se reparten los veredictos</figcaption>
+        <p class="sub">Cantidad de respuestas correctas, parciales e incorrectas sobre 50.</p>
+      </figure>
+
+      <figure class="grafico" id="g-costo">
+        <figcaption>Costo por consulta vs. puntaje</figcaption>
+        <p class="sub">Costo medio por pregunta en USD, sin contar la preparación de cada brazo.</p>
+      </figure>
+    </section>
+
+    <section aria-labelledby="t-act">
+      <h2 id="t-act">Prueba de actualización</h2>
+      <p>Después de la corrida principal se modificaron 3 documentos (un tope de aprobación, dos plazos de reclamos, el home office). Cada brazo se actualizó y respondió 10 preguntas nuevas sobre esos cambios.</p>
+      <div class="tabla-envoltura"><table id="tabla-actualizacion" aria-label="Prueba de actualización"></table></div>
+      <p class="aviso">La actualización de la wiki quedó incompleta. Las páginas principales tomaron los valores nuevos, pero otras páginas que repetían esos datos siguen con los viejos como vigentes. Ninguna de las 10 preguntas lo penalizó, y el lint automático tampoco lo detecta.</p>
+    </section>
+
+    <section aria-labelledby="t-fallos">
+      <h2 id="t-fallos">Fallos que vale la pena mirar</h2>
+      <ul class="fallos">
+        <li><span class="etiqueta">RAG</span><strong>El documento entra, el fragmento no</strong>
+          <p>En varias preguntas de procedimiento, el documento correcto estaba entre los recuperados, pero no el fragmento con los pasos clave. Medido por documento, el RAG recupera bien en 39 de 40 preguntas; en procedimientos saca 0,60.</p></li>
+        <li><span class="etiqueta">Wiki</span><strong>Un dato se pierde en la compilación</strong>
+          <p>La frecuencia del inventario general («dos veces por año») no quedó en ninguna de las 52 páginas. Como la consulta solo lee la wiki, respondió que no hay periodicidad definida.</p></li>
+        <li><span class="etiqueta">Wiki</span><strong>Una contradicción plantada nunca se registró</strong>
+          <p>El manual del vendedor promete entregas en «24 a 48 horas» y la FAQ de clientes, en «72 horas». La wiki solo tiene las 72 horas: del manual del vendedor, el agente extrajo otros temas.</p></li>
+        <li><span class="etiqueta">RAG</span><strong>Ve la contradicción pero elige un ganador</strong>
+          <p>Con fragmentos sueltos, mencionó los dos plazos en conflicto y después eligió el del manual «por ser el documento formal», una jerarquía que el corpus no establece. El contexto completo resolvió bien las 5 contradicciones.</p></li>
+        <li><span class="etiqueta">Evaluación</span><strong>Referencias que castigaban respuestas fieles</strong>
+          <p>Algunas referencias de las preguntas sin respuesta omitían cosas que el corpus sí dice, y el juez castigaba a quien las mencionaba. Primero corregí solo una pregunta, y eso favorecía a dos brazos. Después se corrigieron las 10 con el mismo criterio y se publican ambos puntajes.</p></li>
+        <li><span class="etiqueta">Proceso</span><strong>El esquema de la wiki filtraba respuestas</strong>
+          <p>Los ejemplos del documento que guía a los agentes de la wiki eran, literalmente, respuestas de la evaluación. Lo detectó una revisión independiente y la wiki se reconstruyó. En total, compilar la wiki costó tres veces lo que cuesta la versión final.</p></li>
+      </ul>
+      <p><a class="repo" data-ruta="resultados/fallos.md" href="#">Los 10 fallos, con su causa y evidencia</a></p>
+    </section>
+
+    <section aria-labelledby="t-limites">
+      <h2 id="t-limites">Límites</h2>
+      <ul id="limites"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Corpus, empresa, personas y datos son inventados. Código bajo licencia MIT. <a class="repo" href="#">Repositorio</a> · <a class="repo" data-ruta="resultados/results.json" href="#">results.json</a></p>
+  </footer>
+
+  <div class="globo" id="globo" role="status"></div>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -82,6 +82,16 @@ Cada llamada queda registrada en `logs/llamadas.jsonl` (no versionado) con el br
 
 El tag `linea-base` marca el corpus de la corrida principal. Después se modificaron 3 documentos para la prueba de actualización (`git diff linea-base -- corpus/`).
 
+## Landing (`site/`)
+
+Sitio estático en HTML, CSS y JS sin paso de build. Lee `site/datos/results.json`, una copia que `scripts/resultados.py` escribe junto con `resultados/results.json`.
+
+- **Ver la landing en local:** `python -m http.server -d site 8000` y abrir http://localhost:8000.
+- **Antes de publicar:** completar la URL del repo en `site/config.js` (`REPO_URL`).
+- **Publicar en Render**, de cualquiera de estas dos formas:
+  - con el blueprint `render.yaml` (New → Blueprint);
+  - a mano: New → Static Site, con *Publish directory* `site` y *Build command* vacío.
+
 ## Estructura
 
 | Ruta | Contenido |

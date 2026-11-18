@@ -1,0 +1,7 @@
+# Blueprint de Render: sitio estático sin paso de build. Publica la carpeta site/.
+services:
+  - type: web
+    name: contexto-vs-rag-vs-wiki
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: ./site
