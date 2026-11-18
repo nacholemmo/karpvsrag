@@ -1,13 +1,13 @@
 # Resumen de resultados
 
-Modelo: claude-haiku-5-5 (responde y juzga). Commit: befbfe1. Puntaje: correcta + 0,5 × parcial, sobre el total de preguntas.
+Modelo: claude-haiku-5-5 (responde y juzga). Commit: ddfdd63. Puntaje: correcta + 0,5 × parcial, sobre el total de preguntas.
 
 ## Corrida principal (50 preguntas)
 
 | Brazo | Puntaje | Correcta | Parcial | Incorrecta | Costo/consulta (media) | Latencia (mediana) | Llamadas/consulta |
 |---|---|---|---|---|---|---|---|
-| contexto | 0.960 | 94.0% | 4.0% | 2.0% | USD 0.00134 | 2.2 s | 1.00 |
-| rag | 0.810 | 70.0% | 22.0% | 8.0% | USD 0.00054 | 2.2 s | 1.00 |
+| contexto | 0.970 | 96.0% | 2.0% | 2.0% | USD 0.00134 | 2.2 s | 1.00 |
+| rag | 0.820 | 72.0% | 20.0% | 8.0% | USD 0.00054 | 2.2 s | 1.00 |
 | wiki | 0.870 | 78.0% | 18.0% | 4.0% | USD 0.00259 | 5.0 s | 3.04 |
 
 ### Puntaje por tipo de pregunta
@@ -19,7 +19,7 @@ Modelo: claude-haiku-5-5 (responde y juzga). Commit: befbfe1. Puntaje: correcta 
 | cruce | 1.00 (10/10) | 0.85 (8/10) | 0.90 (8/10) |
 | contradiccion | 1.00 (5/5) | 0.80 (3/5) | 0.90 (4/5) |
 | version | 1.00 (5/5) | 0.70 (3/5) | 0.80 (4/5) |
-| sin_respuesta | 0.80 (7/10) | 0.90 (8/10) | 0.70 (5/10) |
+| sin_respuesta | 0.85 (8/10) | 0.95 (9/10) | 0.70 (5/10) |
 
 ### Fuentes (etiqueta del juez)
 

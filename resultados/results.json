@@ -7,7 +7,7 @@
     "preguntas": 50,
     "documentos": 50,
     "tokens_corpus_haiku": 91737,
-    "commit": "befbfe1",
+    "commit": "ddfdd63",
     "puntaje": "correcta + 0,5 × parcial, sobre el total de preguntas",
     "advertencias": [
       "Corpus sintético de 50 documentos de una empresa ficticia.",
@@ -16,6 +16,19 @@
       "Las preguntas y las referencias las escribieron agentes a partir de hechos.csv; no hubo revisión humana de las 50."
     ]
   },
+  "correcciones_post_corrida": [
+    {
+      "pregunta": "P25",
+      "motivo": "La referencia omitía que las notas del turno noche registran una sugerencia informal (llamar a la policía y a Walter); el juez penalizaba respuestas fieles al corpus. Se completó la referencia y se re-juzgó P25 en los tres brazos.",
+      "antes": {
+        "contexto": "parcial",
+        "rag": "parcial",
+        "wiki": "correcta"
+      },
+      "despues": "correcta en los tres",
+      "juicios_anteriores": "resultados/juicios_P25_antes_de_corregir_referencia.jsonl"
+    }
+  ],
   "acuerdo_humano_juez": {
     "v1": {
       "n": 15,
@@ -70,13 +83,13 @@
     "contexto": {
       "exactitud": {
         "n": 50,
-        "correcta": 47,
-        "parcial": 2,
+        "correcta": 48,
+        "parcial": 1,
         "incorrecta": 1,
-        "pct_correcta": 94.0,
-        "pct_parcial": 4.0,
+        "pct_correcta": 96.0,
+        "pct_parcial": 2.0,
         "pct_incorrecta": 2.0,
-        "puntaje": 0.96
+        "puntaje": 0.97
       },
       "por_tipo": {
         "dato": {
@@ -131,13 +144,13 @@
         },
         "sin_respuesta": {
           "n": 10,
-          "correcta": 7,
-          "parcial": 2,
+          "correcta": 8,
+          "parcial": 1,
           "incorrecta": 1,
-          "pct_correcta": 70.0,
-          "pct_parcial": 20.0,
+          "pct_correcta": 80.0,
+          "pct_parcial": 10.0,
           "pct_incorrecta": 10.0,
-          "puntaje": 0.8
+          "puntaje": 0.85
         }
       },
       "fuente_juez": {
@@ -172,13 +185,13 @@
     "rag": {
       "exactitud": {
         "n": 50,
-        "correcta": 35,
-        "parcial": 11,
+        "correcta": 36,
+        "parcial": 10,
         "incorrecta": 4,
-        "pct_correcta": 70.0,
-        "pct_parcial": 22.0,
+        "pct_correcta": 72.0,
+        "pct_parcial": 20.0,
         "pct_incorrecta": 8.0,
-        "puntaje": 0.81
+        "puntaje": 0.82
       },
       "por_tipo": {
         "dato": {
@@ -233,13 +246,13 @@
         },
         "sin_respuesta": {
           "n": 10,
-          "correcta": 8,
-          "parcial": 2,
+          "correcta": 9,
+          "parcial": 1,
           "incorrecta": 0,
-          "pct_correcta": 80.0,
-          "pct_parcial": 20.0,
+          "pct_correcta": 90.0,
+          "pct_parcial": 10.0,
           "pct_incorrecta": 0.0,
-          "puntaje": 0.9
+          "puntaje": 0.95
         }
       },
       "fuente_juez": {

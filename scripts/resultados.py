@@ -167,6 +167,12 @@ def main() -> int:
                 "Las preguntas y las referencias las escribieron agentes a partir de hechos.csv; no hubo revisión humana de las 50.",
             ],
         },
+        "correcciones_post_corrida": [
+            {"pregunta": "P25", "motivo": "La referencia omitía que las notas del turno noche registran una sugerencia informal "
+             "(llamar a la policía y a Walter); el juez penalizaba respuestas fieles al corpus. Se completó la referencia y se "
+             "re-juzgó P25 en los tres brazos.", "antes": {"contexto": "parcial", "rag": "parcial", "wiki": "correcta"},
+             "despues": "correcta en los tres", "juicios_anteriores": "resultados/juicios_P25_antes_de_corregir_referencia.jsonl"},
+        ],
         "acuerdo_humano_juez": acuerdo_humano(),
         "recall_rag": recall,
         "brazos": armar(),
