@@ -97,6 +97,7 @@ def corregir(errores: list[str]) -> dict:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--corregir", action="store_true")
+    ap.add_argument("--etapa", default="construccion", help="etiqueta del registro de costo (construccion / actualizacion)")
     args = ap.parse_args(argv)
     wiki, corpus = config.RAIZ / "wiki", config.CORPUS
     errores = chequear(wiki, corpus)
@@ -113,7 +114,7 @@ def main(argv: list[str] | None = None) -> int:
         historial = json.loads(registro.read_text(encoding="utf-8")) if registro.exists() else []
         from datetime import datetime, timezone
         historial.append({"ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                          "errores_antes": antes, "errores_despues": len(errores), **res})
+                          "etapa": args.etapa, "errores_antes": antes, "errores_despues": len(errores), **res})
         registro.write_text(json.dumps(historial, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         for e in errores:
             print(f"  - {e}")

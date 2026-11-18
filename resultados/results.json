@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "modelo_respuesta": "claude-haiku-5-5",
+    "modelo_juez": "claude-haiku-5-5",
+    "effort": "low",
+    "rag_top_k": 8,
+    "preguntas": 50,
+    "documentos": 50,
+    "tokens_corpus_haiku": 91737,
+    "commit": "5d95c08",
+    "puntaje": "correcta + 0,5 × parcial, sobre el total de preguntas",
+    "advertencias": [
+      "Corpus sintético de 50 documentos de una empresa ficticia.",
+      "Un solo modelo (Haiku 5.5) responde en los tres brazos y también juzga: hay sesgo de autoevaluación.",
+      "Una sola corrida por brazo; el juez no es determinista.",
+      "Las preguntas y las referencias las escribieron agentes a partir de hechos.csv; no hubo revisión humana de las 50."
+    ]
+  },
+  "acuerdo_humano_juez": {
+    "v1": {
+      "n": 15,
+      "acuerdo": 11,
+      "kappa": 0.4915
+    },
+    "v2": {
+      "n": 15,
+      "acuerdo": 12,
+      "kappa": 0.5833
+    },
+    "nota": "v2 se calculó después de ajustar la rúbrica y dos referencias mirando estas mismas 15 respuestas; las etiquetas de fuente y el veredicto de un caso los completó Claude a pedido del usuario."
+  },
+  "recall_rag": {
+    "top_5": {
+      "total": "37/40",
+      "contradiccion": "5/5",
+      "cruce": "7/10",
+      "dato": "10/10",
+      "procedimiento": "10/10",
+      "version": "5/5",
+      "fallos": [
+        "P26",
+        "P30",
+        "P32"
+      ]
+    },
+    "top_8": {
+      "total": "39/40",
+      "contradiccion": "5/5",
+      "cruce": "9/10",
+      "dato": "10/10",
+      "procedimiento": "10/10",
+      "version": "5/5",
+      "fallos": [
+        "P32"
+      ]
+    },
+    "top_12": {
+      "total": "39/40",
+      "contradiccion": "5/5",
+      "cruce": "9/10",
+      "dato": "10/10",
+      "procedimiento": "10/10",
+      "version": "5/5",
+      "fallos": [
+        "P32"
+      ]
+    }
+  },
+  "brazos": {
+    "contexto": {
+      "exactitud": {
+        "n": 50,
+        "correcta": 47,
+        "parcial": 2,
+        "incorrecta": 1,
+        "pct_correcta": 94.0,
+        "pct_parcial": 4.0,
+        "pct_incorrecta": 2.0,
+        "puntaje": 0.96
+      },
+      "por_tipo": {
+        "dato": {
+          "n": 10,
+          "correcta": 10,
+          "parcial": 0,
+          "incorrecta": 0,
+          "pct_correcta": 100.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 1.0
+        },
+        "procedimiento": {
+          "n": 10,
+          "correcta": 10,
+          "parcial": 0,
+          "incorrecta": 0,
+          "pct_correcta": 100.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 1.0
+        },
+        "cruce": {
+          "n": 10,
+          "correcta": 10,
+          "parcial": 0,
+          "incorrecta": 0,
+          "pct_correcta": 100.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 1.0
+        },
+        "contradiccion": {
+          "n": 5,
+          "correcta": 5,
+          "parcial": 0,
+          "incorrecta": 0,
+          "pct_correcta": 100.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 1.0
+        },
+        "version": {
+          "n": 5,
+          "correcta": 5,
+          "parcial": 0,
+          "incorrecta": 0,
+          "pct_correcta": 100.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 1.0
+        },
+        "sin_respuesta": {
+          "n": 10,
+          "correcta": 7,
+          "parcial": 2,
+          "incorrecta": 1,
+          "pct_correcta": 70.0,
+          "pct_parcial": 20.0,
+          "pct_incorrecta": 10.0,
+          "puntaje": 0.8
+        }
+      },
+      "fuente_juez": {
+        "correcta": 39,
+        "parcial": 1,
+        "incorrecta": 0,
+        "no_aplica": 10
+      },
+      "fuente_exacta": {
+        "correcta": 40,
+        "parcial": 0,
+        "incorrecta": 0,
+        "no_aplica": 10
+      },
+      "sin_respuesta_valida": [],
+      "costo_usd": {
+        "total": 0.067112,
+        "media": 0.001342,
+        "mediana": 0.001096,
+        "p90": 0.001277
+      },
+      "latencia_s": {
+        "media": 2.564,
+        "mediana": 2.213,
+        "p90": 3.817
+      },
+      "llamadas_por_pregunta": {
+        "media": 1,
+        "max": 1
+      }
+    },
+    "rag": {
+      "exactitud": {
+        "n": 50,
+        "correcta": 35,
+        "parcial": 11,
+        "incorrecta": 4,
+        "pct_correcta": 70.0,
+        "pct_parcial": 22.0,
+        "pct_incorrecta": 8.0,
+        "puntaje": 0.81
+      },
+      "por_tipo": {
+        "dato": {
+          "n": 10,
+          "correcta": 10,
+          "parcial": 0,
+          "incorrecta": 0,
+          "pct_correcta": 100.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 1.0
+        },
+        "procedimiento": {
+          "n": 10,
+          "correcta": 3,
+          "parcial": 5,
+          "incorrecta": 2,
+          "pct_correcta": 30.0,
+          "pct_parcial": 50.0,
+          "pct_incorrecta": 20.0,
+          "puntaje": 0.55
+        },
+        "cruce": {
+          "n": 10,
+          "correcta": 8,
+          "parcial": 1,
+          "incorrecta": 1,
+          "pct_correcta": 80.0,
+          "pct_parcial": 10.0,
+          "pct_incorrecta": 10.0,
+          "puntaje": 0.85
+        },
+        "contradiccion": {
+          "n": 5,
+          "correcta": 3,
+          "parcial": 2,
+          "incorrecta": 0,
+          "pct_correcta": 60.0,
+          "pct_parcial": 40.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 0.8
+        },
+        "version": {
+          "n": 5,
+          "correcta": 3,
+          "parcial": 1,
+          "incorrecta": 1,
+          "pct_correcta": 60.0,
+          "pct_parcial": 20.0,
+          "pct_incorrecta": 20.0,
+          "puntaje": 0.7
+        },
+        "sin_respuesta": {
+          "n": 10,
+          "correcta": 8,
+          "parcial": 2,
+          "incorrecta": 0,
+          "pct_correcta": 80.0,
+          "pct_parcial": 20.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 0.9
+        }
+      },
+      "fuente_juez": {
+        "correcta": 38,
+        "parcial": 0,
+        "incorrecta": 2,
+        "no_aplica": 10
+      },
+      "fuente_exacta": {
+        "correcta": 38,
+        "parcial": 1,
+        "incorrecta": 1,
+        "no_aplica": 10
+      },
+      "sin_respuesta_valida": [],
+      "costo_usd": {
+        "total": 0.026805,
+        "media": 0.000536,
+        "mediana": 0.000514,
+        "p90": 0.000715
+      },
+      "latencia_s": {
+        "media": 2.589,
+        "mediana": 2.173,
+        "p90": 3.959
+      },
+      "llamadas_por_pregunta": {
+        "media": 1,
+        "max": 1
+      }
+    },
+    "wiki": {
+      "exactitud": {
+        "n": 50,
+        "correcta": 39,
+        "parcial": 9,
+        "incorrecta": 2,
+        "pct_correcta": 78.0,
+        "pct_parcial": 18.0,
+        "pct_incorrecta": 4.0,
+        "puntaje": 0.87
+      },
+      "por_tipo": {
+        "dato": {
+          "n": 10,
+          "correcta": 10,
+          "parcial": 0,
+          "incorrecta": 0,
+          "pct_correcta": 100.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 1.0
+        },
+        "procedimiento": {
+          "n": 10,
+          "correcta": 8,
+          "parcial": 2,
+          "incorrecta": 0,
+          "pct_correcta": 80.0,
+          "pct_parcial": 20.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 0.9
+        },
+        "cruce": {
+          "n": 10,
+          "correcta": 8,
+          "parcial": 2,
+          "incorrecta": 0,
+          "pct_correcta": 80.0,
+          "pct_parcial": 20.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 0.9
+        },
+        "contradiccion": {
+          "n": 5,
+          "correcta": 4,
+          "parcial": 1,
+          "incorrecta": 0,
+          "pct_correcta": 80.0,
+          "pct_parcial": 20.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 0.9
+        },
+        "version": {
+          "n": 5,
+          "correcta": 4,
+          "parcial": 0,
+          "incorrecta": 1,
+          "pct_correcta": 80.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 20.0,
+          "puntaje": 0.8
+        },
+        "sin_respuesta": {
+          "n": 10,
+          "correcta": 5,
+          "parcial": 4,
+          "incorrecta": 1,
+          "pct_correcta": 50.0,
+          "pct_parcial": 40.0,
+          "pct_incorrecta": 10.0,
+          "puntaje": 0.7
+        }
+      },
+      "fuente_juez": {
+        "correcta": 36,
+        "parcial": 3,
+        "incorrecta": 1,
+        "no_aplica": 10
+      },
+      "fuente_exacta": {
+        "correcta": 37,
+        "parcial": 2,
+        "incorrecta": 1,
+        "no_aplica": 10
+      },
+      "sin_respuesta_valida": [],
+      "costo_usd": {
+        "total": 0.129629,
+        "media": 0.002593,
+        "mediana": 0.002593,
+        "p90": 0.00327
+      },
+      "latencia_s": {
+        "media": 5.323,
+        "mediana": 5.047,
+        "p90": 7.088
+      },
+      "llamadas_por_pregunta": {
+        "media": 3.04,
+        "max": 4
+      }
+    }
+  },
+  "preparacion": {
+    "wiki": {
+      "ingesta_costo_usd": 0.54336,
+      "ingesta_segundos": 2530.9,
+      "ingesta_turnos": 252,
+      "documentos": 50,
+      "lint_costo_usd": 0.060112,
+      "lint_pasadas": 3,
+      "paginas": 52,
+      "versiones_descartadas_no_sumadas": {
+        "v1_primera_pasada": {
+          "costo_usd": 0.477018,
+          "segundos": 2280.4
+        },
+        "v1_parcheada": {
+          "costo_usd": 0.472696,
+          "segundos": 2182.8
+        },
+        "v2_esquema_con_fuga": {
+          "costo_usd": 0.486806,
+          "segundos": 2357.7
+        }
+      }
+    },
+    "rag": {
+      "indexacion_segundos": 34.7,
+      "costo_usd": 0.0,
+      "modelo_embeddings": "intfloat/multilingual-e5-small (local, CPU)"
+    },
+    "contexto": {
+      "nota": "Sin preparación. La primera llamada de cada corrida escribe ~92k tokens en caché (~USD 0,012)."
+    }
+  },
+  "actualizacion": null
+}

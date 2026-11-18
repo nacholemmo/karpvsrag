@@ -28,7 +28,7 @@ def grupos(h: dict) -> set[str]:
     return {g.strip() for g in h["grupo"].split(";") if g.strip()}
 
 
-def validar(raiz: Path, archivo: Path, parcial: bool = False) -> tuple[list[str], list[str], dict]:
+def validar(raiz: Path, archivo: Path, parcial: bool = False, actualizacion: bool = False) -> tuple[list[str], list[str], dict]:
     errores: list[str] = []
     avisos: list[str] = []
     hechos = {h["hecho_id"]: h for h in csv.DictReader((raiz / "hechos.csv").open(encoding="utf-8"))}
@@ -55,8 +55,8 @@ def validar(raiz: Path, archivo: Path, parcial: bool = False) -> tuple[list[str]
         if faltan:
             errores.append(f"{pid}: faltan campos {faltan}")
             continue
-        if not re.fullmatch(r"P\d{2}", pid):
-            errores.append(f"{pid}: id con formato inválido (P01..P50)")
+        if not re.fullmatch(r"U\d{2}" if actualizacion else r"P\d{2}", pid):
+            errores.append(f"{pid}: id con formato inválido ({'U01..U10' if actualizacion else 'P01..P50'})")
         tipo = p["tipo"]
         if tipo not in TIPOS:
             errores.append(f"{pid}: tipo inválido '{tipo}'")
@@ -130,7 +130,10 @@ def validar(raiz: Path, archivo: Path, parcial: bool = False) -> tuple[list[str]
                     errores.append(f"{pid}: el valor viejo '{h['texto']}' no puede ser elemento clave")
 
     stats = {"preguntas": len(preguntas), **Counter(p.get("tipo") for p in preguntas)}
-    if not parcial:
+    if actualizacion and not parcial:
+        if len(preguntas) != 10 or set(ids) != {f"U{i:02d}" for i in range(1, 11)}:
+            errores.append(f"se esperaban 10 preguntas U01..U10, hay {len(preguntas)}")
+    elif not parcial:
         if len(preguntas) != POR_TIPO * len(TIPOS):
             errores.append(f"hay {len(preguntas)} preguntas, se esperaban {POR_TIPO * len(TIPOS)}")
         for t in TIPOS:
@@ -158,8 +161,11 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--archivo", type=Path, default=raiz / "evals" / "preguntas.jsonl")
     ap.add_argument("--parcial", action="store_true")
+    ap.add_argument("--actualizacion", action="store_true", help="valida evals/preguntas_actualizacion.jsonl (U01..U10)")
     args = ap.parse_args(argv)
-    errores, avisos, stats = validar(raiz, args.archivo, parcial=args.parcial)
+    if args.actualizacion and args.archivo == raiz / "evals" / "preguntas.jsonl":
+        args.archivo = raiz / "evals" / "preguntas_actualizacion.jsonl"
+    errores, avisos, stats = validar(raiz, args.archivo, parcial=args.parcial, actualizacion=args.actualizacion)
     print(json.dumps(stats, ensure_ascii=False))
     for a in avisos:
         print(f"AVISO: {a}")
