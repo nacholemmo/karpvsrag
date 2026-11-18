@@ -736,19 +736,13 @@
       "lint_costo_usd": 0.060112,
       "lint_pasadas": 3,
       "paginas": 52,
-      "versiones_descartadas_no_sumadas": {
-        "v1_primera_pasada": {
-          "costo_usd": 0.477018,
-          "segundos": 2280.4
-        },
-        "v1_parcheada": {
-          "costo_usd": 0.472696,
-          "segundos": 2182.8
-        },
-        "v2_esquema_con_fuga": {
-          "costo_usd": 0.486806,
-          "segundos": 2357.7
-        }
+      "construccion_todas_las_versiones": {
+        "fuente": "logs/llamadas.jsonl (no versionado), sumado por brazo; excluye la corrida wiki_actualizacion",
+        "compilaciones": 3,
+        "detalle": "v1 (con harness con bugs, parcheada con reintentos), v2 (esquema que filtraba respuestas), v3 (final)",
+        "ingesta_usd": 1.6103,
+        "lint_usd": 0.1629,
+        "total_usd": 1.7731
       }
     },
     "rag": {
@@ -1016,7 +1010,8 @@
       "contexto": {
         "costo_usd": 0.0,
         "segundos": 0.0,
-        "nota": "No hay nada que reconstruir. La primera consulta después del cambio reescribe la caché del corpus: costó USD 0.0117, contra ~USD 0,0012 de una consulta con caché caliente."
+        "nota": "No hay nada que reconstruir. La primera consulta después del cambio reescribe la caché del corpus: costó USD 0.0117, contra ~USD 0,0012 de una consulta con caché caliente.",
+        "costo_primera_consulta_usd": 0.01168295
       },
       "rag": {
         "costo_usd": 0.0,

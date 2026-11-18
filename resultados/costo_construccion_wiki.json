@@ -1,0 +1,8 @@
+{
+ "fuente": "logs/llamadas.jsonl (no versionado), sumado por brazo; excluye la corrida wiki_actualizacion",
+ "compilaciones": 3,
+ "detalle": "v1 (con harness con bugs, parcheada con reintentos), v2 (esquema que filtraba respuestas), v3 (final)",
+ "ingesta_usd": 1.6103,
+ "lint_usd": 0.1629,
+ "total_usd": 1.7731
+}

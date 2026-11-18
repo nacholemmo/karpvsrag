@@ -156,13 +156,8 @@ def preparacion() -> dict:
     lint = json.loads((RES / "lint_wiki.json").read_text(encoding="utf-8")) if (RES / "lint_wiki.json").exists() else []
     lint_base = [x for x in lint if x.get("etapa", "construccion") == "construccion"]
     rag_seg = json.loads((RES / "rag_indice_linea_base.json").read_text())["segundos"]
-    fallidas = {}
-    for nombre, archivo in (("v1_primera_pasada", "ingesta_wiki_primera_pasada.json"),
-                            ("v1_parcheada", "ingesta_wiki_v1_parcheada.json"),
-                            ("v2_esquema_con_fuga", "ingesta_wiki_v2_esquema_con_fuga.json")):
-        if (RES / archivo).exists():
-            r = json.loads((RES / archivo).read_text(encoding="utf-8")).get("resumen", {})
-            fallidas[nombre] = {"costo_usd": r.get("costo_usd"), "segundos": r.get("segundos")}
+    construccion = RES / "costo_construccion_wiki.json"
+    todas = json.loads(construccion.read_text(encoding="utf-8")) if construccion.exists() else None
     return {
         "wiki": {
             "ingesta_costo_usd": round(sum(d["costo_usd"] for d in base.values()), 6),
@@ -172,7 +167,7 @@ def preparacion() -> dict:
             "lint_costo_usd": round(sum(x["costo_usd"] for x in lint_base), 6),
             "lint_pasadas": len(lint_base),
             "paginas": len(list((RAIZ / "wiki").rglob("*.md"))),
-            "versiones_descartadas_no_sumadas": fallidas,
+            "construccion_todas_las_versiones": todas,
         },
         "rag": {"indexacion_segundos": rag_seg, "costo_usd": 0.0,
                 "modelo_embeddings": "intfloat/multilingual-e5-small (local, CPU)"},

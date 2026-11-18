@@ -10,13 +10,13 @@ Todos salen de la corrida real: Haiku 5.5 responde y juzga. Las respuestas compl
 - **Qué pasó:** los 8 fragmentos recuperados venían de compras: el procedimiento de alta, la política de compras, el manual 2023, las actas y la reposición. Ninguno era de `politica-calidad-inocuidad.md`. El modelo respondió, con honestidad, que la política "no fue incluida".
 - **Causa:** la pregunta usa el vocabulario de compras ("proveedor", "alta") y el dato vive en un documento de calidad. Es el único fallo de recuperación por documento sobre 40 preguntas con respuesta (recall top-8 = 39/40, `resultados/recall_rag.json`).
 
-## 2. RAG: el documento entra, el fragmento no (P19, P11 y P44; procedimientos 3/10)
+## 2. RAG: el documento entra, el fragmento no (P19, P11 y P44; procedimientos 0,60)
 
 - **Qué pasó:**
   - En P19 (qué hacer ante una ausencia por enfermedad) el top-8 incluía `reglamento-interno.md`, pero llegaron sus fragmentos `#6` y `#7`, no el `#3` con los artículos de aviso y certificado. La respuesta dijo que el procedimiento "no fue provisto".
   - En P11 (gestión de mora) llegaron partes del instructivo, pero no los fragmentos con el mail de intimación y la carta documento.
   - Lo mismo afectó a una pregunta de versión, P44 (cuántas cotizaciones para una compra de $ 8.000.000): `politica-compras.md` entró al top-8, pero no el fragmento del artículo de cotizaciones, y la respuesta fue "los fragmentos no indican la cantidad".
-- **Causa:** los procedimientos están repartidos en varias secciones y el top-8 trae solo una parte. Por eso el RAG saca 0,55 en procedimientos, contra 1,00 del contexto completo y 0,90 de la wiki.
+- **Causa:** los procedimientos están repartidos en varias secciones y el top-8 trae solo una parte. Por eso el RAG saca 0,60 en procedimientos (4/10 correctas, voto de 3 juicios), contra 1,00 del contexto completo y 0,90 de la wiki.
 - **Lección:** el recall medido por documento (39/40) sobreestima la calidad de la recuperación. Lo que importa es el fragmento.
 
 ## 3. RAG después de la actualización: el cruce se corta en el documento que remite (U09)
@@ -87,5 +87,5 @@ Todos salen de la corrida real: Haiku 5.5 responde y juzga. Las respuestas compl
   Como el esquema va en el system prompt de la ingesta y de la consulta, solo el brazo wiki las veía.
 - **Cómo se detectó:** una revisión independiente; ningún test lo atrapaba.
 - **Arreglo:** ejemplos ficticios, un test que falla si el esquema contiene cualquier elemento clave de las preguntas y la reconstrucción de la wiki (v3, USD 0,543).
-- **Gasto total de la compilación de la wiki, sumando las dos versiones descartadas:** ~USD 1,61, frente a USD 0,54 de la versión final.
+- **Gasto total de construir la wiki en sus tres compilaciones:** USD 1,61 de ingesta + USD 0,16 de lint = USD 1,77 (`resultados/costo_construccion_wiki.json`), frente a USD 0,60 de la versión final (0,54 de ingesta + 0,06 de lint).
 - **Fallo relacionado:** una llamada del lint llegó a 106.698 tokens de prompt y se cobró en el tramo caro de Haiku (más de 100k), porque el tope de contexto se chequeaba después de enviar y no antes.

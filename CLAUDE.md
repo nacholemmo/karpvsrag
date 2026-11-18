@@ -114,6 +114,16 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
 - **`scripts/resultados.py`** es la única fuente de `results.json` y `resumen.md`. Las métricas de preparación de la wiki vienen de `ingesta_wiki_v3_linea_base.json` y de `lint_wiki.json` (etapa construcción).
 - **`fallos.md`:** cada afirmación se verifica contra los datos. Un fallo falso (una "invención" de la wiki que en realidad estaba en el corpus) se detectó en la revisión y se reemplazó. Para verificar, buscar variantes y sinónimos, no una sola palabra.
 
+## Decisiones de la fase 5 (landing)
+
+- **`site/`:** HTML, CSS y JS sin build ni recursos externos. Los gráficos son SVG generados con JS, con la paleta validada por la skill dataviz: azul = contexto, naranja = RAG, aqua = wiki; veredictos con la paleta de estado.
+  - Cada gráfico tiene una tabla equivalente y tooltip con mouse y teclado.
+  - Los SVG se dibujan al ancho real del contenedor (si no, el texto queda ilegible en celular) y se redibujan al cambiar el tamaño.
+- **Datos:** `site/datos/results.json` lo escribe `scripts/resultados.py`, y un test exige que sea idéntico a `resultados/results.json`. Ningún número de la página está escrito a mano sin respaldo.
+- **`REPO_URL`:** marcador en `site/config.js`, que el usuario completa antes de publicar. Render usa `render.yaml` (static, `./site`, sin build).
+- **Costo de construir la wiki:** el total de todas las versiones está en `resultados/costo_construccion_wiki.json` (calculado del log, que no se versiona): USD 1,77, contra USD 0,60 de la versión final.
+- **Verificación visual:** `google-chrome-stable --headless=new ... --screenshot`. Para modo oscuro, `--force-dark-mode --blink-settings=preferredColorScheme=0`. No usar `pkill -f` con un patrón que también aparezca en el mismo comando.
+
 ## Comandos
 
 ```bash

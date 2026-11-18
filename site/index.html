@@ -47,6 +47,7 @@
       <h2 id="t-res">Resultados</h2>
       <div class="tabla-envoltura"><table id="tabla-resultados" aria-label="Resultados por brazo"></table></div>
       <p class="meta" id="nota-tabla"></p>
+      <div class="tabla-envoltura"><table id="tabla-preparacion" aria-label="Preparación de cada brazo"></table></div>
 
       <figure class="grafico" id="g-tipos">
         <figcaption>Puntaje por tipo de pregunta</figcaption>
@@ -75,7 +76,7 @@
       <h2 id="t-fallos">Fallos que vale la pena mirar</h2>
       <ul class="fallos">
         <li><span class="etiqueta">RAG</span><strong>El documento entra, el fragmento no</strong>
-          <p>En varias preguntas de procedimiento, el documento correcto estaba entre los recuperados, pero no el fragmento con los pasos clave. Medido por documento, el RAG recupera bien en 39 de 40 preguntas; en procedimientos saca 0,60.</p></li>
+          <p>En dos preguntas de procedimiento y una de versión, el documento correcto estaba entre los recuperados, pero no el fragmento con los pasos o el dato clave. Medido por documento, el RAG recupera bien en 39 de 40 preguntas; en procedimientos saca 0,60.</p></li>
         <li><span class="etiqueta">Wiki</span><strong>Un dato se pierde en la compilación</strong>
           <p>La frecuencia del inventario general («dos veces por año») no quedó en ninguna de las 52 páginas. Como la consulta solo lee la wiki, respondió que no hay periodicidad definida.</p></li>
         <li><span class="etiqueta">Wiki</span><strong>Una contradicción plantada nunca se registró</strong>
@@ -85,7 +86,7 @@
         <li><span class="etiqueta">Evaluación</span><strong>Referencias que castigaban respuestas fieles</strong>
           <p>Algunas referencias de las preguntas sin respuesta omitían cosas que el corpus sí dice, y el juez castigaba a quien las mencionaba. Primero corregí solo una pregunta, y eso favorecía a dos brazos. Después se corrigieron las 10 con el mismo criterio y se publican ambos puntajes.</p></li>
         <li><span class="etiqueta">Proceso</span><strong>El esquema de la wiki filtraba respuestas</strong>
-          <p>Los ejemplos del documento que guía a los agentes de la wiki eran, literalmente, respuestas de la evaluación. Lo detectó una revisión independiente y la wiki se reconstruyó. En total, compilar la wiki costó tres veces lo que cuesta la versión final.</p></li>
+          <p>Los ejemplos del documento que guía a los agentes de la wiki eran, literalmente, respuestas de la evaluación. Lo detectó una revisión independiente y la wiki se reconstruyó desde cero.</p></li>
       </ul>
       <p><a class="repo" data-ruta="resultados/fallos.md" href="#">Los 10 fallos, con su causa y evidencia</a></p>
     </section>
@@ -100,7 +101,7 @@
     <p>Corpus, empresa, personas y datos son inventados. Código bajo licencia MIT. <a class="repo" href="#">Repositorio</a> · <a class="repo" data-ruta="resultados/results.json" href="#">results.json</a></p>
   </footer>
 
-  <div class="globo" id="globo" role="status"></div>
+  <div class="globo" id="globo" aria-hidden="true"></div>
   <script src="config.js"></script>
   <script src="app.js"></script>
 </body>

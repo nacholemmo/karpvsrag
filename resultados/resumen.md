@@ -71,7 +71,8 @@ Con las referencias originales:
  "contexto": {
   "costo_usd": 0.0,
   "segundos": 0.0,
-  "nota": "No hay nada que reconstruir. La primera consulta después del cambio reescribe la caché del corpus: costó USD 0.0117, contra ~USD 0,0012 de una consulta con caché caliente."
+  "nota": "No hay nada que reconstruir. La primera consulta después del cambio reescribe la caché del corpus: costó USD 0.0117, contra ~USD 0,0012 de una consulta con caché caliente.",
+  "costo_primera_consulta_usd": 0.01168295
  },
  "rag": {
   "costo_usd": 0.0,

@@ -117,11 +117,11 @@
     const prep = {
       contexto: "Ninguna",
       rag: `Indexación local ${num(p.rag.indexacion_segundos, 0)} s · USD 0`,
-      wiki: `${usd(p.wiki.ingesta_costo_usd + p.wiki.lint_costo_usd, 2)} · ${num(p.wiki.ingesta_segundos / 60, 0)} min`,
+      wiki: `Compilar la wiki: ${usd(p.wiki.ingesta_costo_usd + p.wiki.lint_costo_usd, 2)} y ${num(p.wiki.ingesta_segundos / 60, 0)} min (ingesta + lint)`,
     };
     const t = document.getElementById("tabla-resultados");
     t.append(el("thead", {}, el("tr", {}, ["Brazo", "Puntaje", "Correctas", "Parciales", "Incorrectas",
-      "Costo / consulta", "Latencia (mediana)", "Llamadas / consulta", "Preparación"].map((c) => el("th", { scope: "col", text: c })))));
+      "Costo / consulta", "Latencia (mediana)", "Llamadas / consulta"].map((c) => el("th", { scope: "col", text: c })))));
     const cuerpo = el("tbody");
     for (const b of BRAZOS) {
       const m = r.brazos[b.id];
@@ -131,15 +131,18 @@
         el("td", { text: num(e.puntaje) }), el("td", { text: `${e.correcta} (${pct(e.pct_correcta)})` }),
         el("td", { text: String(e.parcial) }), el("td", { text: String(e.incorrecta) }),
         el("td", { text: usd(m.costo_usd.media) }), el("td", { text: num(m.latencia_s.mediana, 1) + " s" }),
-        el("td", { text: num(m.llamadas_por_pregunta.media, 1) }), el("td", { text: prep[b.id] }),
+        el("td", { text: num(m.llamadas_por_pregunta.media, 1) }),
       ]));
     }
     t.append(cuerpo);
+    const tp = document.getElementById("tabla-preparacion");
+    tp.append(el("thead", {}, el("tr", {}, ["Brazo", "Preparación antes de responder"].map((c) => el("th", { scope: "col", text: c })))));
+    tp.append(el("tbody", {}, BRAZOS.map((b) => el("tr", {}, [el("th", { scope: "row" }, [punto(b.color), " ", b.nombre]), el("td", { text: prep[b.id] })]))));
     const est = r.brazos._estabilidad_juez;
     const orig = r.brazos_referencias_originales;
     document.getElementById("nota-tabla").textContent =
       `Juez: voto de ${est.corridas} corridas; ${est.unanime} de ${est.respuestas} veredictos fueron unánimes. ` +
-      `Con las referencias originales, antes de corregir las preguntas sin respuesta: ` +
+      `Con las referencias originales, antes de corregir las preguntas sin respuesta (una sola corrida del juez): ` +
       BRAZOS.map((b) => `${b.nombre} ${num(orig[b.id].exactitud.puntaje)}`).join(", ") + ".";
   }
 
@@ -147,7 +150,7 @@
   function graficoTipos(r) {
     const fig = document.getElementById("g-tipos");
     if (!fig.querySelector(".leyenda")) fig.append(leyenda(BRAZOS));
-    const W = anchoDe(fig), izq = W < 460 ? 118 : 150, der = 40, altoBarra = 9, hueco = 2, grupo = BRAZOS.length * (altoBarra + hueco) + 14;
+    const W = anchoDe(fig), izq = W < 460 ? 118 : 150, der = 74, altoBarra = 9, hueco = 4, grupo = BRAZOS.length * (altoBarra + hueco) + 14;
     const H = TIPOS.length * grupo + 24;
     const svg = sv("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img", "aria-label": "Puntaje por tipo de pregunta y brazo" });
     const xs = (v) => izq + v * (W - izq - der);
@@ -168,10 +171,14 @@
         const barra = barraH(xs(0), y, xs(d.puntaje) - xs(0), altoBarra, b.color);
         conGlobo(barra, `${b.nombre} · ${nombre}: ${num(d.puntaje)} (${d.correcta} correctas, ${d.parcial} parciales de ${d.n})`);
         svg.append(barra);
-        const v = sv("text", { x: xs(d.puntaje) + 4, y: y + altoBarra - 1, class: "valor" });
-        v.textContent = num(d.puntaje);
-        v.setAttribute("font-size", "10");
-        svg.append(v);
+        const vals = BRAZOS.map((bb) => r.brazos[bb.id].por_tipo[id].puntaje);
+        const todosIguales = vals.every((x) => x === vals[0]);
+        if (!todosIguales || j === 1) {  // si los tres valen lo mismo, una sola etiqueta en la barra del medio
+          const v = sv("text", { x: xs(d.puntaje) + 4, y: y + altoBarra, class: "valor" });
+          v.textContent = num(d.puntaje) + (todosIguales ? " (los tres)" : "");
+          v.setAttribute("font-size", "11");
+          svg.append(v);
+        }
       });
     });
     lienzo(fig, svg);
@@ -274,7 +281,7 @@
     const t = document.getElementById("tabla-actualizacion");
     t.append(el("thead", {}, el("tr", {}, ["Brazo", "Puntaje (10 preguntas)", "Costo de actualizar", "Tiempo de actualizar"].map((c) => el("th", { scope: "col", text: c })))));
     const desc = {
-      contexto: ["USD 0 (solo reescribe la caché en la primera consulta)", "—"],
+      contexto: [`${usd(a.costo_y_tiempo_de_actualizar.contexto.costo_primera_consulta_usd, 3)} (la primera consulta reescribe la caché)`, "—"],
       rag: ["USD 0", `${num(a.costo_y_tiempo_de_actualizar.rag.segundos, 0)} s (reindexación local)`],
       wiki: [usd(a.costo_y_tiempo_de_actualizar.wiki.costo_usd, 3), `${num(a.costo_y_tiempo_de_actualizar.wiki.segundos / 60, 1)} min (reingesta de 3 documentos)`],
     };
@@ -292,13 +299,19 @@
     if (a && a.v1) {
       document.getElementById("acuerdo").innerHTML = "";
       document.getElementById("acuerdo").append(el("strong", { text: "Control del juez: " }),
-        `en una muestra de 15 respuestas revisadas a mano, el juez coincidió en ${a.v1.acuerdo} de 15 con la rúbrica original ` +
-        `y en ${a.v2.acuerdo} de 15 después de ajustarla mirando esa misma muestra.`);
+        `en una muestra de 15 respuestas con veredicto humano, el juez coincidió en ${a.v1.acuerdo} de 15 con la rúbrica original ` +
+        `y en ${a.v2.acuerdo} de 15 después de ajustarla mirando esa misma muestra (un veredicto y las etiquetas de fuente ` +
+        `de esa muestra se completaron con la regla de la rúbrica, no a mano).`);
     }
     const ul = document.getElementById("limites");
     for (const texto of r.meta.advertencias) ul.append(el("li", { text: texto }));
     ul.append(el("li", { text: "Con unos 92 mil tokens, el corpus entra entero en el contexto. Con un corpus mucho más grande, el contexto completo deja de ser viable y la comparación cambia." }));
-    ul.append(el("li", { text: "La wiki se compiló tres veces: la primera tenía errores del harness y la segunda un esquema que filtraba respuestas. Los resultados usan la tercera." }));
+    const ct = r.preparacion.wiki.construccion_todas_las_versiones;
+    if (ct) {
+      const final = r.preparacion.wiki.ingesta_costo_usd + r.preparacion.wiki.lint_costo_usd;
+      ul.append(el("li", { text: `La wiki se compiló ${ct.compilaciones} veces: la primera tenía errores del harness y la segunda un esquema que filtraba respuestas. ` +
+        `Los resultados usan la última. Construirla costó ${usd(ct.total_usd, 2)} en total, ${num(ct.total_usd / final, 1)} veces los ${usd(final, 2)} de la versión final.` }));
+    }
   }
 
   fetch("datos/results.json")

@@ -1,6 +1,6 @@
 # ESTADO
 
-**Fase actual:** 4 (corrida y resultados) implementada y revisada. Falta el OK del usuario para cerrarla. Próxima: fase 5 (landing en `site/`), con plan a aprobar.
+**Fase actual:** 5 (landing) implementada y revisada. Falta el OK del usuario para cerrarla. Próxima: fase 6 (borrador del post).
 
 ## Hecho
 - **Fases 1 a 3:** cerradas. Corpus de 91,7k tokens, 50 preguntas con juez Haiku y tres brazos (wiki v3).
@@ -22,8 +22,9 @@
 - **Gasto real acumulado de la API:** USD 2,46 (ver `logs/llamadas.jsonl`). Saldo aproximado: USD 1,38.
 
 ## Pendiente
-- [ ] OK del usuario para cerrar la fase 4.
-- [ ] Fase 5: landing estática en `site/` que lea una copia de `results.json`; lista para Render como static site, sin build.
+- [x] Fase 4 cerrada.
+- [x] Fase 5: landing en `site/`, revisada por un subagente (correcciones aplicadas). Falta el OK del usuario.
+- [ ] Completar `REPO_URL` en `site/config.js` y publicar en Render (usuario).
 - [ ] Fase 6: `borrador-linkedin.md`.
 - [ ] Agregar al README el link a la landing cuando esté publicada.
 - [ ] Push: lo hace el usuario, incluido el tag `linea-base`.
