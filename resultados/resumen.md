@@ -1,13 +1,21 @@
 # Resumen de resultados
 
-Modelo: claude-haiku-5-5 (responde y juzga). Commit: ddfdd63. Puntaje: correcta + 0,5 × parcial, sobre el total de preguntas.
+Modelo: claude-haiku-5-5 (responde y juzga). Corrida principal sobre el tag linea-base (befbfe1). Puntaje: correcta + 0,5 × parcial, sobre el total de preguntas.
 
 ## Corrida principal (50 preguntas)
 
 | Brazo | Puntaje | Correcta | Parcial | Incorrecta | Costo/consulta (media) | Latencia (mediana) | Llamadas/consulta |
 |---|---|---|---|---|---|---|---|
-| contexto | 0.970 | 96.0% | 2.0% | 2.0% | USD 0.00134 | 2.2 s | 1.00 |
-| rag | 0.820 | 72.0% | 20.0% | 8.0% | USD 0.00054 | 2.2 s | 1.00 |
+| contexto | 0.980 | 98.0% | 0.0% | 2.0% | USD 0.00134 | 2.2 s | 1.00 |
+| rag | 0.810 | 72.0% | 18.0% | 10.0% | USD 0.00054 | 2.2 s | 1.00 |
+| wiki | 0.870 | 78.0% | 18.0% | 4.0% | USD 0.00259 | 5.0 s | 3.04 |
+
+Con las referencias originales (sin la corrección de las 10 sin_respuesta y U05):
+
+| Brazo | Puntaje | Correcta | Parcial | Incorrecta | Costo/consulta (media) | Latencia (mediana) | Llamadas/consulta |
+|---|---|---|---|---|---|---|---|
+| contexto | 0.960 | 94.0% | 4.0% | 2.0% | USD 0.00134 | 2.2 s | 1.00 |
+| rag | 0.810 | 70.0% | 22.0% | 8.0% | USD 0.00054 | 2.2 s | 1.00 |
 | wiki | 0.870 | 78.0% | 18.0% | 4.0% | USD 0.00259 | 5.0 s | 3.04 |
 
 ### Puntaje por tipo de pregunta
@@ -19,7 +27,7 @@ Modelo: claude-haiku-5-5 (responde y juzga). Commit: ddfdd63. Puntaje: correcta 
 | cruce | 1.00 (10/10) | 0.85 (8/10) | 0.90 (8/10) |
 | contradiccion | 1.00 (5/5) | 0.80 (3/5) | 0.90 (4/5) |
 | version | 1.00 (5/5) | 0.70 (3/5) | 0.80 (4/5) |
-| sin_respuesta | 0.85 (8/10) | 0.95 (9/10) | 0.70 (5/10) |
+| sin_respuesta | 0.90 (9/10) | 0.90 (9/10) | 0.70 (5/10) |
 
 ### Fuentes (etiqueta del juez)
 
@@ -36,6 +44,14 @@ Modelo: claude-haiku-5-5 (responde y juzga). Commit: ddfdd63. Puntaje: correcta 
 - Contexto: Sin preparación. La primera llamada de cada corrida escribe ~92k tokens en caché (~USD 0,012).
 
 ## Prueba de actualización (10 preguntas sobre 3 documentos modificados)
+
+| Brazo | Puntaje | Correcta | Parcial | Incorrecta | Costo/consulta (media) | Latencia (mediana) | Llamadas/consulta |
+|---|---|---|---|---|---|---|---|
+| contexto | 1.000 | 100.0% | 0.0% | 0.0% | USD 0.00220 | 2.4 s | 1.00 |
+| rag | 0.900 | 90.0% | 0.0% | 10.0% | USD 0.00058 | 3.1 s | 1.00 |
+| wiki | 1.000 | 100.0% | 0.0% | 0.0% | USD 0.00275 | 5.2 s | 3.00 |
+
+Con las referencias originales:
 
 | Brazo | Puntaje | Correcta | Parcial | Incorrecta | Costo/consulta (media) | Latencia (mediana) | Llamadas/consulta |
 |---|---|---|---|---|---|---|---|
@@ -74,7 +90,7 @@ Modelo: claude-haiku-5-5 (responde y juzga). Commit: ddfdd63. Puntaje: correcta 
    "wiki/proceso/procedimiento-de-reclamos.md"
   ],
   "lint": "0 errores después de la reingesta; no hizo falta corrección con agente (USD 0)",
-  "nota": "Reingesta incremental de los 3 documentos sobre la wiki v3."
+  "nota": "Reingesta incremental de los 3 documentos sobre la wiki v3. ACTUALIZACIÓN INCOMPLETA: quedaron valores viejos como vigentes en páginas que no se reescribieron (wiki/proceso/circuito-de-compra.md con $ 2.000.000 y frescos sin cotizar; wiki/proceso/reclamo-hermanos-lutz-sucursal-4.md con $ 500.000). El lint en código no lo detecta. Ver fallos.md #7."
  }
 }
 ```

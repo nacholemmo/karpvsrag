@@ -10,11 +10,12 @@ Todos salen de la corrida real: Haiku 5.5 responde y juzga. Las respuestas compl
 - **Qué pasó:** los 8 fragmentos recuperados venían de compras: el procedimiento de alta, la política de compras, el manual 2023, las actas y la reposición. Ninguno era de `politica-calidad-inocuidad.md`. El modelo respondió, con honestidad, que la política "no fue incluida".
 - **Causa:** la pregunta usa el vocabulario de compras ("proveedor", "alta") y el dato vive en un documento de calidad. Es el único fallo de recuperación por documento sobre 40 preguntas con respuesta (recall top-8 = 39/40, `resultados/recall_rag.json`).
 
-## 2. RAG: el documento entra, el fragmento no (P44, P19, P11; procedimientos 3/10)
+## 2. RAG: el documento entra, el fragmento no (P19, P11 y P44; procedimientos 3/10)
 
 - **Qué pasó:**
-  - En P44 (cuántas cotizaciones pedir para una compra de $ 8.000.000) el top-8 incluía `politica-compras.md`, pero no el fragmento del artículo de cotizaciones. La respuesta fue "los fragmentos no indican la cantidad".
-  - En P19 (ausencia por enfermedad) y P11 (gestión de mora) pasó lo mismo: llegaron partes del documento correcto, pero no las que tenían los pasos clave.
+  - En P19 (qué hacer ante una ausencia por enfermedad) el top-8 incluía `reglamento-interno.md`, pero llegaron sus fragmentos `#6` y `#7`, no el `#3` con los artículos de aviso y certificado. La respuesta dijo que el procedimiento "no fue provisto".
+  - En P11 (gestión de mora) llegaron partes del instructivo, pero no los fragmentos con el mail de intimación y la carta documento.
+  - Lo mismo afectó a una pregunta de versión, P44 (cuántas cotizaciones para una compra de $ 8.000.000): `politica-compras.md` entró al top-8, pero no el fragmento del artículo de cotizaciones, y la respuesta fue "los fragmentos no indican la cantidad".
 - **Causa:** los procedimientos están repartidos en varias secciones y el top-8 trae solo una parte. Por eso el RAG saca 0,55 en procedimientos, contra 1,00 del contexto completo y 0,90 de la wiki.
 - **Lección:** el recall medido por documento (39/40) sobreestima la calidad de la recuperación. Lo que importa es el fragmento.
 
@@ -41,18 +42,28 @@ Todos salen de la corrida real: Haiku 5.5 responde y juzga. Las respuestas compl
 - **Qué pasó:** la wiki respondió solo "72 horas". `parcial`, con fuente `parcial`.
 - **Causa:** "24 a 48" no figura en ninguna página. Del Manual del Vendedor, un documento largo, el agente solo extrajo el pedido mínimo y los descuentos. La contradicción no se pierde por mala redacción: se pierde porque uno de sus lados nunca entró a la wiki.
 
-## 7. Wiki: el compilador inventa y la consulta lo repite (P22, P49; sin respuesta 0,70)
+## 7. Wiki: la actualización incremental dejó valores viejos vigentes en páginas no reescritas (U05)
 
-- **Qué pasó:** en P22 y P49 (quién lleva o aprueba presentarse a una licitación) la wiki respondió que "seguramente" intervengan Comercial y Administración. El juez lo tomó como completar un hueco.
-- **Causa:** esa frase no está en el corpus. Está en `wiki/proceso/reunion-compras-quincenal.md:35`, escrita por el agente de ingesta. El acta solo dice que Ernesto lo tiene que hablar con Claudio.
-- **Por qué importa:** la wiki "lavó" una especulación del compilador hasta convertirla en conocimiento con fuente, y la consulta la repitió con confianza. Es el peor tipo de error de este patrón: la cita `[fuente: acta-compras-quincenal.md]` le da una apariencia de respaldo que no tiene.
+- **Qué pasó:** después de modificar 3 documentos, la reingesta incremental (USD 0,049) reescribió las páginas principales con el valor nuevo y el viejo marcado como "Antes (reemplazado)". Pero no tocó otras páginas que repetían esos datos:
+  - `wiki/proceso/circuito-de-compra.md` (líneas 6, 7 y 20) sigue diciendo que el Jefe de Compras aprueba "hasta $ 2.000.000" y que los frescos no requieren cotizaciones;
+  - `wiki/proceso/reclamo-hermanos-lutz-sucursal-4.md:16` sigue con el umbral de $ 500.000.
 
-## 8. La evaluación también falla: una referencia incompleta castigaba respuestas fieles (P25)
+  En U05, la consulta citó `circuito-de-compra.md` y quedó `parcial`.
+- **Causa:** el agente de ingesta actualiza las páginas que encuentra desde el documento que procesa. Nadie revisa las otras páginas que copiaron el dato. El lint en código (0 errores) tampoco lo detecta: el valor viejo sigue siendo textual en el documento, dentro del historial de cambios.
+- **Por qué importa:** en una wiki compilada, cada dato duplicado es un lugar más para desactualizarse. El costo bajo de la actualización (USD 0,049) es el costo de una actualización **incompleta**.
 
-- **Pregunta:** qué hacer si roban mercadería en ruta. Es un hueco sin procedimiento.
-- **Qué pasó:** la referencia decía que las notas no registran nada, pero `corpus/notas-turno-noche.md:13` dice "le dije q llame a la policia y a walter pero la verdad NO SE, no tenemos nada escrito". El contexto y el RAG citaron esa frase y el juez los marcó `parcial` por "contradecir la referencia".
-- **Corrección:** se completó la referencia y se re-juzgó P25 en los tres brazos (los juicios anteriores están en `resultados/juicios_P25_antes_de_corregir_referencia.jsonl`; queda registrado en `results.json`). Contexto y RAG pasaron de `parcial` a `correcta`.
-- **Caso relacionado, sin corregir:** el único `incorrecta` del contexto completo es P46 (condonación de intereses). La respuesta deriva el caso a Marta Ifrán, que en el acta tiene a cargo preparar la propuesta. El juez lo leyó como completar el hueco de "quién aprueba". Es una zona gris, y la dejamos como está.
+## 8. La evaluación también falla: referencias de "sin respuesta" que castigaban respuestas fieles al corpus
+
+- **Qué pasó:** en las preguntas sin respuesta, varias referencias omitían cosas que el corpus sí dice sobre el tema, y el juez castigaba a las respuestas que las mencionaban. Por ejemplo:
+  - **P25:** las notas del turno noche registran que el supervisor sugirió llamar a la policía y a Walter (`corpus/notas-turno-noche.md:13`).
+  - **P22/P49:** el acta de compras dice que Ernesto lo tiene que hablar con Claudio "y seguro con Comercial y Administración" (`corpus/acta-compras-quincenal.md:40`).
+  - **P46:** el acta del comité registra que hoy se condona "según quién lo pida" y que Marta prepara la propuesta.
+
+  La referencia de P25 además citaba un artículo sobre siniestros que el recorte del corpus había eliminado.
+- **Sesgo en la corrección:** con referencias originales, esto castigaba 5 veces a la wiki, 2 al contexto y 1 al RAG. Primero se corrigió solo P25, que favorecía al contexto y al RAG; lo detectó la revisión independiente. Después se aplicó un mismo criterio a las 10 preguntas sin respuesta y a U05: la referencia incluye lo que el corpus dice y saca lo que no dice. Las referencias las revisó un subagente que no vio ninguna respuesta, y se volvieron a juzgar las 33 respuestas afectadas.
+- **Reporte:** `results.json` informa los dos puntajes, con referencias originales y corregidas. Una sola referencia defectuosa mueve hasta 0,03 el puntaje de un brazo, más que algunas diferencias entre brazos.
+- **El juez es inestable en esta categoría:** al volver a juzgar las 30 respuestas `sin_respuesta`, **12 cambiaron de veredicto**, en las dos direcciones. Algunos cambios se explican por la referencia corregida (P25, P49). Otros no: wiki-P23 pasó de `correcta` a `incorrecta` y rag-P46 de `correcta` a `incorrecta`. Con referencias corregidas, la wiki sigue en 5/10 en esta categoría y el puntaje global queda en contexto 0,98, RAG 0,81 y wiki 0,87. Las diferencias de 0,01-0,02 entre corridas del juez no son señal.
+- **Otro hallazgo de la revisión, que no se cambió:** el juez fue inconsistente en P46, porque marcó `correcta` la respuesta del RAG, que derivaba a la misma persona que las respuestas marcadas `incorrecta`.
 
 ## 9. Proceso: el agente de ingesta "terminaba" sin escribir y leía un índice truncado (wiki v1)
 

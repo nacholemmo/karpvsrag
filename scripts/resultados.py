@@ -142,9 +142,9 @@ def preparacion() -> dict:
     }
 
 
-def armar(sufijo: str = "", archivo_preguntas: str = "preguntas.jsonl") -> dict | None:
+def armar(sufijo: str = "", archivo_preguntas: str = "preguntas.jsonl", juicios_archivo: str | None = None) -> dict | None:
     preguntas = {p["id"]: p for p in jsonl(EVALS / archivo_preguntas)}
-    juicios = {j["id"]: j for j in jsonl(RES / f"juicios{sufijo}.jsonl")}
+    juicios = {j["id"]: j for j in jsonl(RES / (juicios_archivo or f"juicios{sufijo}.jsonl"))}
     if not preguntas or not juicios:
         return None
     return {b: metricas_brazo(b, preguntas, jsonl(RES / f"respuestas_{b}{sufijo}.jsonl"), juicios) for b in BRAZOS}
@@ -152,7 +152,10 @@ def armar(sufijo: str = "", archivo_preguntas: str = "preguntas.jsonl") -> dict 
 
 def main() -> int:
     tokens = json.loads((RES / "tokens_corpus.json").read_text())
-    commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=RAIZ, capture_output=True, text=True).stdout.strip()
+    def git(*a):
+        return subprocess.run(["git", *a], cwd=RAIZ, capture_output=True, text=True).stdout.strip()
+    commit = {"linea_base_corrida_principal": git("rev-parse", "--short", "linea-base^{commit}"),
+              "nota": "La corrida principal se hizo sobre el corpus del tag linea-base; la prueba de actualización, sobre el corpus actual."}
     recall = json.loads((RES / "recall_rag.json").read_text()) if (RES / "recall_rag.json").exists() else {}
     out = {
         "meta": {
@@ -165,24 +168,34 @@ def main() -> int:
                 "Un solo modelo (Haiku 5.5) responde en los tres brazos y también juzga: hay sesgo de autoevaluación.",
                 "Una sola corrida por brazo; el juez no es determinista.",
                 "Las preguntas y las referencias las escribieron agentes a partir de hechos.csv; no hubo revisión humana de las 50.",
+                "Solo el prompt del RAG dice 'si los fragmentos no alcanzan, decilo'; el resto de las instrucciones de formato es igual en los tres brazos.",
+                "El juez puede deducir el brazo por el estilo de la respuesta (el RAG menciona 'fragmentos' y la wiki, 'wiki').",
             ],
         },
-        "correcciones_post_corrida": [
-            {"pregunta": "P25", "motivo": "La referencia omitía que las notas del turno noche registran una sugerencia informal "
-             "(llamar a la policía y a Walter); el juez penalizaba respuestas fieles al corpus. Se completó la referencia y se "
-             "re-juzgó P25 en los tres brazos.", "antes": {"contexto": "parcial", "rag": "parcial", "wiki": "correcta"},
-             "despues": "correcta en los tres", "juicios_anteriores": "resultados/juicios_P25_antes_de_corregir_referencia.jsonl"},
-        ],
+        "correccion_de_referencias": {
+            "que": "Las 10 preguntas sin_respuesta y U05 se re-evaluaron con referencias corregidas por un criterio uniforme: "
+                   "incluir lo que el corpus sí dice del tema y sacar lo que no dice. Las revisó un subagente sin ver respuestas.",
+            "por_que": "Las referencias originales omitían contenido del corpus y el juez castigaba respuestas fieles "
+                       "(5 veces a la wiki, 2 al contexto, 1 al RAG). Una primera corrección solo de P25 favorecía a contexto y RAG.",
+            "puntaje_principal": "brazos = referencias corregidas; brazos_referencias_originales = referencias tal como estaban en la corrida",
+            "estabilidad_del_juez": "Al volver a juzgar las 30 respuestas sin_respuesta y las 3 de U05, cambiaron 12 de 30 veredictos "
+                                    "sin_respuesta en las dos direcciones; parte se explica por la referencia corregida y parte es ruido del juez.",
+            "archivos": ["evals/preguntas_referencias_originales.jsonl", "resultados/juicios_referencias_originales.jsonl",
+                         "resultados/juicios_actualizacion_referencias_originales.jsonl"],
+        },
         "acuerdo_humano_juez": acuerdo_humano(),
         "recall_rag": recall,
         "brazos": armar(),
+        "brazos_referencias_originales": armar(juicios_archivo="juicios_referencias_originales.jsonl"),
         "preparacion": preparacion(),
         "actualizacion": None,
     }
     act = armar("_actualizacion", "preguntas_actualizacion.jsonl")
     if act:
         datos_act = json.loads((RES / "actualizacion.json").read_text()) if (RES / "actualizacion.json").exists() else {}
-        out["actualizacion"] = {"brazos": act, "costo_y_tiempo_de_actualizar": datos_act}
+        out["actualizacion"] = {"brazos": act, "costo_y_tiempo_de_actualizar": datos_act,
+                                "brazos_referencias_originales": armar("_actualizacion", "preguntas_actualizacion.jsonl",
+                                                                       "juicios_actualizacion_referencias_originales.jsonl")}
     (RES / "results.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (RES / "resumen.md").write_text(resumen(out), encoding="utf-8")
     print((RES / "resumen.md").read_text(encoding="utf-8"))
@@ -207,9 +220,12 @@ def tabla_brazos(brazos: dict) -> list[str]:
 
 def resumen(out: dict) -> str:
     l = ["# Resumen de resultados", "",
-         f"Modelo: {out['meta']['modelo_respuesta']} (responde y juzga). Commit: {out['meta']['commit']}. "
+         f"Modelo: {out['meta']['modelo_respuesta']} (responde y juzga). Corrida principal sobre el tag linea-base "
+         f"({out['meta']['commit']['linea_base_corrida_principal']}). "
          f"Puntaje: {out['meta']['puntaje']}.", "", "## Corrida principal (50 preguntas)", ""]
     l += tabla_brazos(out["brazos"])
+    l += ["", "Con las referencias originales (sin la corrección de las 10 sin_respuesta y U05):", ""]
+    l += tabla_brazos(out["brazos_referencias_originales"])
     l += ["", "### Puntaje por tipo de pregunta", "", "| Tipo | " + " | ".join(BRAZOS) + " |", "|---" * 4 + "|"]
     for c in CLASES:
         celdas = []
@@ -231,6 +247,8 @@ def resumen(out: dict) -> str:
     if out.get("actualizacion"):
         l += ["", "## Prueba de actualización (10 preguntas sobre 3 documentos modificados)", ""]
         l += tabla_brazos(out["actualizacion"]["brazos"])
+        l += ["", "Con las referencias originales:", ""]
+        l += tabla_brazos(out["actualizacion"]["brazos_referencias_originales"])
         l += ["", "```json", json.dumps(out["actualizacion"]["costo_y_tiempo_de_actualizar"], ensure_ascii=False, indent=1), "```"]
     a = out.get("acuerdo_humano_juez", {})
     if a.get("v1"):

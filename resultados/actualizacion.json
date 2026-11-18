@@ -28,6 +28,6 @@
    "wiki/proceso/procedimiento-de-reclamos.md"
   ],
   "lint": "0 errores después de la reingesta; no hizo falta corrección con agente (USD 0)",
-  "nota": "Reingesta incremental de los 3 documentos sobre la wiki v3."
+  "nota": "Reingesta incremental de los 3 documentos sobre la wiki v3. ACTUALIZACIÓN INCOMPLETA: quedaron valores viejos como vigentes en páginas que no se reescribieron (wiki/proceso/circuito-de-compra.md con $ 2.000.000 y frescos sin cotizar; wiki/proceso/reclamo-hermanos-lutz-sucursal-4.md con $ 500.000). El lint en código no lo detecta. Ver fallos.md #7."
  }
 }
