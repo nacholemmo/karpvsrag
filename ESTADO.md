@@ -1,6 +1,6 @@
 # ESTADO
 
-**Fase actual:** las 6 fases están implementadas y revisadas. Falta el OK final del usuario para la fase 6.
+**Fase actual:** proyecto completo. Las 6 fases están cerradas con el OK del usuario.
 
 ## Hecho
 1. **Corpus:** 50 documentos sintéticos, 232 hechos plantados y validador. Recortado a 91,7k tokens de Haiku 5.5.
