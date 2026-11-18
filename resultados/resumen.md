@@ -1,6 +1,6 @@
 # Resumen de resultados
 
-Modelo: claude-haiku-5-5 (responde y juzga). Commit: 5d95c08. Puntaje: correcta + 0,5 × parcial, sobre el total de preguntas.
+Modelo: claude-haiku-5-5 (responde y juzga). Commit: 56262a8. Puntaje: correcta + 0,5 × parcial, sobre el total de preguntas.
 
 ## Corrida principal (50 preguntas)
 

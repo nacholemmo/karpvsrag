@@ -7,7 +7,7 @@
     "preguntas": 50,
     "documentos": 50,
     "tokens_corpus_haiku": 91737,
-    "commit": "5d95c08",
+    "commit": "56262a8",
     "puntaje": "correcta + 0,5 × parcial, sobre el total de preguntas",
     "advertencias": [
       "Corpus sintético de 50 documentos de una empresa ficticia.",
