@@ -191,19 +191,19 @@
    "etiqueta": "ingesta"
   },
   "reglamento-interno.md": {
-   "costo_usd": 0.007978,
-   "turnos": 5,
-   "segundos": 42.0,
-   "max_prompt_tokens": 20740,
+   "costo_usd": 0.01531,
+   "turnos": 6,
+   "segundos": 60.0,
+   "max_prompt_tokens": 41682,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
-    "wiki/politica/reglamento-interno-personal.md",
-    "wiki/proceso/pedido-de-vacaciones.md"
+    "wiki/politica/horas-extras.md",
+    "wiki/politica/reglamento-interno-personal.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
-   "etiqueta": "ingesta"
+   "etiqueta": "actualizacion"
   },
   "politica-viaticos-vendedores.md": {
    "costo_usd": 0.006867,
@@ -237,20 +237,19 @@
    "etiqueta": "ingesta"
   },
   "politica-compras.md": {
-   "costo_usd": 0.010311,
+   "costo_usd": 0.016454,
    "turnos": 5,
-   "segundos": 51.9,
-   "max_prompt_tokens": 26742,
+   "segundos": 67.8,
+   "max_prompt_tokens": 48057,
    "cortada": null,
    "escritos": [
     "wiki/index.md",
     "wiki/politica/aprobacion-de-compras.md",
-    "wiki/politica/politica-de-compras.md",
-    "wiki/proceso/circuito-de-compra.md"
+    "wiki/politica/politica-de-compras.md"
    ],
    "avisos_sin_escritura": 0,
    "cortes_por_largo": 0,
-   "etiqueta": "ingesta"
+   "etiqueta": "actualizacion"
   },
   "zonas-reparto.md": {
    "costo_usd": 0.006204,
@@ -341,17 +340,18 @@
    "etiqueta": "ingesta"
   },
   "procedimiento-reclamos-v2.md": {
-   "costo_usd": 0.019842,
-   "turnos": 6,
-   "segundos": 107.8,
-   "max_prompt_tokens": 33371,
+   "costo_usd": 0.017414,
+   "turnos": 5,
+   "segundos": 66.0,
+   "max_prompt_tokens": 54262,
    "cortada": null,
    "escritos": [
+    "wiki/index.md",
     "wiki/proceso/procedimiento-de-reclamos.md"
    ],
    "avisos_sin_escritura": 0,
-   "cortes_por_largo": 1,
-   "etiqueta": "ingesta"
+   "cortes_por_largo": 0,
+   "etiqueta": "actualizacion"
   },
   "instructivo-mostrador.md": {
    "costo_usd": 0.007178,
@@ -751,8 +751,8 @@
  },
  "resumen": {
   "documentos_ingeridos": 50,
-  "costo_usd": 0.54336,
-  "segundos": 2530.9,
+  "costo_usd": 0.554407,
+  "segundos": 2523.0,
   "turnos": 252,
   "sesiones_cortadas": [],
   "sesiones_sin_escrituras": []

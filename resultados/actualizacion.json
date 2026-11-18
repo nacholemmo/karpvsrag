@@ -1,0 +1,33 @@
+{
+ "documentos_modificados": [
+  "politica-compras.md",
+  "procedimiento-reclamos-v2.md",
+  "reglamento-interno.md"
+ ],
+ "contexto": {
+  "costo_usd": 0.0,
+  "segundos": 0.0,
+  "nota": "No hay nada que reconstruir. La primera consulta después del cambio reescribe la caché del corpus: costó USD 0.0117, contra ~USD 0,0012 de una consulta con caché caliente."
+ },
+ "rag": {
+  "costo_usd": 0.0,
+  "segundos": 33.3,
+  "fragmentos": 389,
+  "nota": "Reindexación local completa (sin reindexado incremental): se recalculan todos los embeddings."
+ },
+ "wiki": {
+  "costo_usd": 0.049178,
+  "segundos": 193.8,
+  "turnos": 16,
+  "paginas_escritas": [
+   "wiki/index.md",
+   "wiki/politica/aprobacion-de-compras.md",
+   "wiki/politica/horas-extras.md",
+   "wiki/politica/politica-de-compras.md",
+   "wiki/politica/reglamento-interno-personal.md",
+   "wiki/proceso/procedimiento-de-reclamos.md"
+  ],
+  "lint": "0 errores después de la reingesta; no hizo falta corrección con agente (USD 0)",
+  "nota": "Reingesta incremental de los 3 documentos sobre la wiki v3."
+ }
+}

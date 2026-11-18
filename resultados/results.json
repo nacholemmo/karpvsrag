@@ -7,7 +7,7 @@
     "preguntas": 50,
     "documentos": 50,
     "tokens_corpus_haiku": 91737,
-    "commit": "56262a8",
+    "commit": "befbfe1",
     "puntaje": "correcta + 0,5 × parcial, sobre el total de preguntas",
     "advertencias": [
       "Corpus sintético de 50 documentos de una empresa ficticia.",
@@ -407,5 +407,257 @@
       "nota": "Sin preparación. La primera llamada de cada corrida escribe ~92k tokens en caché (~USD 0,012)."
     }
   },
-  "actualizacion": null
+  "actualizacion": {
+    "brazos": {
+      "contexto": {
+        "exactitud": {
+          "n": 10,
+          "correcta": 10,
+          "parcial": 0,
+          "incorrecta": 0,
+          "pct_correcta": 100.0,
+          "pct_parcial": 0.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 1.0
+        },
+        "por_tipo": {
+          "dato": {
+            "n": 3,
+            "correcta": 3,
+            "parcial": 0,
+            "incorrecta": 0,
+            "pct_correcta": 100.0,
+            "pct_parcial": 0.0,
+            "pct_incorrecta": 0.0,
+            "puntaje": 1.0
+          },
+          "cruce": {
+            "n": 2,
+            "correcta": 2,
+            "parcial": 0,
+            "incorrecta": 0,
+            "pct_correcta": 100.0,
+            "pct_parcial": 0.0,
+            "pct_incorrecta": 0.0,
+            "puntaje": 1.0
+          },
+          "version": {
+            "n": 5,
+            "correcta": 5,
+            "parcial": 0,
+            "incorrecta": 0,
+            "pct_correcta": 100.0,
+            "pct_parcial": 0.0,
+            "pct_incorrecta": 0.0,
+            "puntaje": 1.0
+          }
+        },
+        "fuente_juez": {
+          "correcta": 10,
+          "parcial": 0,
+          "incorrecta": 0,
+          "no_aplica": 0
+        },
+        "fuente_exacta": {
+          "correcta": 10,
+          "parcial": 0,
+          "incorrecta": 0,
+          "no_aplica": 0
+        },
+        "sin_respuesta_valida": [],
+        "costo_usd": {
+          "total": 0.022019,
+          "media": 0.002202,
+          "mediana": 0.001142,
+          "p90": 0.002379
+        },
+        "latencia_s": {
+          "media": 2.542,
+          "mediana": 2.414,
+          "p90": 3.594
+        },
+        "llamadas_por_pregunta": {
+          "media": 1,
+          "max": 1
+        }
+      },
+      "rag": {
+        "exactitud": {
+          "n": 10,
+          "correcta": 8,
+          "parcial": 1,
+          "incorrecta": 1,
+          "pct_correcta": 80.0,
+          "pct_parcial": 10.0,
+          "pct_incorrecta": 10.0,
+          "puntaje": 0.85
+        },
+        "por_tipo": {
+          "dato": {
+            "n": 3,
+            "correcta": 3,
+            "parcial": 0,
+            "incorrecta": 0,
+            "pct_correcta": 100.0,
+            "pct_parcial": 0.0,
+            "pct_incorrecta": 0.0,
+            "puntaje": 1.0
+          },
+          "cruce": {
+            "n": 2,
+            "correcta": 1,
+            "parcial": 0,
+            "incorrecta": 1,
+            "pct_correcta": 50.0,
+            "pct_parcial": 0.0,
+            "pct_incorrecta": 50.0,
+            "puntaje": 0.5
+          },
+          "version": {
+            "n": 5,
+            "correcta": 4,
+            "parcial": 1,
+            "incorrecta": 0,
+            "pct_correcta": 80.0,
+            "pct_parcial": 20.0,
+            "pct_incorrecta": 0.0,
+            "puntaje": 0.9
+          }
+        },
+        "fuente_juez": {
+          "correcta": 9,
+          "parcial": 0,
+          "incorrecta": 1,
+          "no_aplica": 0
+        },
+        "fuente_exacta": {
+          "correcta": 9,
+          "parcial": 1,
+          "incorrecta": 0,
+          "no_aplica": 0
+        },
+        "sin_respuesta_valida": [],
+        "costo_usd": {
+          "total": 0.005802,
+          "media": 0.00058,
+          "mediana": 0.000595,
+          "p90": 0.000731
+        },
+        "latencia_s": {
+          "media": 2.882,
+          "mediana": 3.071,
+          "p90": 3.788
+        },
+        "llamadas_por_pregunta": {
+          "media": 1,
+          "max": 1
+        }
+      },
+      "wiki": {
+        "exactitud": {
+          "n": 10,
+          "correcta": 9,
+          "parcial": 1,
+          "incorrecta": 0,
+          "pct_correcta": 90.0,
+          "pct_parcial": 10.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 0.95
+        },
+        "por_tipo": {
+          "dato": {
+            "n": 3,
+            "correcta": 3,
+            "parcial": 0,
+            "incorrecta": 0,
+            "pct_correcta": 100.0,
+            "pct_parcial": 0.0,
+            "pct_incorrecta": 0.0,
+            "puntaje": 1.0
+          },
+          "cruce": {
+            "n": 2,
+            "correcta": 2,
+            "parcial": 0,
+            "incorrecta": 0,
+            "pct_correcta": 100.0,
+            "pct_parcial": 0.0,
+            "pct_incorrecta": 0.0,
+            "puntaje": 1.0
+          },
+          "version": {
+            "n": 5,
+            "correcta": 4,
+            "parcial": 1,
+            "incorrecta": 0,
+            "pct_correcta": 80.0,
+            "pct_parcial": 20.0,
+            "pct_incorrecta": 0.0,
+            "puntaje": 0.9
+          }
+        },
+        "fuente_juez": {
+          "correcta": 9,
+          "parcial": 1,
+          "incorrecta": 0,
+          "no_aplica": 0
+        },
+        "fuente_exacta": {
+          "correcta": 9,
+          "parcial": 0,
+          "incorrecta": 1,
+          "no_aplica": 0
+        },
+        "sin_respuesta_valida": [],
+        "costo_usd": {
+          "total": 0.027522,
+          "media": 0.002752,
+          "mediana": 0.002768,
+          "p90": 0.003197
+        },
+        "latencia_s": {
+          "media": 5.001,
+          "mediana": 5.168,
+          "p90": 5.933
+        },
+        "llamadas_por_pregunta": {
+          "media": 3,
+          "max": 3
+        }
+      }
+    },
+    "costo_y_tiempo_de_actualizar": {
+      "documentos_modificados": [
+        "politica-compras.md",
+        "procedimiento-reclamos-v2.md",
+        "reglamento-interno.md"
+      ],
+      "contexto": {
+        "costo_usd": 0.0,
+        "segundos": 0.0,
+        "nota": "No hay nada que reconstruir. La primera consulta después del cambio reescribe la caché del corpus: costó USD 0.0117, contra ~USD 0,0012 de una consulta con caché caliente."
+      },
+      "rag": {
+        "costo_usd": 0.0,
+        "segundos": 33.3,
+        "fragmentos": 389,
+        "nota": "Reindexación local completa (sin reindexado incremental): se recalculan todos los embeddings."
+      },
+      "wiki": {
+        "costo_usd": 0.049178,
+        "segundos": 193.8,
+        "turnos": 16,
+        "paginas_escritas": [
+          "wiki/index.md",
+          "wiki/politica/aprobacion-de-compras.md",
+          "wiki/politica/horas-extras.md",
+          "wiki/politica/politica-de-compras.md",
+          "wiki/politica/reglamento-interno-personal.md",
+          "wiki/proceso/procedimiento-de-reclamos.md"
+        ],
+        "lint": "0 errores después de la reingesta; no hizo falta corrección con agente (USD 0)",
+        "nota": "Reingesta incremental de los 3 documentos sobre la wiki v3."
+      }
+    }
+  }
 }

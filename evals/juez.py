@@ -126,9 +126,10 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--respuestas", type=Path, action="append", required=True)
     ap.add_argument("--salida", type=Path, required=True)
+    ap.add_argument("--preguntas", type=Path, default=PREGUNTAS)
     args = ap.parse_args(argv)
 
-    preguntas = {p["id"]: p for p in cargar_jsonl(PREGUNTAS)}
+    preguntas = {p["id"]: p for p in cargar_jsonl(args.preguntas)}
     respuestas = [r for ruta in args.respuestas for r in cargar_jsonl(ruta)]
     hechos = {j["id"] for j in cargar_jsonl(args.salida)} if args.salida.exists() else set()
     pendientes = [r for r in respuestas if r["id"] not in hechos]

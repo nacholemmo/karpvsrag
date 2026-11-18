@@ -1,6 +1,6 @@
 # Resumen de resultados
 
-Modelo: claude-haiku-5-5 (responde y juzga). Commit: 56262a8. Puntaje: correcta + 0,5 × parcial, sobre el total de preguntas.
+Modelo: claude-haiku-5-5 (responde y juzga). Commit: befbfe1. Puntaje: correcta + 0,5 × parcial, sobre el total de preguntas.
 
 ## Corrida principal (50 preguntas)
 
@@ -34,5 +34,49 @@ Modelo: claude-haiku-5-5 (responde y juzga). Commit: 56262a8. Puntaje: correcta 
 - Wiki: ingesta de 50 documentos USD 0.5434 en 42.2 min + lint USD 0.0601 (3 pasadas); 52 páginas.
 - RAG: indexación local en 34.7 s, USD 0.
 - Contexto: Sin preparación. La primera llamada de cada corrida escribe ~92k tokens en caché (~USD 0,012).
+
+## Prueba de actualización (10 preguntas sobre 3 documentos modificados)
+
+| Brazo | Puntaje | Correcta | Parcial | Incorrecta | Costo/consulta (media) | Latencia (mediana) | Llamadas/consulta |
+|---|---|---|---|---|---|---|---|
+| contexto | 1.000 | 100.0% | 0.0% | 0.0% | USD 0.00220 | 2.4 s | 1.00 |
+| rag | 0.850 | 80.0% | 10.0% | 10.0% | USD 0.00058 | 3.1 s | 1.00 |
+| wiki | 0.950 | 90.0% | 10.0% | 0.0% | USD 0.00275 | 5.2 s | 3.00 |
+
+```json
+{
+ "documentos_modificados": [
+  "politica-compras.md",
+  "procedimiento-reclamos-v2.md",
+  "reglamento-interno.md"
+ ],
+ "contexto": {
+  "costo_usd": 0.0,
+  "segundos": 0.0,
+  "nota": "No hay nada que reconstruir. La primera consulta después del cambio reescribe la caché del corpus: costó USD 0.0117, contra ~USD 0,0012 de una consulta con caché caliente."
+ },
+ "rag": {
+  "costo_usd": 0.0,
+  "segundos": 33.3,
+  "fragmentos": 389,
+  "nota": "Reindexación local completa (sin reindexado incremental): se recalculan todos los embeddings."
+ },
+ "wiki": {
+  "costo_usd": 0.049178,
+  "segundos": 193.8,
+  "turnos": 16,
+  "paginas_escritas": [
+   "wiki/index.md",
+   "wiki/politica/aprobacion-de-compras.md",
+   "wiki/politica/horas-extras.md",
+   "wiki/politica/politica-de-compras.md",
+   "wiki/politica/reglamento-interno-personal.md",
+   "wiki/proceso/procedimiento-de-reclamos.md"
+  ],
+  "lint": "0 errores después de la reingesta; no hizo falta corrección con agente (USD 0)",
+  "nota": "Reingesta incremental de los 3 documentos sobre la wiki v3."
+ }
+}
+```
 
 Acuerdo humano vs. juez (muestra de 15): v1 11/15 (kappa 0.4915), v2 12/15 (kappa 0.5833). v2 se calculó después de ajustar la rúbrica y dos referencias mirando estas mismas 15 respuestas; las etiquetas de fuente y el veredicto de un caso los completó Claude a pedido del usuario.

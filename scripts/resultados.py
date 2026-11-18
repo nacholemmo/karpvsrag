@@ -111,17 +111,13 @@ def acuerdo_humano() -> dict:
 
 
 def preparacion() -> dict:
-    ing = json.loads((RES / "ingesta_wiki.json").read_text(encoding="utf-8"))
+    base_path = RES / "ingesta_wiki_v3_linea_base.json"  # congelado antes de la prueba de actualización
+    ing = json.loads((base_path if base_path.exists() else RES / "ingesta_wiki.json").read_text(encoding="utf-8"))
     docs = ing["documentos"]
     base = {a: d for a, d in docs.items() if d.get("etiqueta", "ingesta") == "ingesta"}
     lint = json.loads((RES / "lint_wiki.json").read_text(encoding="utf-8")) if (RES / "lint_wiki.json").exists() else []
     lint_base = [x for x in lint if x.get("etapa", "construccion") == "construccion"]
-    meta_rag = RAIZ / "indices" / "rag" / "meta.json"
-    rag_seg = json.loads(meta_rag.read_text())["segundos"] if meta_rag.exists() else None
-    if rag_seg is not None:  # se guarda una copia versionada, porque indices/ no se versiona
-        (RES / "rag_indice.json").write_text(meta_rag.read_text(), encoding="utf-8")
-    elif (RES / "rag_indice.json").exists():
-        rag_seg = json.loads((RES / "rag_indice.json").read_text())["segundos"]
+    rag_seg = json.loads((RES / "rag_indice_linea_base.json").read_text())["segundos"]
     fallidas = {}
     for nombre, archivo in (("v1_primera_pasada", "ingesta_wiki_primera_pasada.json"),
                             ("v1_parcheada", "ingesta_wiki_v1_parcheada.json"),

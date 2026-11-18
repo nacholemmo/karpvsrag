@@ -4,6 +4,7 @@
 
 **Emitido por:** Jefatura de Recursos Humanos
 **Fecha:** 24/02/2025
+**Última revisión:** 10/11/2025 (ver Historial de cambios)
 **Redacción:** Graciela Toledo, Jefa de Recursos Humanos
 **Aprobación:** Horacio Benítez Lagos, Gerente General
 
@@ -53,6 +54,8 @@
 
 **Artículo 18.º — Tope.** Las horas extraordinarias de cada trabajador no podrán superar las **30 horas mensuales**. Los jefes de área son responsables de planificar las tareas de modo de no exceder ese tope.
 
+**Artículo 18 bis — Horas extras en sábado.** Las horas extraordinarias en día sábado requieren autorización previa por escrito de la Jefa de Recursos Humanos, además de la del jefe de área.
+
 **Artículo 19.º — Registro y liquidación.** Las horas extras se registran en el sistema de control de asistencia y son informadas mensualmente por cada jefe de área a Recursos Humanos.
 
 ### CAPÍTULO V — VACACIONES
@@ -65,7 +68,7 @@
 
 ### CAPÍTULO VI — TRABAJO REMOTO
 
-**Artículo 23.º — Alcance.** El personal administrativo cuyas tareas lo permitan podrá trabajar en forma remota hasta **2 días por semana**, previo acuerdo con su jefe directo. El personal de depósito, distribución y demás tareas presenciales queda excluido de esta modalidad por la naturaleza de sus funciones.
+**Artículo 23.º — Alcance.** El personal administrativo cuyas tareas lo permitan podrá trabajar en forma remota hasta **3 días por semana**, previo acuerdo con su jefe directo. El personal de depósito, distribución y demás tareas presenciales queda excluido de esta modalidad por la naturaleza de sus funciones.
 
 **Artículo 24.º — Excepción por cierre.** No se admite el trabajo remoto durante los **últimos 3 días hábiles** de cada mes, en razón de las tareas de cierre mensual.
 
@@ -112,3 +115,7 @@ Jefa de Recursos Humanos
 
 Horacio Benítez Lagos
 Gerente General
+
+## Historial de cambios
+
+- Revisión del 10/11/2025: el trabajo remoto del personal administrativo pasa de 2 días por semana a 3 días por semana. Se agrega el Artículo 18 bis sobre horas extras en sábado.

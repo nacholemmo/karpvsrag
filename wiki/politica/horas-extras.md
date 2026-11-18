@@ -7,6 +7,10 @@ Tope general de horas extras por persona: 30 horas mensuales, con autorización 
 - Excepción de diciembre de 2025: tope de **45 horas en el mes** por persona, para todas las áreas [fuente: mail-horas-extras-cierre.md].
 - La excepción es solo para diciembre: "no es un cambio de regla"; en enero se vuelve a lo que dice el Reglamento Interno de Personal [fuente: mail-horas-extras-cierre.md].
 - La excepción la aprobó Graciela Toledo, Jefa de Recursos Humanos, por correo del 04/11/2025 [fuente: mail-horas-extras-cierre.md].
+- El Reglamento (revisión del 10/11/2025) no menciona la excepción de diciembre [fuente: reglamento-interno.md].
+
+## Horas extras en sábado
+- Requieren autorización previa **por escrito** de la Jefa de Recursos Humanos, además de la del jefe de área (Artículo 18 bis, incorporado en la revisión del 10/11/2025) [fuente: reglamento-interno.md].
 
 ## Reglas que no cambian durante la excepción
 - Las horas extras se autorizan antes, no después. Si no hay autorización previa, no se reconocen [fuente: mail-horas-extras-cierre.md] [fuente: reglamento-interno.md].

@@ -69,16 +69,16 @@ H067,primer lunes de cada mes,mail-cambio-lista-precios.md,facturacion,plazo,no,
 H068,sección 5 del Manual de Facturación,faq-facturacion-clientes.md,facturacion,referencia_cruzada,no,,X7,Remite a D08 para duplicados y reenvíos.
 H069,antes de las 15:00,faq-facturacion-clientes.md,facturacion,plazo,no,,,Si el duplicado se pide antes de las 15:00 se envía el mismo día.
 H070,Rocío Almirón,faq-facturacion-clientes.md,facturacion,responsable,no,,,Envía los duplicados de facturas.
-H071,$ 2.000.000,politica-compras.md,compras,version,no,,V4;X10,El Jefe de Compras aprueba órdenes de compra hasta este monto (vigente).
+H071,$ 2.000.000,politica-compras.md,compras,version,si,H226,V4,El Jefe de Compras aprueba órdenes de compra hasta este monto (vigente).
 H072,$ 10.000.000,politica-compras.md,compras,monto,no,,,El Gerente de Operaciones aprueba OC hasta este monto.
 H073,Gerente General,politica-compras.md,compras,responsable,no,,,Aprueba OC por encima de $ 10.000.000.
 H074,tres cotizaciones,politica-compras.md,compras,version,no,,V10,Cantidad mínima de cotizaciones para compras no recurrentes (vigente).
 H075,$ 3.000.000,politica-compras.md,compras,monto,no,,,Monto a partir del cual se exigen las cotizaciones.
-H076,productos frescos,politica-compras.md,compras,excepcion,no,,,Excepción: los productos frescos no requieren cotizaciones.
+H076,productos frescos,politica-compras.md,compras,version,si,H227,V16,Antes: los productos frescos no requerían cotizaciones (reemplazado en la revisión 1.1).
 H077,el alta de un proveedor la aprueba el Jefe de Compras,politica-compras.md,compras,contradiccion,no,,C3,Contradice D17 (Responsable de Calidad).
 H078,a 45 días,politica-compras.md,compras,plazo,no,,,Plazo estándar de pago a proveedores.
 H079,reemplaza al Manual de Compras de 2023,politica-compras.md,compras,version,no,,V4,Marca explícita de reemplazo.
-H080,$ 1.000.000,manual-compras-2023.md,compras,version,si,H071,V4,Monto que aprobaba el Jefe de Compras en 2023 (reemplazado).
+H080,$ 1.000.000,manual-compras-2023.md,compras,version,si,H226,V4,Monto que aprobaba el Jefe de Compras en 2023 (reemplazado).
 H081,dos cotizaciones,manual-compras-2023.md,compras,version,si,H074,V10,Cantidad de cotizaciones exigida en 2023 (reemplazado).
 H082,Fénix,manual-compras-2023.md,compras,dato,no,,,Sistema anterior.
 H083,el alta de un proveedor la aprueba la Responsable de Calidad,procedimiento-alta-proveedores.md,compras,contradiccion,no,,C3,Contradice D15 (Jefe de Compras).
@@ -166,15 +166,15 @@ H164,los jueves,zonas-reparto.md,ventas,plazo,no,,,Día de reparto de la Zona 4 
 H165,$ 15.000,zonas-reparto.md,ventas,monto,no,,,Flete adicional por pedido en la Zona 4 Rural.
 H166,48 horas hábiles,procedimiento-reclamos-v2.md,reclamos,version,no,,V7,Plazo para reclamar faltantes desde la entrega (vigente).
 H167,5 días corridos,procedimiento-reclamos-v2.md,reclamos,plazo,no,,,Plazo para reclamar mercadería vencida o dañada.
-H168,24 horas hábiles,procedimiento-reclamos-v2.md,reclamos,plazo,no,,,Plazo de primera respuesta al cliente.
+H168,24 horas hábiles,procedimiento-reclamos-v2.md,reclamos,version,si,H228,V17,Plazo de primera respuesta al cliente.
 H169,10 días hábiles,procedimiento-reclamos-v2.md,reclamos,plazo,no,,,Plazo de resolución del reclamo.
-H170,$ 500.000,procedimiento-reclamos-v2.md,reclamos,version,no,,V12;X15,Los reclamos por encima de este monto escalan al Gerente Comercial (vigente).
+H170,$ 500.000,procedimiento-reclamos-v2.md,reclamos,version,si,H229,V12,Los reclamos por encima de este monto escalan al Gerente Comercial (vigente).
 H171,Gerente Comercial,procedimiento-reclamos-v2.md,reclamos,responsable,no,,,A quién escalan los reclamos grandes.
 H172,dentro de las 2 horas,procedimiento-reclamos-v2.md,reclamos,excepcion,no,,,"Los reclamos de cadena de frío solo se aceptan dentro de las 2 horas de recibida la mercadería, con foto."
 H173,Circular 04/2025,procedimiento-reclamos-v2.md,reclamos,referencia_cruzada,no,,X6,Remite a D10 para la aprobación de la NC.
 H174,reemplaza al procedimiento de reclamos de 2023,procedimiento-reclamos-v2.md,reclamos,version,no,,V7,Marca explícita de reemplazo.
 H175,24 horas de recibida,procedimiento-reclamos-2023.md,reclamos,version,si,H166,V7,Plazo para reclamar faltantes en 2023 (reemplazado).
-H176,$ 300.000,procedimiento-reclamos-2023.md,reclamos,version,si,H170,V12,Umbral de escalamiento en 2023 (reemplazado).
+H176,$ 300.000,procedimiento-reclamos-2023.md,reclamos,version,si,H229,V12,Umbral de escalamiento en 2023 (reemplazado).
 H177,planilla compartida,procedimiento-reclamos-2023.md,reclamos,version,si,H224,V15,En 2023 los reclamos se registraban en una planilla compartida (reemplazado por Mostrador).
 H178,REC-,instructivo-mostrador.md,reclamos,dato,no,,X5,Prefijo del número de reclamo.
 H179,prioridad alta,instructivo-mostrador.md,reclamos,paso_procedimiento,no,,,Los reclamos de cadena de frío se cargan con prioridad alta.
@@ -190,7 +190,7 @@ H188,30 días de anticipación,reglamento-interno.md,rrhh,version,no,,V8;X12,Ant
 H189,2 horas antes,reglamento-interno.md,rrhh,plazo,no,,,Aviso de ausencia antes del inicio del turno.
 H190,dentro de las 48 horas,reglamento-interno.md,rrhh,plazo,no,,,Plazo para presentar el certificado médico.
 H191,30 horas mensuales,reglamento-interno.md,rrhh,plazo,no,,,Tope de horas extras.
-H192,2 días por semana,reglamento-interno.md,rrhh,plazo,no,,,Home office para administrativos.
+H192,2 días por semana,reglamento-interno.md,rrhh,version,si,H230,V18,Home office para administrativos.
 H193,últimos 3 días hábiles,reglamento-interno.md,rrhh,excepcion,no,,,Sin home office en los últimos 3 días hábiles del mes (cierre).
 H194,6 meses,reglamento-interno.md,rrhh,plazo,no,,,Período de prueba.
 H195,deja sin efecto las circulares anteriores sobre vacaciones,reglamento-interno.md,rrhh,version,no,,V8,Marca explícita de reemplazo.
@@ -224,3 +224,10 @@ H222,aprobado y vigente,instructivo-onboarding.md,rrhh,paso_procedimiento,no,,,S
 H223,la mercadería vuelve al depósito,faq-atencion-clientes.md,ventas,paso_procedimiento,no,,,Si el chofer encuentra el local cerrado (agregado por el redactor de la tanda 5).
 H224,Mostrador,procedimiento-reclamos-v2.md,reclamos,version,no,,V15,Sistema donde se registran los reclamos (reemplaza a la planilla compartida de 2023).
 H225,máximo de temperatura de refrigerados,mail-temperatura-camara.md,deposito,referencia_cruzada,no,,X18,El mail no repite la cifra: el máximo (7 °C) está en la Política de Calidad e Inocuidad Alimentaria.
+H226,$ 2.500.000,politica-compras.md,compras,version,no,,V4;X10,Tope de aprobación del Jefe de Compras desde la revisión 1.1 (vigente). Agregado en la prueba de actualización (10/11/2025).
+H227,al menos dos presupuestos,politica-compras.md,compras,version,no,,V16,Las compras de productos frescos requieren al menos dos presupuestos por escrito (vigente). Agregado en la prueba de actualización (10/11/2025).
+H228,12 horas hábiles,procedimiento-reclamos-v2.md,reclamos,version,no,,V17,Plazo de primera respuesta al cliente desde la revisión 2.1 (vigente). Agregado en la prueba de actualización (10/11/2025).
+H229,$ 400.000,procedimiento-reclamos-v2.md,reclamos,version,no,,V12;X15,"Monto a partir del cual el reclamo escala al Gerente Comercial, desde la revisión 2.1 (vigente). Agregado en la prueba de actualización (10/11/2025)."
+H230,3 días por semana,reglamento-interno.md,rrhh,version,no,,V18,Trabajo remoto del personal administrativo desde la revisión del 10/11/2025 (vigente). Agregado en la prueba de actualización (10/11/2025).
+H231,Artículo 18 bis,reglamento-interno.md,rrhh,seccion,no,,,Artículo nuevo sobre horas extras en sábado. Agregado en la prueba de actualización (10/11/2025).
+H232,autorización previa por escrito de la Jefa de Recursos Humanos,reglamento-interno.md,rrhh,responsable,no,,,"Las horas extras en sábado la requieren, además de la del jefe de área. Agregado en la prueba de actualización (10/11/2025)."

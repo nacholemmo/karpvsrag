@@ -133,7 +133,8 @@ def validar(raiz: Path, parcial: bool = False, tanda: str | None = None) -> tupl
                 if not set(grupos_de(h)) & set(grupos_de(nuevo)):
                     inf.error(f"{hid}: no comparte grupo V con su reemplazo {rp}")
                 if nuevo["documento"] == h["documento"]:
-                    inf.error(f"{hid}: la versión nueva está en el mismo documento")
+                    # Válido solo en documentos revisados que conservan el valor viejo en su historial de cambios.
+                    inf.avisos.append(f"{hid}: versión dentro del mismo documento ({h['documento']}, revisión)")
         elif rp:
             inf.error(f"{hid}: reemplazado=no pero tiene reemplazado_por")
 

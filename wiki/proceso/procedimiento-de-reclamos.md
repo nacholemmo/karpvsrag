@@ -1,9 +1,9 @@
 # Procedimiento de reclamos de clientes
 
-Cómo se reciben, registran, analizan, resuelven y cierran los reclamos de clientes. Desde la v2 (12/05/2025) todos los reclamos se registran en el sistema Mostrador, y la v2 reemplaza al procedimiento de 2023 [fuente: procedimiento-reclamos-v2.md]. Lo lleva Atención al Cliente; los casos de importe alto o reiterados se escalan al Gerente Comercial [fuente: procedimiento-reclamos-v2.md].
+Cómo se reciben, registran, analizan, resuelven y cierran los reclamos de clientes. Desde la v2 (12/05/2025, revisión 2.1 del 10/11/2025) todos los reclamos se registran en el sistema Mostrador, y la v2 reemplaza al procedimiento de 2023 [fuente: procedimiento-reclamos-v2.md]. Lo lleva Atención al Cliente; los casos de importe alto o reiterados se escalan al Gerente Comercial [fuente: procedimiento-reclamos-v2.md].
 
 ## Versiones y cambios vigentes
-- Documento vigente: Procedimiento de Reclamos de Clientes v2, fecha 12/05/2025. Elaboró Julieta Acosta (Coordinadora de Atención al Cliente). Aprobó Verónica Etchart (Gerente Comercial) [fuente: procedimiento-reclamos-v2.md].
+- Documento vigente: Procedimiento de Reclamos de Clientes v2, fecha 12/05/2025, revisión 2.1 del 10/11/2025. Elaboró Julieta Acosta (Coordinadora de Atención al Cliente). Aprobó Verónica Etchart (Gerente Comercial) [fuente: procedimiento-reclamos-v2.md].
 - Registro de reclamos:
   - Valor vigente: todos los reclamos se registran exclusivamente en el sistema Mostrador; la planilla compartida queda discontinuada [fuente: procedimiento-reclamos-v2.md].
   - Antes (reemplazado): planilla compartida de reclamos en la carpeta de red de Atención al Cliente, con una solapa por mes [fuente: procedimiento-reclamos-2023.md].
@@ -16,9 +16,12 @@ Cómo se reciben, registran, analizan, resuelven y cierran los reclamos de clien
 - Plazo para reclamar fallas de cadena de frío:
   - Valor vigente: dentro de las 2 horas de recibida la mercadería, con foto del producto y, cuando sea posible, lectura de temperatura [fuente: procedimiento-reclamos-v2.md].
   - Antes: no previsto en el procedimiento de 2023 [fuente: procedimiento-reclamos-2023.md].
+- Primera respuesta al cliente:
+  - Valor vigente: 12 horas hábiles desde el registro del reclamo en Mostrador [fuente: procedimiento-reclamos-v2.md] (revisión 2.1, 10/11/2025, historial de cambios).
+  - Antes (reemplazado): 24 horas hábiles desde el registro [fuente: procedimiento-reclamos-v2.md] (historial de cambios de la revisión 2.1).
 - Escalamiento por monto:
-  - Valor vigente: superior a $ 500.000 escala al Gerente Comercial [fuente: procedimiento-reclamos-v2.md].
-  - Antes (reemplazado): importe estimado superior a $ 300.000, a escalar antes de acordar cualquier solución [fuente: procedimiento-reclamos-2023.md].
+  - Valor vigente: superior a $ 400.000 escala al Gerente Comercial [fuente: procedimiento-reclamos-v2.md] (revisión 2.1, 10/11/2025, historial de cambios).
+  - Antes (reemplazado): superior a $ 500.000 [fuente: procedimiento-reclamos-v2.md] (historial de cambios de la revisión 2.1). Y antes, en el procedimiento de 2023: importe estimado superior a $ 300.000, a escalar antes de acordar cualquier solución [fuente: procedimiento-reclamos-2023.md].
 - Nota de crédito: la aprobación y emisión se rigen por la Circular 04/2025 y el número de reclamo de Mostrador es la referencia [fuente: procedimiento-reclamos-v2.md]. Ver [Emisión de notas de crédito](emision-notas-de-credito.md).
 
 ## Alcance
@@ -38,23 +41,23 @@ Cómo se reciben, registran, analizan, resuelven y cierran los reclamos de clien
 - Reclamos sin datos suficientes: se registran igualmente con la información disponible y se pide el resto en la primera respuesta [fuente: procedimiento-reclamos-v2.md].
 - Reclamos duplicados: se mantiene un único registro y el plazo se computa desde el primer registro [fuente: procedimiento-reclamos-v2.md].
 - Reclamos presentados fuera de plazo: se registran igualmente en Mostrador, pero pueden ser rechazados por extemporáneos [fuente: procedimiento-reclamos-v2.md].
-- Reclamos de cuentas clave: se registran como cualquier otro, identificando la sucursal, y se informan a la Jefa de Cuentas Clave [fuente: procedimiento-reclamos-v2.md].
+- Reclamos de cuentas clave: se registran como cualquier otro, identificando la sucursal, y se informan a la Jefa de Cuentas Clave [fuente: procedimiento-reclamos-v2.md]. Ver [Jefa de Cuentas Clave](../rol/jefa-de-cuentas-clave.md).
 - Para reclamos por error de facturación, el registro incluye número de comprobante, qué dice el cliente que está mal y quién lo atendió [fuente: faq-facturacion-clientes.md].
 - Antes (reemplazado): cada reclamo era un renglón de la planilla, con columnas N°, Fecha, Cliente (razón social y código de cliente de Fénix), Factura, Tipo, Importe estimado, Estado (Abierto / En análisis / Resuelto / Rechazado) y Resolución. Nadie borraba renglones [fuente: procedimiento-reclamos-2023.md].
 
 ## Plazos
-Vigentes según la v2 [fuente: procedimiento-reclamos-v2.md]:
+Vigentes según la v2, revisión 2.1 [fuente: procedimiento-reclamos-v2.md]:
 
 | Concepto | Plazo |
 |---|---|
 | Reclamo por faltantes | Dentro de las 48 horas hábiles desde la entrega |
 | Reclamo por mercadería vencida o dañada | Dentro de los 5 días corridos desde la entrega |
 | Reclamo por falla de cadena de frío | Dentro de las 2 horas de recibida la mercadería, con foto |
-| Primera respuesta al cliente | 24 horas hábiles desde el registro |
+| Primera respuesta al cliente | 12 horas hábiles desde el registro |
 | Resolución del reclamo | 10 días hábiles desde el registro |
 
 - Si la resolución no es posible en 10 días hábiles, se informa al cliente el motivo y una nueva fecha [fuente: procedimiento-reclamos-v2.md].
-- Antes: faltantes, 24 horas de recibida la mercadería; otros tipos, sin plazo numérico [fuente: procedimiento-reclamos-2023.md]. Ver "Versiones y cambios vigentes".
+- Antes: faltantes, 24 horas de recibida la mercadería; otros tipos, sin plazo numérico [fuente: procedimiento-reclamos-2023.md]. Primera respuesta: 24 horas hábiles, antes de la revisión 2.1 [fuente: procedimiento-reclamos-v2.md]. Ver "Versiones y cambios vigentes".
 
 ## Análisis
 - Atención al Cliente analiza el reclamo y pide información a Depósito, Distribución y Calidad, que la registran en Mostrador [fuente: procedimiento-reclamos-v2.md].
@@ -67,7 +70,7 @@ Vigentes según la v2 [fuente: procedimiento-reclamos-v2.md]:
   - errores de facturación → Facturación, por circuito aparte [fuente: faq-facturacion-clientes.md].
 - Las áreas contestan a Atención al Cliente si el reclamo corresponde o no [fuente: procedimiento-reclamos-2023.md].
 - Retiro de la mercadería: el cliente no debe descartar la mercadería reclamada por vencimiento, daño o falla de cadena de frío antes de que la Empresa resuelva si corresponde retirarla o verificarla. Si se dispone el retiro, lo realiza Distribución en el reparto habitual [fuente: procedimiento-reclamos-v2.md].
-- Causa raíz: Atención al Cliente la registra en Mostrador; alimenta la revisión mensual [fuente: procedimiento-reclamos-v2.md].
+- Causa raíz: Atención al Cliente la registra en Mostrador; alimenta la revisión mensual [fuente: procedimiento-reclamos-v2.md]. Ver [Revisión mensual de reclamos](revision-mensual-reclamos.md).
 
 ## Resolución
 - Tipos: reposición en el próximo reparto; nota de crédito (con o sin retiro de la mercadería); rechazo fundado; y, en reclamos por atención, disculpas formales y acciones correctivas [fuente: procedimiento-reclamos-v2.md].
@@ -89,7 +92,7 @@ Vigentes según la v2 [fuente: procedimiento-reclamos-v2.md]:
 - Ningún documento vigente indica cuál prevalece. La v2 no la resuelve [fuente: procedimiento-reclamos-v2.md]. No se resuelve.
 
 ## Escalamiento a la Gerencia Comercial
-- Por monto: reclamos cuyo monto supere $ 500.000 escalan al Gerente Comercial, que define la resolución con la información reunida por Atención al Cliente [fuente: procedimiento-reclamos-v2.md].
+- Por monto: reclamos cuyo monto supere $ 400.000 escalan al Gerente Comercial, que define la resolución con la información reunida por Atención al Cliente [fuente: procedimiento-reclamos-v2.md]. Antes (reemplazado): superior a $ 500.000 [fuente: procedimiento-reclamos-v2.md] (historial de cambios de la revisión 2.1).
 - Por reiteración o gravedad, con independencia del monto [fuente: procedimiento-reclamos-v2.md]:
   - reclamos de un mismo cliente que se repitan sobre el mismo problema;
   - reclamos de cuentas clave que comprometan la relación comercial;
@@ -98,7 +101,7 @@ Vigentes según la v2 [fuente: procedimiento-reclamos-v2.md]:
   - No definido en la documentación vigente: si los supermercados con varias sucursales y las amenazas de denuncia siguen escalando como hasta 2023 [fuente: procedimiento-reclamos-v2.md] [fuente: procedimiento-reclamos-2023.md].
 
 ### Flujo
-Cliente → registro en Mostrador (Atención al Cliente / vendedor / Televentas) → primera respuesta → análisis con Depósito, Distribución y Calidad → monto hasta $ 500.000 y sin reiteración: resuelve Atención al Cliente; monto superior, reiteración o gravedad: Gerente Comercial → nota de crédito (si corresponde, Circular 04/2025), reposición o rechazo fundado → comunicación al cliente y cierre en Mostrador [fuente: procedimiento-reclamos-v2.md].
+Cliente → registro en Mostrador (Atención al Cliente / vendedor / Televentas) → primera respuesta → análisis con Depósito, Distribución y Calidad → monto hasta $ 400.000 y sin reiteración: resuelve Atención al Cliente; monto superior a $ 400.000, reiteración o gravedad: Gerente Comercial → nota de crédito (si corresponde, Circular 04/2025), reposición o rechazo fundado → comunicación al cliente y cierre en Mostrador [fuente: procedimiento-reclamos-v2.md].
 
 ## Cierre y seguimiento
 - Un reclamo se cierra en Mostrador cuando la resolución fue comunicada y la acción ejecutada [fuente: procedimiento-reclamos-v2.md].
@@ -115,6 +118,7 @@ Cliente → registro en Mostrador (Atención al Cliente / vendedor / Televentas)
 ## Relacionado
 - [Sistema Mostrador](../sistema/mostrador.md)
 - [Emisión de notas de crédito](emision-notas-de-credito.md)
+- [Revisión mensual de reclamos](revision-mensual-reclamos.md)
 - [Facturación diaria](facturacion-diaria.md)
 - [Armado de pedidos](armado-de-pedidos.md)
 - [Política de calidad e inocuidad](../politica/calidad-e-inocuidad.md)

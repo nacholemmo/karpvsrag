@@ -4,6 +4,7 @@ GERENCIA DE OPERACIONES — JEFATURA DE COMPRAS
 # Política de Compras
 
 **Fecha de emisión:** 17/03/2025
+**Revisión 1.1:** 10/11/2025 (ver Historial de cambios al final)
 **Redactó:** Ernesto Saldías, Jefe de Compras
 **Conformidad:** Claudio Mansilla, Gerente de Operaciones
 **Ámbito:** Compras de mercadería para reventa y compras de bienes y servicios de uso interno
@@ -57,11 +58,12 @@ Las compras de mercadería para reventa se originan en el cálculo de reposició
 Para las compras no recurrentes cuyo importe estimado supere los **$ 3.000.000** se exigirán como mínimo **tres cotizaciones** de proveedores distintos, presentadas por escrito y en condiciones comparables. Las cotizaciones se adjuntan a la orden de compra en Tacuarí.
 
 **Artículo 13. Excepciones al régimen de cotizaciones.**
+Las compras de **productos frescos** ya no están exceptuadas: desde la revisión 1.1 requieren al menos dos presupuestos por escrito, que el comprador adjunta a la orden de compra.
+
 No requieren cotizaciones:
 
-a) las compras de **productos frescos**, por la necesidad de reposición continua, la variabilidad de los precios y el carácter perecedero de la mercadería;
-b) las compras recurrentes a proveedores con acuerdos comerciales vigentes, cuyas condiciones de precio ya fueron negociadas;
-c) los casos en que exista un único proveedor en condiciones de satisfacer la necesidad, lo que deberá justificarse por escrito en la orden de compra.
+a) las compras recurrentes a proveedores con acuerdos comerciales vigentes, cuyas condiciones de precio ya fueron negociadas;
+b) los casos en que exista un único proveedor en condiciones de satisfacer la necesidad, lo que deberá justificarse por escrito en la orden de compra.
 
 **Artículo 14. Selección.**
 La selección del proveedor se fundará en la conveniencia integral de la oferta. El precio más bajo no es por sí solo determinante.
@@ -76,8 +78,8 @@ Las órdenes de compra se aprueban de acuerdo con su importe total, según la si
 
 | Importe de la orden de compra | Aprueba |
 |---|---|
-| Hasta $ 2.000.000 | Jefe de Compras |
-| Más de $ 2.000.000 y hasta $ 10.000.000 | Gerente de Operaciones |
+| Hasta $ 2.500.000 | Jefe de Compras |
+| Más de $ 2.500.000 y hasta $ 10.000.000 | Gerente de Operaciones |
 | Más de $ 10.000.000 | Gerente General |
 
 **Artículo 17. Reglas de aplicación.**
@@ -129,3 +131,7 @@ Las dudas de interpretación serán resueltas por el Gerente de Operaciones.
 
 Ernesto Saldías — Jefe de Compras
 Claudio Mansilla — Gerente de Operaciones
+
+## Historial de cambios
+
+- Revisión 1.1 (10/11/2025): el tope de aprobación del Jefe de Compras pasa de $ 2.000.000 a $ 2.500.000. Las compras de productos frescos, que antes no requerían cotizaciones, pasan a requerir al menos dos presupuestos por escrito.

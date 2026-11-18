@@ -63,9 +63,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--limite", type=int)
     ap.add_argument("--estimar", action="store_true")
     ap.add_argument("--sufijo", default="", help="sufijo del archivo de salida (por ejemplo _actualizacion)")
+    ap.add_argument("--archivo-preguntas", type=Path, default=PREGUNTAS)
     args = ap.parse_args(argv)
 
-    todas = {p["id"]: p for p in cargar_jsonl(PREGUNTAS)}
+    todas = {p["id"]: p for p in cargar_jsonl(args.archivo_preguntas)}
     ids = PRUEBA if args.prueba else sorted(todas) if args.todas else args.preguntas.split(",")
     salida = archivo_salida(args.brazo, args.sufijo)
     hechas = {r["pregunta_id"] for r in cargar_jsonl(salida)}

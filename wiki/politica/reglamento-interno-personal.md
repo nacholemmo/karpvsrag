@@ -1,6 +1,6 @@
 # Reglamento interno de personal
 
-Normas de organización, convivencia y disciplina entre la Empresa y su personal en relación de dependencia, emitido por la Jefatura de Recursos Humanos el 24/02/2025 (redacción de Graciela Toledo, Jefa de Recursos Humanos; aprobación de Horacio Benítez Lagos, Gerente General) [fuente: reglamento-interno.md]. Vigente desde su fecha de emisión [fuente: reglamento-interno.md].
+Normas de organización, convivencia y disciplina entre la Empresa y su personal en relación de dependencia, emitido por la Jefatura de Recursos Humanos el 24/02/2025 (redacción de Graciela Toledo, Jefa de Recursos Humanos; aprobación de Horacio Benítez Lagos, Gerente General) y revisado el 10/11/2025 [fuente: reglamento-interno.md]. Vigente desde su fecha de emisión [fuente: reglamento-interno.md]. Cambios de la revisión de 10/11/2025: trabajo remoto de 3 días por semana y nuevo Artículo 18 bis sobre horas extras en sábado [fuente: reglamento-interno.md].
 
 ## Disposiciones generales
 - Aplica en todo lo que no regulen la legislación laboral o los convenios colectivos [fuente: reglamento-interno.md].
@@ -8,13 +8,13 @@ Normas de organización, convivencia y disciplina entre la Empresa y su personal
 - En caso de discrepancia con la Ley de Contrato de Trabajo o convenios, prevalece la norma más favorable al trabajador [fuente: reglamento-interno.md].
 - Autoridad de aplicación e interpretación: la Jefa de Recursos Humanos, en coordinación con jefes y gerentes de cada área [fuente: reglamento-interno.md].
 - Casos no previstos: los resuelve la Jefa de Recursos Humanos conforme a la legislación vigente [fuente: reglamento-interno.md].
-- Deja sin efecto las circulares anteriores sobre vacaciones y toda disposición interna que se le oponga [fuente: reglamento-interno.md].
+- Deja sin efecto las circulares anteriores sobre vacaciones y toda disposición interna que se le oponga; las cuestiones de vacaciones se rigen solo por el Capítulo V [fuente: reglamento-interno.md].
 - Todo el personal recibe un ejemplar y deja constancia de su recepción; el desconocimiento no exime de cumplimiento [fuente: reglamento-interno.md].
 
 ## Ingreso y período de prueba
 - Ningún trabajador puede iniciar tareas sin completar la documentación de ingreso y el examen preocupacional [fuente: reglamento-interno.md].
 - Debe informar a Recursos Humanos todo cambio de domicilio, estado civil, cargas de familia o datos de contacto [fuente: reglamento-interno.md].
-- Período de prueba: primeros **6 meses** de vigencia del contrato, conforme a la legislación aplicable; el jefe directo evalúa el desempeño y comunica sus observaciones a Recursos Humanos [fuente: reglamento-interno.md].
+- Período de prueba: **6 meses** de vigencia del contrato, conforme a la legislación aplicable; el jefe directo evalúa el desempeño y comunica sus observaciones a Recursos Humanos [fuente: reglamento-interno.md].
 - Inducción general y específica del área para todo ingresante; el personal de depósito recibe además la capacitación en seguridad del Manual de Depósito y Operaciones de Almacén [fuente: reglamento-interno.md].
 - No definido en la documentación: el contenido de ese Manual de Depósito y Operaciones de Almacén (no está en el Reglamento) [fuente: reglamento-interno.md].
 
@@ -32,19 +32,22 @@ Normas de organización, convivencia y disciplina entre la Empresa y su personal
 - Son excepcionales: solo las requiere el jefe del área por necesidades operativas, con autorización previa [fuente: reglamento-interno.md].
 - No se reconocen horas extras no autorizadas antes de realizarse [fuente: reglamento-interno.md].
 - Tope: no pueden superar las **30 horas mensuales** por trabajador; los jefes de área planifican para no excederlo [fuente: reglamento-interno.md].
+- Horas extras en sábado: requieren autorización previa **por escrito** de la Jefa de Recursos Humanos, además de la del jefe de área (Artículo 18 bis, incorporado en la revisión del 10/11/2025) [fuente: reglamento-interno.md].
 - Se registran en el sistema de control de asistencia y cada jefe de área las informa mensualmente a Recursos Humanos [fuente: reglamento-interno.md].
-- Excepción temporal de diciembre de 2025: el tope sube a **45 horas en el mes** por persona, para todas las áreas; en enero se vuelve al régimen del reglamento [fuente: mail-horas-extras-cierre.md]. Detalle en [Horas extras: tope mensual y excepción de diciembre de 2025](horas-extras.md).
+- Excepción temporal de diciembre de 2025: el tope sube a **45 horas en el mes** por persona, para todas las áreas; en enero se vuelve al régimen del reglamento [fuente: mail-horas-extras-cierre.md]. Detalle en [Horas extras: tope mensual y excepción de diciembre de 2025](horas-extras.md). El Reglamento no menciona esta excepción [fuente: reglamento-interno.md].
 
 ## Vacaciones
-- Régimen y pasos de solicitud: ver [Pedido de vacaciones](../proceso/pedido-de-vacaciones.md) [fuente: reglamento-interno.md].
-- Valor vigente: solicitud con **30 días de anticipación** [fuente: reglamento-interno.md]. Antes (reemplazado): 15 días de anticipación [fuente: circular-vacaciones-2023.md].
-- Las áreas con alta demanda en cierres contables, inventarios generales o temporadas comerciales pueden restringir vacaciones en esos períodos [fuente: reglamento-interno.md].
+- Régimen: vacaciones anuales conforme a la legislación vigente y a la antigüedad de cada trabajador [fuente: reglamento-interno.md].
+- Valor vigente: solicitud con **30 días de anticipación** a la fecha de inicio pretendida, mediante el formulario de Recursos Humanos, ante el jefe directo [fuente: reglamento-interno.md]. Antes (reemplazado): 15 días de anticipación [fuente: circular-vacaciones-2023.md].
+- El jefe directo da conformidad o propone fechas alternativas y remite la solicitud a Recursos Humanos [fuente: reglamento-interno.md].
+- Las áreas cuya actividad se intensifica en cierres contables, inventarios generales o temporadas comerciales pueden restringir vacaciones en esos períodos [fuente: reglamento-interno.md].
+- Pasos completos del trámite: ver [Pedido de vacaciones](../proceso/pedido-de-vacaciones.md) [fuente: reglamento-interno.md].
 
 ## Trabajo remoto
-- Alcance: personal administrativo cuyas tareas lo permitan, hasta **2 días por semana**, previo acuerdo con el jefe directo [fuente: reglamento-interno.md].
+- Alcance: personal administrativo cuyas tareas lo permitan, hasta **3 días por semana**, previo acuerdo con el jefe directo [fuente: reglamento-interno.md]. Antes (reemplazado, según el historial de cambios): 2 días por semana [fuente: reglamento-interno.md].
 - Excluidos por la naturaleza de sus funciones: personal de depósito, distribución y demás tareas presenciales [fuente: reglamento-interno.md].
-- No se admite trabajo remoto durante los **últimos 3 días hábiles** de cada mes (cierre mensual) [fuente: reglamento-interno.md].
-- Durante los días remotos el trabajador debe estar disponible y conectado en su horario habitual; el jefe directo puede suspender o revocar la modalidad [fuente: reglamento-interno.md].
+- No se admite trabajo remoto durante los **últimos 3 días hábiles** de cada mes, por las tareas de cierre mensual [fuente: reglamento-interno.md].
+- Durante los días remotos el trabajador debe estar disponible y conectado en su horario habitual; el jefe directo puede suspender o revocar la modalidad cuando las necesidades del área lo exijan [fuente: reglamento-interno.md].
 
 ## Deberes y prohibiciones
 - Deberes: cumplir tareas con diligencia y buena fe; tratar con respeto a compañeros, clientes y proveedores; guardar reserva sobre información confidencial; cumplir normas de seguridad, de inocuidad alimentaria y los manuales de su área [fuente: reglamento-interno.md].

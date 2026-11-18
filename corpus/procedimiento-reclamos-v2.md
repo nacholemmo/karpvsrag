@@ -6,6 +6,7 @@ Gerencia Comercial — Atención al Cliente
 | Versión | 2 |
 |---|---|
 | Fecha | 12/05/2025 |
+| Revisión | 2.1, del 10/11/2025 (ver Historial de cambios) |
 | Elaboró | Julieta Acosta, Coordinadora de Atención al Cliente |
 | Aprobó | Verónica Etchart, Gerente Comercial |
 
@@ -70,7 +71,7 @@ f) quejas sobre la atención del personal de la Empresa.
 | Reclamo por faltantes | Dentro de las 48 horas hábiles desde la entrega |
 | Reclamo por mercadería vencida o dañada | Dentro de los 5 días corridos desde la entrega |
 | Reclamo por falla de cadena de frío | Dentro de las 2 horas de recibida la mercadería, con foto |
-| Primera respuesta al cliente | 24 horas hábiles desde el registro |
+| Primera respuesta al cliente | 12 horas hábiles desde el registro |
 | Resolución del reclamo | 10 días hábiles desde el registro |
 
 7.2. **Faltantes.** Los reclamos por faltantes se aceptan dentro de las **48 horas hábiles** contadas desde la entrega.
@@ -79,7 +80,7 @@ f) quejas sobre la atención del personal de la Empresa.
 
 7.4. **Cadena de frío.** Los reclamos por fallas de cadena de frío solo se aceptan **dentro de las 2 horas** de recibida la mercadería, y siempre acompañados de foto del producto y, cuando sea posible, de la lectura de temperatura.
 
-7.5. **Primera respuesta.** Atención al Cliente debe dar la primera respuesta al cliente dentro de las **24 horas hábiles** desde el registro del reclamo en Mostrador.
+7.5. **Primera respuesta.** Atención al Cliente debe dar la primera respuesta al cliente dentro de las **12 horas hábiles** desde el registro del reclamo en Mostrador.
 
 7.6. **Resolución.** El reclamo debe quedar resuelto y comunicado al cliente dentro de los **10 días hábiles** desde su registro. Si no fuera posible, se informa al cliente el motivo y una nueva fecha.
 
@@ -97,7 +98,7 @@ f) quejas sobre la atención del personal de la Empresa.
 
 ## 9. Escalamiento
 
-9.1. **Por monto.** Los reclamos cuyo monto supere los **$ 500.000** escalan al **Gerente Comercial**, que define la resolución con la información reunida por Atención al Cliente.
+9.1. **Por monto.** Los reclamos cuyo monto supere los **$ 400.000** escalan al **Gerente Comercial**, que define la resolución con la información reunida por Atención al Cliente.
 
 9.2. **Por reiteración o gravedad.** Escalan también al Gerente Comercial, con independencia del monto:
 
@@ -119,9 +120,9 @@ Primera respuesta al cliente
   ▼
 Análisis con áreas involucradas (Depósito, Distribución, Calidad)
   │
-  ├── Monto hasta $ 500.000 y sin reiteración ──► Resuelve Atención al Cliente
+  ├── Monto hasta $ 400.000 y sin reiteración ──► Resuelve Atención al Cliente
   │
-  └── Monto superior a $ 500.000, reiteración o gravedad ──► Gerente Comercial
+  └── Monto superior a $ 400.000, reiteración o gravedad ──► Gerente Comercial
                                                                   │
   ◄────────────────────────── Resolución ─────────────────────────┘
   │
@@ -151,3 +152,7 @@ Comunicación al cliente y cierre en Mostrador
 
 Julieta Acosta
 Coordinadora de Atención al Cliente
+
+## Historial de cambios
+
+- Revisión 2.1 (10/11/2025): el plazo de primera respuesta al cliente baja de 24 horas hábiles a 12 horas hábiles, y el monto a partir del cual un reclamo escala al Gerente Comercial baja de $ 500.000 a $ 400.000.
