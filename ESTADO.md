@@ -22,6 +22,6 @@
 
 ## Pendientes del usuario
 - [x] `REPO_URL` completado (https://github.com/nacholemmo/karpvsrag).
-- [ ] Pushear con el tag: `git push && git push --tags`.
-- [ ] Publicar en Render: blueprint `render.yaml`, o Static Site con *Publish directory* `site` y sin build.
-- [ ] Reemplazar `[link a la landing]` y `[link al repo]` en `borrador-linkedin.md` y en el README ("se agrega al publicar").
+- [x] Push hecho por el usuario.
+- [x] Landing publicada en https://contexto-vs-rag-vs-wiki.onrender.com
+- [x] Links reemplazados en el post y el README. Falta pushear este último commit para que el README de GitHub muestre el link.

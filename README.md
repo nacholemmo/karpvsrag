@@ -8,7 +8,7 @@ Este experimento compara tres formas de responder preguntas sobre 50 documentos 
 
 Los tres brazos usan el mismo modelo (Claude Haiku 5.5) y devuelven el mismo formato: respuesta más fuentes citadas.
 
-> Landing con resultados y gráficos: *(link a Render, se agrega al publicar)*
+> Landing con resultados y gráficos: https://contexto-vs-rag-vs-wiki.onrender.com
 
 ## Resultados (50 preguntas)
 

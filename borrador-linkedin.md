@@ -9,6 +9,6 @@ La sorpresa vino de la wiki. El agente que la compilaba a veces daba un document
 Ojo con generalizar: el corpus es sintético y entra entero en el contexto. Con miles de documentos la cuenta cambia. Además, el mismo modelo que respondía hizo de juez.
 
 Datos, código y cada respuesta están publicados para auditarlos.
-[link a la landing] · https://github.com/nacholemmo/karpvsrag
+https://contexto-vs-rag-vs-wiki.onrender.com · https://github.com/nacholemmo/karpvsrag
 
 ¿Ustedes cómo resuelven las consultas sobre documentación interna?
