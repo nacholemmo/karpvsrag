@@ -124,6 +124,12 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
 - **Costo de construir la wiki:** el total de todas las versiones está en `resultados/costo_construccion_wiki.json` (calculado del log, que no se versiona): USD 1,77, contra USD 0,60 de la versión final.
 - **Verificación visual:** `google-chrome-stable --headless=new ... --screenshot`. Para modo oscuro, `--force-dark-mode --blink-settings=preferredColorScheme=0`. No usar `pkill -f` con un patrón que también aparezca en el mismo comando.
 
+## Decisiones de la fase 6 (post)
+
+- `borrador-linkedin.md`: 150 a 220 palabras, en primera persona, con los tres puntajes como números, y como sorpresa la ingesta de la wiki que daba documentos por terminados sin escribir (`fallos.md` #9).
+- Restricciones de estilo: sin "no es X, es Y", sin listas con flechas, sin mencionar empleadores ni búsqueda laboral.
+- Los links van como marcadores, que el usuario reemplaza al publicar.
+
 ## Comandos
 
 ```bash
