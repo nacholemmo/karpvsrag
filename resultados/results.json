@@ -12,6 +12,7 @@
       "nota": "La corrida principal se hizo sobre el corpus del tag linea-base; la prueba de actualización, sobre el corpus actual."
     },
     "puntaje": "correcta + 0,5 × parcial, sobre el total de preguntas",
+    "juez": "Tres corridas independientes del juez por respuesta; veredicto por voto mayoritario (si las tres difieren, parcial). Las métricas con referencias originales usan una sola corrida.",
     "advertencias": [
       "Corpus sintético de 50 documentos de una empresa ficticia.",
       "Un solo modelo (Haiku 5.5) responde en los tres brazos y también juzga: hay sesgo de autoevaluación.",
@@ -25,7 +26,7 @@
     "que": "Las 10 preguntas sin_respuesta y U05 se re-evaluaron con referencias corregidas por un criterio uniforme: incluir lo que el corpus sí dice del tema y sacar lo que no dice. Las revisó un subagente sin ver respuestas.",
     "por_que": "Las referencias originales omitían contenido del corpus y el juez castigaba respuestas fieles (5 veces a la wiki, 2 al contexto, 1 al RAG). Una primera corrección solo de P25 favorecía a contexto y RAG.",
     "puntaje_principal": "brazos = referencias corregidas; brazos_referencias_originales = referencias tal como estaban en la corrida",
-    "estabilidad_del_juez": "Al volver a juzgar las 30 respuestas sin_respuesta y las 3 de U05, cambiaron 12 de 30 veredictos sin_respuesta en las dos direcciones; parte se explica por la referencia corregida y parte es ruido del juez.",
+    "estabilidad_del_juez": "Al volver a juzgar las 30 respuestas sin_respuesta con referencias corregidas cambiaron 12 veredictos. Con referencias fijas, en 3 corridas del juez, 139/150 veredictos fueron unánimes (ver brazos._estabilidad_juez): la mayor parte del cambio vino de las referencias.",
     "archivos": [
       "evals/preguntas_referencias_originales.jsonl",
       "resultados/juicios_referencias_originales.jsonl",
@@ -157,8 +158,8 @@
         }
       },
       "fuente_juez": {
-        "correcta": 39,
-        "parcial": 1,
+        "correcta": 40,
+        "parcial": 0,
         "incorrecta": 0,
         "no_aplica": 10
       },
@@ -188,13 +189,13 @@
     "rag": {
       "exactitud": {
         "n": 50,
-        "correcta": 36,
+        "correcta": 37,
         "parcial": 9,
-        "incorrecta": 5,
-        "pct_correcta": 72.0,
+        "incorrecta": 4,
+        "pct_correcta": 74.0,
         "pct_parcial": 18.0,
-        "pct_incorrecta": 10.0,
-        "puntaje": 0.81
+        "pct_incorrecta": 8.0,
+        "puntaje": 0.83
       },
       "por_tipo": {
         "dato": {
@@ -209,13 +210,13 @@
         },
         "procedimiento": {
           "n": 10,
-          "correcta": 3,
-          "parcial": 5,
+          "correcta": 4,
+          "parcial": 4,
           "incorrecta": 2,
-          "pct_correcta": 30.0,
-          "pct_parcial": 50.0,
+          "pct_correcta": 40.0,
+          "pct_parcial": 40.0,
           "pct_incorrecta": 20.0,
-          "puntaje": 0.55
+          "puntaje": 0.6
         },
         "cruce": {
           "n": 10,
@@ -250,12 +251,12 @@
         "sin_respuesta": {
           "n": 10,
           "correcta": 9,
-          "parcial": 0,
-          "incorrecta": 1,
+          "parcial": 1,
+          "incorrecta": 0,
           "pct_correcta": 90.0,
-          "pct_parcial": 0.0,
-          "pct_incorrecta": 10.0,
-          "puntaje": 0.9
+          "pct_parcial": 10.0,
+          "pct_incorrecta": 0.0,
+          "puntaje": 0.95
         }
       },
       "fuente_juez": {
@@ -290,12 +291,12 @@
     "wiki": {
       "exactitud": {
         "n": 50,
-        "correcta": 39,
-        "parcial": 9,
-        "incorrecta": 2,
-        "pct_correcta": 78.0,
-        "pct_parcial": 18.0,
-        "pct_incorrecta": 4.0,
+        "correcta": 40,
+        "parcial": 7,
+        "incorrecta": 3,
+        "pct_correcta": 80.0,
+        "pct_parcial": 14.0,
+        "pct_incorrecta": 6.0,
         "puntaje": 0.87
       },
       "por_tipo": {
@@ -321,13 +322,13 @@
         },
         "cruce": {
           "n": 10,
-          "correcta": 8,
-          "parcial": 2,
+          "correcta": 9,
+          "parcial": 1,
           "incorrecta": 0,
-          "pct_correcta": 80.0,
-          "pct_parcial": 20.0,
+          "pct_correcta": 90.0,
+          "pct_parcial": 10.0,
           "pct_incorrecta": 0.0,
-          "puntaje": 0.9
+          "puntaje": 0.95
         },
         "contradiccion": {
           "n": 5,
@@ -352,17 +353,17 @@
         "sin_respuesta": {
           "n": 10,
           "correcta": 5,
-          "parcial": 4,
-          "incorrecta": 1,
+          "parcial": 3,
+          "incorrecta": 2,
           "pct_correcta": 50.0,
-          "pct_parcial": 40.0,
-          "pct_incorrecta": 10.0,
-          "puntaje": 0.7
+          "pct_parcial": 30.0,
+          "pct_incorrecta": 20.0,
+          "puntaje": 0.65
         }
       },
       "fuente_juez": {
-        "correcta": 36,
-        "parcial": 3,
+        "correcta": 37,
+        "parcial": 2,
         "incorrecta": 1,
         "no_aplica": 10
       },
@@ -387,6 +388,34 @@
       "llamadas_por_pregunta": {
         "media": 3.04,
         "max": 4
+      }
+    },
+    "_estabilidad_juez": {
+      "corridas": 3,
+      "respuestas": 150,
+      "unanime": 139,
+      "dos_a_uno": 11,
+      "puntaje_por_corrida": {
+        "contexto": [
+          0.98,
+          0.98,
+          0.98
+        ],
+        "rag": [
+          0.81,
+          0.83,
+          0.84
+        ],
+        "wiki": [
+          0.87,
+          0.86,
+          0.88
+        ]
+      },
+      "rango_por_brazo": {
+        "contexto": 0.0,
+        "rag": 0.03,
+        "wiki": 0.02
       }
     }
   },
@@ -947,6 +976,34 @@
         "llamadas_por_pregunta": {
           "media": 3,
           "max": 3
+        }
+      },
+      "_estabilidad_juez": {
+        "corridas": 3,
+        "respuestas": 30,
+        "unanime": 29,
+        "dos_a_uno": 1,
+        "puntaje_por_corrida": {
+          "contexto": [
+            1.0,
+            1.0,
+            0.95
+          ],
+          "rag": [
+            0.9,
+            0.9,
+            0.9
+          ],
+          "wiki": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "rango_por_brazo": {
+          "contexto": 0.05,
+          "rag": 0.0,
+          "wiki": 0.0
         }
       }
     },

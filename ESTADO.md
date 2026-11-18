@@ -1,26 +1,29 @@
 # ESTADO
 
-**Fase actual:** 3 (Brazos) implementada y revisada. Falta el OK del usuario para cerrarla. Próxima: fase 4 (corrida y resultados), con plan a aprobar.
+**Fase actual:** 4 (corrida y resultados) implementada y revisada. Falta el OK del usuario para cerrarla. Próxima: fase 5 (landing en `site/`), con plan a aprobar.
 
 ## Hecho
-- **Fase 1** (corpus, 91,7k tokens) y **fase 2** (50 preguntas, juez Haiku, acuerdo humano vs. juez de 80% en v2): cerradas.
-- **Fase 3:**
-  - Tres brazos con formato común: `brazos/contexto`, `brazos/rag` y `brazos/wiki`.
-  - Las 5 preguntas de prueba (P03, P14, P27, P37, P48) dan correcta en los tres brazos con la wiki v3 (`resultados/prueba_fase3/`).
-  - Revisión independiente hecha y corregida: filtración en `ESQUEMA.md`, tope de contexto, excepciones de archivos, RAG con e5 a 512 tokens.
-  - Wiki v3 reconstruida con el harness y el esquema finales: ingesta USD 0,543, lint USD 0,06, 52 páginas, lint sin errores.
-- **Gasto real acumulado de la API:** USD 1,876. Por brazo, en `logs/llamadas.jsonl`: la ingesta de la wiki suma 1,61 entre las tres versiones y el lint 0,16. Saldo aproximado: USD 1,96.
+- **Fases 1 a 3:** cerradas. Corpus de 91,7k tokens, 50 preguntas con juez Haiku y tres brazos (wiki v3).
+- **Fase 4:**
+  - Corrida principal: 50 × 3, más 3 corridas del juez. Tag `linea-base`.
+  - Prueba de actualización: 3 documentos y 10 preguntas.
+  - `results.json`, `resumen.md` y `fallos.md`.
+  - Revisión independiente hecha y corregida (fallo falso reemplazado; referencias `sin_respuesta` y U05 corregidas de forma uniforme y re-juzgadas).
+  - README con resultados y límites.
+- **Resultados (voto de 3, referencias corregidas):**
+
+  | Brazo | Puntaje | USD por consulta |
+  |---|---|---|
+  | contexto | 0,98 | 0,0013 |
+  | wiki | 0,87 | 0,0026 |
+  | RAG | 0,83 | 0,0005 |
+
+  Actualización: contexto 1,00, wiki 1,00 (actualización incompleta, ver `fallos.md` #7) y RAG 0,90.
+- **Gasto real acumulado de la API:** USD 2,46 (ver `logs/llamadas.jsonl`). Saldo aproximado: USD 1,38.
 
 ## Pendiente
-- [ ] OK del usuario para cerrar la fase 3.
-- [ ] Plan de la fase 4: 50 preguntas × 3 brazos, juicios, `results.json`, prueba de actualización (3 documentos modificados y 10 preguntas nuevas) y `fallos.md`.
-
-## Notas para la fase 4
-- **Errores de contenido de la wiki que detectó la revisión de la fase 3** (sobre la v2; revisar si siguen en la v3):
-  - V6 registrada como contradicción;
-  - C5 no registrada;
-  - huecos desactualizados por la ingesta cronológica.
-- **Candidatos para `fallos.md`:** las sesiones de ingesta sin escrituras (v1), el índice truncado (v1), la filtración del esquema (v2) y el agente de lint que corrige de a poco.
-- **Inconsistencias accidentales del corpus que encontró la revisión:**
-  - orden de compra en Lapacho vs. Tacuarí;
-  - efectivo "exclusivamente contra recibo oficial" vs. la constancia del FAQ de vendedores.
+- [ ] OK del usuario para cerrar la fase 4.
+- [ ] Fase 5: landing estática en `site/` que lea una copia de `results.json`; lista para Render como static site, sin build.
+- [ ] Fase 6: `borrador-linkedin.md`.
+- [ ] Agregar al README el link a la landing cuando esté publicada.
+- [ ] Push: lo hace el usuario, incluido el tag `linea-base`.

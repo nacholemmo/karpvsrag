@@ -100,6 +100,20 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
 - **Errores de contenido de la wiki:** no se corrigen a mano, porque sesgaría el experimento; se reportan como resultado.
 - **Red:** el DNS del proveedor del usuario bloquea `files.pythonhosted.org`. Para instalar paquetes hace falta una entrada temporal en `/etc/hosts` (la agrega y la quita el usuario).
 
+## Decisiones de la fase 4 (corrida y resultados)
+
+- **Tag `linea-base`** (local, lo pushea el usuario): corpus y wiki de la corrida principal.
+- **Prueba de actualización:** se revisaron 3 documentos en el lugar (`politica-compras`, `procedimiento-reclamos-v2`, `reglamento-interno`). Cada uno lleva la fecha 10/11/2025 y un "Historial de cambios" con el valor viejo.
+  - En `hechos.csv`, los valores nuevos son H226-H232 (V16-V18). `validar_hechos` admite, como aviso, versiones dentro del mismo documento.
+  - Las preguntas son `evals/preguntas_actualizacion.jsonl` (U01-U10).
+- **Puntaje:** correcta + 0,5 × parcial. Hay desglose en `results.json`.
+- **Juez:** 3 corridas (`juicios.jsonl`, `_r2`, `_r3`), con voto mayoritario; si las tres difieren, `parcial`. 139/150 veredictos fueron unánimes.
+- **Referencias corregidas después de la corrida:** las 10 `sin_respuesta` y U05, con un criterio uniforme (incluir lo que el corpus dice y sacar lo que no). Las revisó un subagente que no vio respuestas.
+  - Se publican los dos puntajes: `brazos` (referencias corregidas, voto de 3) y `brazos_referencias_originales` (1 corrida).
+  - Lección: corregir una sola referencia (P25) sesgó a favor de dos brazos. **Cualquier corrección se aplica con un criterio uniforme a toda la categoría.**
+- **`scripts/resultados.py`** es la única fuente de `results.json` y `resumen.md`. Las métricas de preparación de la wiki vienen de `ingesta_wiki_v3_linea_base.json` y de `lint_wiki.json` (etapa construcción).
+- **`fallos.md`:** cada afirmación se verifica contra los datos. Un fallo falso (una "invención" de la wiki que en realidad estaba en el corpus) se detectó en la revisión y se reemplazó. Para verificar, buscar variantes y sinónimos, no una sola palabra.
+
 ## Comandos
 
 ```bash

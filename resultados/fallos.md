@@ -48,7 +48,7 @@ Todos salen de la corrida real: Haiku 5.5 responde y juzga. Las respuestas compl
   - `wiki/proceso/circuito-de-compra.md` (líneas 6, 7 y 20) sigue diciendo que el Jefe de Compras aprueba "hasta $ 2.000.000" y que los frescos no requieren cotizaciones;
   - `wiki/proceso/reclamo-hermanos-lutz-sucursal-4.md:16` sigue con el umbral de $ 500.000.
 
-  En U05, la consulta citó `circuito-de-compra.md` y quedó `parcial`.
+  En U05, la consulta citó `circuito-de-compra.md`. Con la referencia original quedó `parcial`; con la referencia corregida, que reconoce la ambigüedad del artículo 13, los tres juicios dieron `correcta`. El error de la wiki sigue ahí aunque esta pregunta no lo penalice.
 - **Causa:** el agente de ingesta actualiza las páginas que encuentra desde el documento que procesa. Nadie revisa las otras páginas que copiaron el dato. El lint en código (0 errores) tampoco lo detecta: el valor viejo sigue siendo textual en el documento, dentro del historial de cambios.
 - **Por qué importa:** en una wiki compilada, cada dato duplicado es un lugar más para desactualizarse. El costo bajo de la actualización (USD 0,049) es el costo de una actualización **incompleta**.
 
@@ -61,8 +61,12 @@ Todos salen de la corrida real: Haiku 5.5 responde y juzga. Las respuestas compl
 
   La referencia de P25 además citaba un artículo sobre siniestros que el recorte del corpus había eliminado.
 - **Sesgo en la corrección:** con referencias originales, esto castigaba 5 veces a la wiki, 2 al contexto y 1 al RAG. Primero se corrigió solo P25, que favorecía al contexto y al RAG; lo detectó la revisión independiente. Después se aplicó un mismo criterio a las 10 preguntas sin respuesta y a U05: la referencia incluye lo que el corpus dice y saca lo que no dice. Las referencias las revisó un subagente que no vio ninguna respuesta, y se volvieron a juzgar las 33 respuestas afectadas.
-- **Reporte:** `results.json` informa los dos puntajes, con referencias originales y corregidas. Una sola referencia defectuosa mueve hasta 0,03 el puntaje de un brazo, más que algunas diferencias entre brazos.
-- **El juez es inestable en esta categoría:** al volver a juzgar las 30 respuestas `sin_respuesta`, **12 cambiaron de veredicto**, en las dos direcciones. Algunos cambios se explican por la referencia corregida (P25, P49). Otros no: wiki-P23 pasó de `correcta` a `incorrecta` y rag-P46 de `correcta` a `incorrecta`. Con referencias corregidas, la wiki sigue en 5/10 en esta categoría y el puntaje global queda en contexto 0,98, RAG 0,81 y wiki 0,87. Las diferencias de 0,01-0,02 entre corridas del juez no son señal.
+- **Reporte:** `results.json` informa los dos puntajes, con referencias originales (una corrida del juez) y corregidas (voto de 3). Una sola referencia defectuosa mueve hasta 0,03 el puntaje de un brazo.
+- **Cuánto pesa la referencia y cuánto el ruido del juez:**
+  - Al volver a juzgar las 30 respuestas `sin_respuesta` con las referencias corregidas, cambiaron 12 veredictos.
+  - Con referencias fijas, el juez es bastante estable: en 3 corridas independientes, **139 de 150 veredictos fueron unánimes**, 11 fueron 2 a 1 y ninguno tuvo tres veredictos distintos. El puntaje por brazo varió como mucho 0,03 entre corridas (RAG 0,81-0,84).
+  - La mayor parte del cambio vino de las referencias, no del azar.
+- **Resultado:** con voto mayoritario de 3 juicios y referencias corregidas, el puntaje global queda en contexto 0,98, wiki 0,87 y RAG 0,83. La wiki sigue en 5/10 en las preguntas sin respuesta: tiende a agregar contexto del corpus que el juez lee como "completar el hueco".
 - **Otro hallazgo de la revisión, que no se cambió:** el juez fue inconsistente en P46, porque marcó `correcta` la respuesta del RAG, que derivaba a la misma persona que las respuestas marcadas `incorrecta`.
 
 ## 9. Proceso: el agente de ingesta "terminaba" sin escribir y leía un índice truncado (wiki v1)

@@ -55,6 +55,44 @@ def exactitud(veredictos: list[str]) -> dict:
     return d
 
 
+def votar(juicios_por_corrida: list[dict]) -> dict:
+    """Voto mayoritario entre corridas del juez, por id de respuesta.
+
+    Si las tres etiquetas difieren, se toma la del medio (parcial). fuente_exacta no depende del juez.
+    """
+    out = {}
+    for rid in juicios_por_corrida[0]:
+        js = [c[rid] for c in juicios_por_corrida if rid in c]
+        def mayoria(campo, orden):
+            cnt = Counter(j[campo] for j in js)
+            top, n = cnt.most_common(1)[0]
+            if n > 1 or len(js) == 1:
+                return top
+            presentes = sorted(cnt, key=orden.index)
+            return presentes[len(presentes) // 2]
+        out[rid] = {**js[0], "veredicto": mayoria("veredicto", VEREDICTOS), "fuente": mayoria("fuente", FUENTES),
+                    "votos": [j["veredicto"] for j in js]}
+    return out
+
+
+def estabilidad(juicios_por_corrida: list[dict], preguntas: dict) -> dict:
+    """Cuánto cambian los veredictos entre corridas del juez."""
+    ids = list(juicios_por_corrida[0])
+    patrones = Counter()
+    for rid in ids:
+        n = len({c[rid]["veredicto"] for c in juicios_por_corrida if rid in c})
+        patrones[{1: "unanime", 2: "dos_a_uno", 3: "todas_distintas"}[n]] += 1
+    por_corrida = {}
+    for b in BRAZOS:
+        por_corrida[b] = []
+        for c in juicios_por_corrida:
+            vs = [c[r]["veredicto"] for r in ids if r.startswith(f"{b}-")]
+            por_corrida[b].append(exactitud(vs)["puntaje"])
+    return {"corridas": len(juicios_por_corrida), "respuestas": len(ids), **dict(patrones),
+            "puntaje_por_corrida": por_corrida,
+            "rango_por_brazo": {b: round(max(v) - min(v), 4) for b, v in por_corrida.items()}}
+
+
 def metricas_brazo(brazo: str, preguntas: dict, respuestas: list[dict], juicios: dict) -> dict:
     """juicios: id de respuesta -> juicio. Las preguntas sin respuesta válida cuentan como incorrectas."""
     por_preg = {r["pregunta_id"]: r for r in respuestas}
@@ -142,12 +180,21 @@ def preparacion() -> dict:
     }
 
 
-def armar(sufijo: str = "", archivo_preguntas: str = "preguntas.jsonl", juicios_archivo: str | None = None) -> dict | None:
+def armar(sufijo: str = "", archivo_preguntas: str = "preguntas.jsonl", juicios_archivo: str | None = None,
+          triple: bool = False) -> dict | None:
     preguntas = {p["id"]: p for p in jsonl(EVALS / archivo_preguntas)}
-    juicios = {j["id"]: j for j in jsonl(RES / (juicios_archivo or f"juicios{sufijo}.jsonl"))}
+    if triple:
+        corridas = [{j["id"]: j for j in jsonl(RES / f"juicios{sufijo}{r}.jsonl")} for r in ("", "_r2", "_r3")]
+        corridas = [c for c in corridas if c]
+        juicios = votar(corridas)
+    else:
+        juicios = {j["id"]: j for j in jsonl(RES / (juicios_archivo or f"juicios{sufijo}.jsonl"))}
     if not preguntas or not juicios:
         return None
-    return {b: metricas_brazo(b, preguntas, jsonl(RES / f"respuestas_{b}{sufijo}.jsonl"), juicios) for b in BRAZOS}
+    res = {b: metricas_brazo(b, preguntas, jsonl(RES / f"respuestas_{b}{sufijo}.jsonl"), juicios) for b in BRAZOS}
+    if triple:
+        res["_estabilidad_juez"] = estabilidad(corridas, preguntas)
+    return res
 
 
 def main() -> int:
@@ -163,6 +210,8 @@ def main() -> int:
             "rag_top_k": 8, "preguntas": 50, "documentos": 50,
             "tokens_corpus_haiku": tokens["tokens_prompt_contexto_completo"], "commit": commit,
             "puntaje": "correcta + 0,5 × parcial, sobre el total de preguntas",
+            "juez": "Tres corridas independientes del juez por respuesta; veredicto por voto mayoritario (si las tres difieren, parcial). "
+                    "Las métricas con referencias originales usan una sola corrida.",
             "advertencias": [
                 "Corpus sintético de 50 documentos de una empresa ficticia.",
                 "Un solo modelo (Haiku 5.5) responde en los tres brazos y también juzga: hay sesgo de autoevaluación.",
@@ -178,19 +227,20 @@ def main() -> int:
             "por_que": "Las referencias originales omitían contenido del corpus y el juez castigaba respuestas fieles "
                        "(5 veces a la wiki, 2 al contexto, 1 al RAG). Una primera corrección solo de P25 favorecía a contexto y RAG.",
             "puntaje_principal": "brazos = referencias corregidas; brazos_referencias_originales = referencias tal como estaban en la corrida",
-            "estabilidad_del_juez": "Al volver a juzgar las 30 respuestas sin_respuesta y las 3 de U05, cambiaron 12 de 30 veredictos "
-                                    "sin_respuesta en las dos direcciones; parte se explica por la referencia corregida y parte es ruido del juez.",
+            "estabilidad_del_juez": "Al volver a juzgar las 30 respuestas sin_respuesta con referencias corregidas cambiaron 12 veredictos. "
+                                    "Con referencias fijas, en 3 corridas del juez, 139/150 veredictos fueron unánimes (ver brazos._estabilidad_juez): "
+                                    "la mayor parte del cambio vino de las referencias.",
             "archivos": ["evals/preguntas_referencias_originales.jsonl", "resultados/juicios_referencias_originales.jsonl",
                          "resultados/juicios_actualizacion_referencias_originales.jsonl"],
         },
         "acuerdo_humano_juez": acuerdo_humano(),
         "recall_rag": recall,
-        "brazos": armar(),
+        "brazos": armar(triple=True),
         "brazos_referencias_originales": armar(juicios_archivo="juicios_referencias_originales.jsonl"),
         "preparacion": preparacion(),
         "actualizacion": None,
     }
-    act = armar("_actualizacion", "preguntas_actualizacion.jsonl")
+    act = armar("_actualizacion", "preguntas_actualizacion.jsonl", triple=True)
     if act:
         datos_act = json.loads((RES / "actualizacion.json").read_text()) if (RES / "actualizacion.json").exists() else {}
         out["actualizacion"] = {"brazos": act, "costo_y_tiempo_de_actualizar": datos_act,
@@ -224,7 +274,12 @@ def resumen(out: dict) -> str:
          f"({out['meta']['commit']['linea_base_corrida_principal']}). "
          f"Puntaje: {out['meta']['puntaje']}.", "", "## Corrida principal (50 preguntas)", ""]
     l += tabla_brazos(out["brazos"])
-    l += ["", "Con las referencias originales (sin la corrección de las 10 sin_respuesta y U05):", ""]
+    e = out["brazos"].get("_estabilidad_juez")
+    if e:
+        l += ["", f"Juez: voto mayoritario de {e['corridas']} corridas. De {e['respuestas']} respuestas: "
+              f"{e.get('unanime', 0)} unánimes, {e.get('dos_a_uno', 0)} 2 a 1, {e.get('todas_distintas', 0)} con tres veredictos distintos. "
+              "Puntaje por corrida: " + "; ".join(f"{b} {', '.join(f'{x:.2f}' for x in v)}" for b, v in e["puntaje_por_corrida"].items()) + "."]
+    l += ["", "Con las referencias originales (una corrida del juez, sin la corrección de las 10 sin_respuesta y U05):", ""]
     l += tabla_brazos(out["brazos_referencias_originales"])
     l += ["", "### Puntaje por tipo de pregunta", "", "| Tipo | " + " | ".join(BRAZOS) + " |", "|---" * 4 + "|"]
     for c in CLASES:

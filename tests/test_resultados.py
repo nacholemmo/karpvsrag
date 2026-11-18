@@ -30,3 +30,12 @@ def test_pregunta_sin_respuesta_valida_cuenta_como_incorrecta():
     assert m["sin_respuesta_valida"] == ["P02"]
     assert m["exactitud"]["incorrecta"] == 1 and m["exactitud"]["puntaje"] == 0.5
     assert m["por_tipo"]["version"]["incorrecta"] == 1
+
+
+def test_voto_mayoritario():
+    j = lambda v, f="correcta": {"id": "x", "veredicto": v, "fuente": f, "fuente_exacta": "correcta"}
+    assert r.votar([{"x": j("correcta")}, {"x": j("parcial")}, {"x": j("correcta")}])["x"]["veredicto"] == "correcta"
+    # tres distintos -> el del medio
+    assert r.votar([{"x": j("correcta")}, {"x": j("incorrecta")}, {"x": j("parcial")}])["x"]["veredicto"] == "parcial"
+    v = r.votar([{"x": j("incorrecta", "incorrecta")}, {"x": j("incorrecta", "parcial")}, {"x": j("correcta", "correcta")}])["x"]
+    assert v["veredicto"] == "incorrecta" and v["fuente"] == "parcial" and v["votos"] == ["incorrecta", "incorrecta", "correcta"]
