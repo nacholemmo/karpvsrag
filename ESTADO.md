@@ -21,7 +21,7 @@
 **Gasto real total de la API:** USD 2,46 (ver `logs/llamadas.jsonl`).
 
 ## Pendientes del usuario
-- [ ] Completar `REPO_URL` en `site/config.js`.
+- [x] `REPO_URL` completado (https://github.com/nacholemmo/karpvsrag).
 - [ ] Pushear con el tag: `git push && git push --tags`.
 - [ ] Publicar en Render: blueprint `render.yaml`, o Static Site con *Publish directory* `site` y sin build.
 - [ ] Reemplazar `[link a la landing]` y `[link al repo]` en `borrador-linkedin.md` y en el README ("se agrega al publicar").

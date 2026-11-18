@@ -46,7 +46,7 @@ Detalle completo en [`resultados/resumen.md`](resultados/resumen.md), [`resultad
 Requisitos: Python 3.12, [uv](https://docs.astral.sh/uv/) y una clave de la API de Anthropic, solo para los pasos que llaman al modelo.
 
 ```bash
-git clone <este repo> && cd <repo>
+git clone https://github.com/nacholemmo/karpvsrag.git && cd karpvsrag
 uv venv --python 3.12 .venv
 uv pip install --python .venv -r requirements.txt   # incluye PyTorch para CPU
 cp .env.example .env                                 # completar ANTHROPIC_API_KEY
