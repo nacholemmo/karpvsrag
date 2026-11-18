@@ -126,7 +126,7 @@ Para retomar el trabajo alcanza con leer este archivo y `ESTADO.md`.
 
 ## Decisiones de la fase 6 (post)
 
-- `borrador-linkedin.md`: 150 a 220 palabras, en primera persona, con los tres puntajes como números, y como sorpresa la ingesta de la wiki que daba documentos por terminados sin escribir (`fallos.md` #9).
+- `docs/post-linkedin.md`: 150 a 220 palabras, en primera persona, con los tres puntajes como números, y como sorpresa la ingesta de la wiki que daba documentos por terminados sin escribir (`fallos.md` #9).
 - Restricciones de estilo: sin "no es X, es Y", sin listas con flechas, sin mencionar empleadores ni búsqueda laboral.
 - Los links van como marcadores, que el usuario reemplaza al publicar.
 

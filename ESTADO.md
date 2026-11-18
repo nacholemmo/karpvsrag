@@ -16,7 +16,7 @@
 
    Actualización: contexto 1,00, wiki 1,00 (con la actualización incompleta documentada) y RAG 0,90. Más `fallos.md`, `results.json` y el tag `linea-base`.
 5. **Landing:** `site/` (estática, Render con `render.yaml`).
-6. **Post:** `borrador-linkedin.md` (219 palabras, revisado contra los datos).
+6. **Post:** `docs/post-linkedin.md` (219 palabras, revisado contra los datos).
 
 **Gasto real total de la API:** USD 2,46 (ver `logs/llamadas.jsonl`).
 
